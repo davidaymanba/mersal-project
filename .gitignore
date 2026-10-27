@@ -19,3 +19,6 @@ uploads/
 .test-dist/
 test-results/
 playwright-report/
+
+# Screenshots from the mersal-ui-review skill
+.ui-review/

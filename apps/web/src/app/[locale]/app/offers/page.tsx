@@ -7,6 +7,7 @@ import { useFormatter, useNow, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { openOffersKey } from '@/components/shell/app-shell';
+import { SlidingThumb } from '@/components/motion/sliding-thumb';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -189,9 +190,10 @@ export default function OffersPage() {
     <>
       <PageHeader title={t('title')} description={t('subtitle')} />
       <div
-        className="mb-4 flex gap-1 rounded-lg border border-border bg-surface p-1 sm:w-fit"
+        className="relative mb-4 flex gap-1 rounded-lg border border-border bg-surface p-1 sm:w-fit"
         role="tablist"
       >
+        <SlidingThumb />
         {(['open', 'history'] as const).map((key) => (
           <button
             key={key}
@@ -200,8 +202,8 @@ export default function OffersPage() {
             aria-selected={tab === key}
             onClick={() => setTab(key)}
             className={cn(
-              'flex-1 rounded-md px-4 py-1.5 text-sm font-medium transition-colors',
-              tab === key ? 'bg-ink text-white' : 'text-muted-foreground hover:text-ink',
+              'relative flex-1 rounded-md px-4 py-1.5 text-sm font-medium transition-colors',
+              tab === key ? 'text-surface' : 'text-muted-foreground hover:text-ink',
             )}
           >
             {t(`tabs.${key}`)}

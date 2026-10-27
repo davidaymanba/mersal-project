@@ -63,7 +63,7 @@ export default function MessagesPage({ searchParams }: { searchParams: Promise<{
           <nav
             aria-label={t('listLabel')}
             className={cn(
-              'self-start overflow-hidden rounded-2xl border border-border bg-surface',
+              'self-start overflow-hidden rounded-2xl border border-border bg-surface shadow-xs',
               selected && 'hidden lg:block',
             )}
           >

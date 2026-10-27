@@ -67,7 +67,10 @@
       "pickedUp": "Picked up · code verified",
       "delivery": "Delivery with code",
       "traveller": "Verified traveller",
-      "rating": "4.9 · 31 deliveries"
+      "rating": "4.9 · 31 deliveries",
+      "from": "Paris",
+      "to": "Algiers",
+      "protected": "Payment held until delivery"
     },
     "travellerTitle": "Already travelling?",
     "travellerBody": "Publish your trip, accept the parcels that suit you, and receive your earnings every week.",
@@ -1611,5 +1614,8 @@
       "sender": "Sender",
       "traveller": "Traveller"
     }
+  },
+  "theme": {
+    "toggle": "Switch light or dark mode"
   }
 }

@@ -44,7 +44,7 @@ function DocumentImage({
   emptyLabel: string;
 }) {
   return (
-    <figure className="overflow-hidden rounded-xl border border-border bg-surface">
+    <figure className="overflow-hidden rounded-xl border border-border bg-surface shadow-xs">
       <div className="flex aspect-[4/3] items-center justify-center bg-muted">
         {src ? (
           <a href={apiUrl(src)} target="_blank" rel="noreferrer" className="h-full w-full">
@@ -132,7 +132,7 @@ export default function AdminVerificationPage({ params }: { params: Promise<{ id
       </div>
 
       {v.status === 'PENDING' ? (
-        <div className="mt-8 grid gap-6 rounded-2xl border border-border bg-surface p-6 md:grid-cols-[auto_1fr]">
+        <div className="mt-8 grid gap-6 rounded-2xl border border-border bg-surface shadow-xs p-6 md:grid-cols-[auto_1fr]">
           <Button
             size="lg"
             onClick={() => approve.mutate()}

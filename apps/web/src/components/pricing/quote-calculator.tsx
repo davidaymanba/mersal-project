@@ -1,11 +1,13 @@
 'use client';
 
 import { QuoteRequestSchema, type QuoteRequest, type QuoteResponse } from '@mersal/shared';
-import { Clock, Zap } from 'lucide-react';
+import { Check, Clock, Zap } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useMemo, useState, type FormEvent, type ReactNode } from 'react';
 import { FormAlert } from '@/components/auth/form-alert';
 import { CitySelect, useRoutes } from '@/components/catalog/city-select';
+import { RouteArc } from '@/components/marketing/route-arc';
+import { CountUp } from '@/components/motion/count-up';
 import { Button } from '@/components/ui/button';
 import { Field } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
@@ -129,7 +131,7 @@ export function QuoteCalculator({
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem]">
       <form
         onSubmit={submit}
-        className="flex flex-col gap-8 rounded-2xl border border-border bg-surface p-6 sm:p-8"
+        className="flex flex-col gap-8 rounded-3xl border border-border bg-surface p-6 shadow-sm sm:p-8"
       >
         <div className="grid gap-5 sm:grid-cols-2">
           <CitySelect
@@ -161,12 +163,17 @@ export function QuoteCalculator({
                 <label
                   key={category.code}
                   className={cn(
-                    'flex cursor-pointer flex-col gap-2 rounded-xl border p-3 text-sm transition-colors',
+                    'relative flex cursor-pointer flex-col gap-2.5 rounded-xl border p-3 text-sm transition-[border-color,background-color,box-shadow,translate] duration-200 ease-out-quart has-focus-visible:ring-4 has-focus-visible:ring-primary/15',
                     selected
-                      ? 'border-primary bg-tint/60 ring-2 ring-primary/15'
-                      : 'border-border hover:bg-muted',
+                      ? 'border-primary bg-tint/60 shadow-sm ring-2 ring-primary/15'
+                      : 'border-border hover:-translate-y-0.5 hover:border-ink/20 hover:shadow-sm',
                   )}
                 >
+                  {selected && (
+                    <span className="absolute end-2 top-2 flex size-5 animate-check items-center justify-center rounded-full bg-primary text-primary-foreground">
+                      <Check className="size-3" aria-hidden="true" />
+                    </span>
+                  )}
                   <input
                     type="radio"
                     name="category"
@@ -174,10 +181,16 @@ export function QuoteCalculator({
                     checked={selected}
                     onChange={() => update('categoryCode', category.code)}
                   />
-                  <Icon
-                    className={cn('size-5', selected ? 'text-primary' : 'text-muted-foreground')}
-                    aria-hidden="true"
-                  />
+                  <span
+                    className={cn(
+                      'flex size-9 items-center justify-center rounded-lg transition-colors duration-200',
+                      selected
+                        ? 'bg-primary text-primary-foreground'
+                        : 'bg-muted text-muted-foreground',
+                    )}
+                  >
+                    <Icon className="size-[1.125rem]" aria-hidden="true" />
+                  </span>
                   <span className="leading-snug font-medium text-ink">
                     {localized(category.names)}
                   </span>
@@ -238,10 +251,10 @@ export function QuoteCalculator({
                 <label
                   key={urgency}
                   className={cn(
-                    'flex cursor-pointer gap-3 rounded-xl border p-4 transition-colors',
+                    'flex cursor-pointer gap-3 rounded-xl border p-4 transition-[border-color,background-color,box-shadow] duration-200 has-focus-visible:ring-4 has-focus-visible:ring-primary/15',
                     selected
-                      ? 'border-primary bg-tint/60 ring-2 ring-primary/15'
-                      : 'border-border hover:bg-muted',
+                      ? 'border-primary bg-tint/60 shadow-sm ring-2 ring-primary/15'
+                      : 'border-border hover:border-ink/20 hover:shadow-sm',
                   )}
                 >
                   <input
@@ -319,17 +332,25 @@ export function QuoteCalculator({
       <aside className="lg:sticky lg:top-24 lg:self-start">
         <div
           className={cn(
-            'rounded-2xl bg-ink p-6 text-white transition-opacity',
+            'relative isolate overflow-hidden rounded-3xl bg-deep p-6 text-white shadow-lg transition-opacity duration-300',
             stale && 'opacity-60',
           )}
         >
+          <div
+            className="absolute -end-24 -top-28 -z-10 size-80 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--brand-primary)_70%,transparent),transparent)] opacity-70"
+            aria-hidden="true"
+          />
           <p className="text-sm text-white/70">{t('result.title')}</p>
           {quote ? (
-            <>
-              <p className="mt-2 font-display text-5xl font-semibold tabular-nums">
-                {money(quote.total, quote.currency)}
+            <div key={quote.id}>
+              <p className="mt-2 animate-fade-up font-display text-5xl font-semibold tabular-nums">
+                <CountUp
+                  value={quote.total}
+                  duration={900}
+                  format={(v) => money(Math.round(v), quote.currency)}
+                />
               </p>
-              <div className="mt-6 rounded-xl bg-white p-4">
+              <div className="mt-6 animate-fade-up rounded-2xl bg-surface p-4 shadow-md [animation-delay:0.1s]">
                 <QuoteLines
                   lines={quote.lines}
                   currency={quote.currency}
@@ -352,10 +373,15 @@ export function QuoteCalculator({
                   ),
                 })}
               </p>
-              {!stale && action && <div className="mt-6">{action(quote)}</div>}
-            </>
+              {!stale && action && (
+                <div className="mt-6 animate-fade-up [animation-delay:0.2s]">{action(quote)}</div>
+              )}
+            </div>
           ) : (
-            <p className="mt-4 leading-relaxed text-white/70">{t('result.placeholder')}</p>
+            <>
+              <RouteArc id="quote-arc" tone="dark" delay={0.4} className="mt-4 w-full opacity-80" />
+              <p className="mt-2 leading-relaxed text-white/70">{t('result.placeholder')}</p>
+            </>
           )}
         </div>
       </aside>

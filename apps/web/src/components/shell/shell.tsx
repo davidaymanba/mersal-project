@@ -3,9 +3,10 @@
 import type { MeResponse } from '@mersal/shared';
 import type { LucideIcon } from 'lucide-react';
 import { Menu, X } from 'lucide-react';
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Logo } from '@/components/brand/logo';
 import { LocaleSwitcher } from '@/components/locale-switcher';
+import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { Link, usePathname } from '@/i18n/navigation';
 import { useRealtimeNotifications } from '@/lib/realtime';
@@ -38,9 +39,25 @@ interface ShellProps {
 export function Shell({ me, sections, tag, footer, children }: ShellProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const main = useRef<HTMLElement>(null);
   useRealtimeNotifications();
 
   useEffect(() => setOpen(false), [pathname]);
+
+  // A short settle-in on every page change; skipped for the first render and reduced motion.
+  const firstPath = useRef(pathname);
+  useEffect(() => {
+    if (pathname === firstPath.current) return;
+    firstPath.current = '';
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    main.current?.animate(
+      [
+        { opacity: 0, translate: '0 8px' },
+        { opacity: 1, translate: '0 0' },
+      ],
+      { duration: 380, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' },
+    );
+  }, [pathname]);
 
   const isActive = (item: NavItem) =>
     item.exact
@@ -52,7 +69,7 @@ export function Shell({ me, sections, tag, footer, children }: ShellProps) {
       {sections.map((section, index) => (
         <div key={section.title ?? index}>
           {section.title && (
-            <p className="mb-2 px-3 text-xs font-medium tracking-wide text-muted-foreground uppercase">
+            <p className="mb-1.5 px-3 text-xs font-medium text-muted-foreground/80">
               {section.title}
             </p>
           )}
@@ -63,13 +80,17 @@ export function Shell({ me, sections, tag, footer, children }: ShellProps) {
                   href={item.href}
                   aria-current={isActive(item) ? 'page' : undefined}
                   className={cn(
-                    'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                    'group relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200',
+                    'before:absolute before:inset-y-2 before:-start-3 before:w-[3px] before:rounded-e-full before:bg-primary before:transition-[scale,opacity] before:duration-300 before:ease-out-expo',
                     isActive(item)
-                      ? 'bg-tint text-primary'
-                      : 'text-muted-foreground hover:bg-muted hover:text-ink',
+                      ? 'bg-tint text-primary before:scale-y-100 before:opacity-100'
+                      : 'text-muted-foreground before:scale-y-0 before:opacity-0 hover:bg-muted hover:text-ink',
                   )}
                 >
-                  <item.icon className="size-[1.1rem] shrink-0" aria-hidden="true" />
+                  <item.icon
+                    className="size-[1.1rem] shrink-0 transition-transform duration-300 ease-spring group-hover:scale-110"
+                    aria-hidden="true"
+                  />
                   <span className="flex-1">{item.label}</span>
                   {item.badge}
                 </Link>
@@ -86,7 +107,7 @@ export function Shell({ me, sections, tag, footer, children }: ShellProps) {
       {/* Desktop sidebar */}
       <aside className="sticky top-0 hidden h-dvh w-64 shrink-0 flex-col border-e border-border bg-surface lg:flex">
         <div className="flex h-16 items-center gap-2 px-6">
-          <Link href="/" aria-label="Mersal">
+          <Link href="/" aria-label="Mersal" className="group/logo">
             <Logo />
           </Link>
           {tag}
@@ -101,10 +122,10 @@ export function Shell({ me, sections, tag, footer, children }: ShellProps) {
           <button
             type="button"
             aria-label="Close"
-            className="absolute inset-0 bg-ink/40"
+            className="absolute inset-0 animate-fade-in bg-deep/50 backdrop-blur-[2px] [animation-duration:0.25s]"
             onClick={() => setOpen(false)}
           />
-          <aside className="absolute inset-y-0 start-0 flex w-72 flex-col bg-surface shadow-xl">
+          <aside className="absolute inset-y-0 start-0 flex w-72 animate-slide-in flex-col bg-surface shadow-lg">
             <div className="flex h-16 items-center justify-between px-4">
               <Logo />
               <Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Close">
@@ -118,7 +139,7 @@ export function Shell({ me, sections, tag, footer, children }: ShellProps) {
       )}
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-40 flex h-16 items-center gap-3 border-b border-border bg-surface/90 px-4 backdrop-blur-md sm:px-6">
+        <header className="sticky top-0 z-40 flex h-16 items-center gap-3 border-b border-border/80 bg-surface/80 px-4 backdrop-blur-xl backdrop-saturate-150 sm:px-6">
           <Button
             variant="ghost"
             size="icon"
@@ -132,12 +153,17 @@ export function Shell({ me, sections, tag, footer, children }: ShellProps) {
             <Logo />
           </div>
           <div className="ms-auto flex items-center gap-2">
-            <LocaleSwitcher className="hidden sm:flex" />
+            <LocaleSwitcher className="hidden sm:grid" />
+            <ThemeToggle />
             <NotificationBell />
             <UserMenu me={me} />
           </div>
         </header>
-        <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 lg:px-10">
+        <main
+          id="main"
+          ref={main}
+          className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 lg:px-10"
+        >
           {children}
         </main>
       </div>

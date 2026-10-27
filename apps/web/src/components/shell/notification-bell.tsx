@@ -50,11 +50,18 @@ export function NotificationBell() {
         onClick={() => setOpen((v) => !v)}
         className="relative"
       >
-        <Bell className="size-5!" aria-hidden="true" />
+        <Bell
+          className={cn(
+            'size-5! origin-top',
+            unread > 0 && 'animate-[bell-ring_4s_ease-in-out_1s_3]',
+          )}
+          aria-hidden="true"
+        />
         {unread > 0 && (
           <span
             dir="ltr"
-            className="absolute end-1.5 top-1.5 flex min-w-4 items-center justify-center rounded-full bg-accent px-1 text-[0.65rem] leading-4 font-semibold text-white"
+            key={unread}
+            className="absolute end-1.5 top-1.5 flex min-w-4 animate-check items-center justify-center rounded-full bg-accent px-1 text-[0.65rem] leading-4 font-semibold text-white ring-2 ring-surface"
           >
             {unread > 9 ? '9+' : unread}
           </span>
@@ -62,7 +69,7 @@ export function NotificationBell() {
       </Button>
 
       {open && (
-        <div className="absolute end-0 z-50 mt-2 w-[min(22rem,calc(100vw-2rem))] overflow-hidden rounded-xl border border-border bg-surface shadow-xl">
+        <div className="absolute end-0 z-50 mt-2 w-[min(22rem,calc(100vw-2rem))] origin-top-right animate-pop-in overflow-hidden rounded-xl border border-border bg-surface shadow-lg rtl:origin-top-left">
           <div className="flex items-center justify-between border-b border-border px-4 py-3">
             <p className="font-semibold text-ink">{t('title')}</p>
             {unread > 0 && (

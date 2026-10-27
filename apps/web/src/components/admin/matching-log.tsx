@@ -100,7 +100,7 @@ export function MatchingLogPanel({
     format.dateTime(new Date(iso), { dateStyle: 'short', timeStyle: 'short' });
 
   return (
-    <section className="rounded-2xl border border-border bg-surface p-6">
+    <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h2 className="font-semibold text-ink">{t('log')}</h2>
         {canMatch && (

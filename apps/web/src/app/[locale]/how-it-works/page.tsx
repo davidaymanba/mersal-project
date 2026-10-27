@@ -20,6 +20,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import type { Metadata } from 'next';
+import type { CSSProperties } from 'react';
 import { getFormatter, getTranslations, setRequestLocale } from 'next-intl/server';
 import { CtaBand } from '@/components/marketing/cta-band';
 import { PageIntro } from '@/components/marketing/page-intro';
@@ -92,10 +93,11 @@ function Journey({
   return (
     <section
       aria-labelledby={id}
-      className="rounded-3xl border border-border bg-surface p-6 sm:p-8"
+      data-reveal="group"
+      className="rounded-3xl border border-border bg-surface shadow-xs p-6 shadow-xs sm:p-8"
     >
       <div className="flex items-center gap-3">
-        <span className="flex size-11 items-center justify-center rounded-xl bg-tint text-primary">
+        <span className="flex size-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-glow">
           <Icon className="size-5" aria-hidden="true" />
         </span>
         <h2 id={id} className="scroll-mt-24 text-2xl font-semibold text-ink">
@@ -104,14 +106,18 @@ function Journey({
       </div>
       <ol className="mt-8">
         {steps.map((step, index) => (
-          <li key={step.title} className="relative flex gap-4 pb-8 last:pb-0">
+          <li
+            key={step.title}
+            className="reveal-item relative flex gap-4 pb-8 last:pb-0"
+            style={{ '--i': index } as CSSProperties}
+          >
             {index < steps.length - 1 && (
               <span
-                className="absolute start-[1.125rem] top-11 bottom-2 w-px bg-border"
+                className="absolute start-[1.125rem] top-11 bottom-2 w-px bg-gradient-to-b from-primary/40 to-border"
                 aria-hidden="true"
               />
             )}
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-tint text-primary">
               <step.icon className="size-4" aria-hidden="true" />
             </span>
             <div className="pt-1.5">
@@ -168,14 +174,28 @@ export default async function HowItWorksPage({ params }: Props) {
 
         <section aria-labelledby="money" className="border-y border-border bg-sand/50">
           <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-            <h2 id="money" className="scroll-mt-24 text-3xl font-semibold text-ink">
-              {t('money.title')}
-            </h2>
-            <p className="mt-3 max-w-2xl text-lg text-muted-foreground">{t('money.subtitle')}</p>
-            <ol className="mt-10 grid gap-4 lg:grid-cols-5">
+            <div data-reveal>
+              <h2 id="money" className="scroll-mt-24 text-3xl font-semibold text-ink">
+                {t('money.title')}
+              </h2>
+              <p className="mt-3 max-w-2xl text-lg text-muted-foreground">{t('money.subtitle')}</p>
+            </div>
+            <ol data-reveal="group" className="mt-10 grid gap-4 lg:grid-cols-5">
               {MONEY_STAGES.map(({ key, icon: Icon }, index) => (
-                <li key={key} className="relative rounded-2xl border border-border bg-surface p-5">
-                  <Icon className="size-6 text-primary" aria-hidden="true" />
+                <li
+                  key={key}
+                  className="reveal-item relative rounded-2xl border border-border bg-surface shadow-xs p-5 shadow-xs"
+                  style={{ '--i': index } as CSSProperties}
+                >
+                  <span
+                    className={
+                      key === 'held'
+                        ? 'flex size-10 items-center justify-center rounded-xl bg-deep text-white'
+                        : 'flex size-10 items-center justify-center rounded-xl bg-tint text-primary'
+                    }
+                  >
+                    <Icon className="size-5" aria-hidden="true" />
+                  </span>
                   <h3 className="mt-4 font-semibold text-ink">{t(`money.stages.${key}.title`)}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                     {t(`money.stages.${key}.body`, values)}
@@ -196,13 +216,19 @@ export default async function HowItWorksPage({ params }: Props) {
         </section>
 
         <section aria-labelledby="safety" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-          <h2 id="safety" className="scroll-mt-24 text-3xl font-semibold text-ink">
+          <h2 data-reveal id="safety" className="scroll-mt-24 text-3xl font-semibold text-ink">
             {t('safety.title')}
           </h2>
-          <div className="mt-10 grid gap-x-10 gap-y-8 md:grid-cols-2">
-            {SAFETY.map(({ key, icon: Icon }) => (
-              <div key={key} className="flex gap-4">
-                <Icon className="mt-1 size-6 shrink-0 text-accent" aria-hidden="true" />
+          <div data-reveal="group" className="mt-10 grid gap-5 md:grid-cols-2">
+            {SAFETY.map(({ key, icon: Icon }, index) => (
+              <div
+                key={key}
+                className="reveal-item flex gap-4 rounded-2xl border border-border bg-surface shadow-xs p-5 shadow-xs"
+                style={{ '--i': index } as CSSProperties}
+              >
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                  <Icon className="size-5" aria-hidden="true" />
+                </span>
                 <div>
                   <h3 className="font-semibold text-ink">{t(`safety.items.${key}.title`)}</h3>
                   <p className="mt-1.5 leading-relaxed text-muted-foreground">
@@ -221,11 +247,7 @@ export default async function HowItWorksPage({ params }: Props) {
               <ArrowRight className="rtl:rotate-180" aria-hidden="true" />
             </Link>
           </Button>
-          <Button
-            size="lg"
-            className="border border-white/25 bg-transparent text-white hover:bg-white/10"
-            asChild
-          >
+          <Button size="lg" variant="outlineInverse" asChild>
             <Link href="/signup?mode=traveller">
               <Plane aria-hidden="true" />
               {t('cta.travel')}

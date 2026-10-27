@@ -123,7 +123,7 @@ function DetailsStep({ quote, onEditQuote }: { quote: StoredQuote; onEditQuote: 
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
       <form
         onSubmit={onSubmit}
-        className="flex flex-col gap-8 rounded-2xl border border-border bg-surface p-6 sm:p-8"
+        className="flex flex-col gap-8 rounded-2xl border border-border bg-surface shadow-xs p-6 sm:p-8"
         noValidate
       >
         {formError && <FormAlert>{formError}</FormAlert>}
@@ -215,7 +215,7 @@ function DetailsStep({ quote, onEditQuote }: { quote: StoredQuote; onEditQuote: 
       </form>
 
       <aside className="lg:sticky lg:top-24 lg:self-start">
-        <div className="rounded-2xl bg-ink p-6 text-white">
+        <div className="rounded-2xl bg-deep-glow p-6 text-white shadow-md">
           <p className="flex items-center gap-2 font-semibold">
             {localized(origin?.names)}
             <ArrowRight className="size-4 text-white/60 rtl:rotate-180" aria-hidden="true" />

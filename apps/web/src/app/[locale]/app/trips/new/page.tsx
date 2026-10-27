@@ -87,7 +87,7 @@ export default function NewTripPage() {
       <PageHeader title={t('title')} />
       <form
         onSubmit={submit}
-        className="flex max-w-3xl flex-col gap-8 rounded-2xl border border-border bg-surface p-6 sm:p-8"
+        className="flex max-w-3xl flex-col gap-8 rounded-2xl border border-border bg-surface shadow-xs p-6 sm:p-8"
       >
         {error && <FormAlert>{error}</FormAlert>}
         <div className="grid gap-5 sm:grid-cols-2">

@@ -94,7 +94,7 @@ export default function AdminSettingsPage() {
           })}
         </p>
       </div>
-      <section className="grid gap-5 rounded-2xl border border-border bg-surface p-6 sm:grid-cols-2">
+      <section className="grid gap-5 rounded-2xl border border-border bg-surface shadow-xs p-6 sm:grid-cols-2">
         {KEYS.map((key) =>
           key === 'payouts.weekday' ? (
             <Field key={key} label={t(`fields.${labelKey(key)}`)}>

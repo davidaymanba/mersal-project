@@ -19,7 +19,10 @@ export function FormAlert({
   return (
     <div
       role={tone === 'danger' ? 'alert' : 'status'}
-      className={cn('flex gap-2.5 rounded-lg px-3.5 py-3 text-sm', className)}
+      className={cn(
+        'flex animate-pop-in gap-2.5 rounded-lg px-3.5 py-3 text-sm ring-1 ring-current/15 ring-inset',
+        className,
+      )}
     >
       <Icon className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
       <div>{children}</div>

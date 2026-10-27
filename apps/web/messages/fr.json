@@ -67,7 +67,10 @@
       "pickedUp": "Pris en charge · code vérifié",
       "delivery": "Livraison avec code",
       "traveller": "Voyageur vérifié",
-      "rating": "4,9 · 31 livraisons"
+      "rating": "4,9 · 31 livraisons",
+      "from": "Paris",
+      "to": "Alger",
+      "protected": "Paiement bloqué jusqu’à la livraison"
     },
     "travellerTitle": "Vous voyagez déjà ?",
     "travellerBody": "Publiez votre trajet, acceptez les colis qui vous conviennent et recevez vos gains chaque semaine.",
@@ -1611,5 +1614,8 @@
       "sender": "Expéditeur",
       "traveller": "Voyageur"
     }
+  },
+  "theme": {
+    "toggle": "Basculer entre mode clair et sombre"
   }
 }

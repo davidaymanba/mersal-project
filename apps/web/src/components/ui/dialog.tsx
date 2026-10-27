@@ -42,7 +42,7 @@ export function Dialog({
       <button
         type="button"
         aria-label="Close"
-        className="absolute inset-0 bg-ink/50 backdrop-blur-[2px]"
+        className="absolute inset-0 animate-fade-in bg-deep/60 backdrop-blur-[3px] [animation-duration:0.25s]"
         onClick={onClose}
       />
       <div
@@ -50,7 +50,10 @@ export function Dialog({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className={cn('relative w-full max-w-md rounded-2xl bg-surface p-6 shadow-2xl', className)}
+        className={cn(
+          'relative w-full max-w-md animate-sheet-up rounded-2xl border border-border/60 bg-surface p-6 shadow-lg',
+          className,
+        )}
       >
         <div className="mb-5 flex items-start justify-between gap-4">
           <h2 id={titleId} className="text-lg font-semibold text-ink">
@@ -59,7 +62,7 @@ export function Dialog({
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1 text-muted-foreground hover:bg-muted hover:text-ink"
+            className="rounded-lg p-1 text-muted-foreground transition-[color,background-color,rotate] duration-200 hover:rotate-90 hover:bg-muted hover:text-ink"
             aria-label="Close"
           >
             <X className="size-5" aria-hidden="true" />

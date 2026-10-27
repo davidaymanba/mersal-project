@@ -71,7 +71,10 @@ export default async function BrandPage({ params }: Props) {
     const level = wcagLevel(ratio);
     const key = COLOR_KEYS[color.token] ?? 'surface';
     return (
-      <li key={color.token} className="overflow-hidden rounded-xl border border-border bg-surface">
+      <li
+        key={color.token}
+        className="overflow-hidden rounded-xl border border-border bg-surface shadow-xs"
+      >
         <div className="h-20 border-b border-border" style={{ background: color.hex }} />
         <div className="space-y-1 p-4">
           <p className="font-medium text-ink">{color.name}</p>
@@ -109,7 +112,7 @@ export default async function BrandPage({ params }: Props) {
 
         <Section title={t('logoTitle')} body={t('logoBody')}>
           <div className="grid gap-4 sm:grid-cols-2">
-            <figure className="flex min-h-40 flex-col justify-between rounded-xl border border-border bg-surface p-6">
+            <figure className="flex min-h-40 flex-col justify-between rounded-xl border border-border bg-surface shadow-xs p-6">
               <span className="inline-flex items-center gap-2" dir="ltr">
                 <LogoMark className="size-12" />
                 <span className="font-display text-[2.3rem] leading-none font-semibold tracking-tight text-ink">
@@ -118,7 +121,7 @@ export default async function BrandPage({ params }: Props) {
               </span>
               <figcaption className="text-sm text-muted-foreground">{t('logoFull')}</figcaption>
             </figure>
-            <figure className="flex min-h-40 flex-col justify-between rounded-xl border border-border bg-surface p-6">
+            <figure className="flex min-h-40 flex-col justify-between rounded-xl border border-border bg-surface shadow-xs p-6">
               <span className="inline-flex items-center gap-2" dir="rtl">
                 <LogoMark className="size-12" />
                 <span className="font-display text-[2.3rem] leading-none font-semibold text-ink">
@@ -131,7 +134,7 @@ export default async function BrandPage({ params }: Props) {
               <LogoMark className="size-16" />
               <figcaption className="text-sm text-muted-foreground">{t('logoMark')}</figcaption>
             </figure>
-            <figure className="flex min-h-40 flex-col justify-between rounded-xl bg-ink p-6 text-white">
+            <figure className="flex min-h-40 flex-col justify-between rounded-xl bg-deep p-6 text-white">
               <span className="inline-flex items-center gap-2" dir="ltr">
                 <LogoMark className="size-12" mono />
                 <span className="font-display text-[2.3rem] leading-none font-semibold tracking-tight">
@@ -153,7 +156,7 @@ export default async function BrandPage({ params }: Props) {
 
         <Section title={t('typeTitle')} body={t('typeBody')}>
           <div className="space-y-6">
-            <div className="rounded-xl border border-border bg-surface p-6">
+            <div className="rounded-xl border border-border bg-surface shadow-xs p-6">
               <p className="text-xs font-medium text-muted-foreground uppercase">
                 {t('typeDisplay')}
               </p>
@@ -162,7 +165,7 @@ export default async function BrandPage({ params }: Props) {
                 طردك يسافر مع من هو مسافر أصلاً.
               </p>
             </div>
-            <div className="rounded-xl border border-border bg-surface p-6">
+            <div className="rounded-xl border border-border bg-surface shadow-xs p-6">
               <p className="text-xs font-medium text-muted-foreground uppercase">
                 {t('typeBodyLabel')}
               </p>

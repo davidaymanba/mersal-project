@@ -214,7 +214,7 @@ export function ReviewPanel({ shipment }: { shipment: ShipmentView }) {
   }
 
   return (
-    <section className="rounded-2xl border border-border bg-surface p-6">
+    <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
       {shipment.review ? (
         <>
           <h2 className="font-semibold text-ink">{t('yours')}</h2>

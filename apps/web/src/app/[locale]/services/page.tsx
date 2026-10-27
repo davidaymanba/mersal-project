@@ -83,7 +83,7 @@ export default async function ServicesPage({ params }: Props) {
                 {countryPairs(catalog).map(([a, b]) => (
                   <article
                     key={`${a}-${b}`}
-                    className="rounded-2xl border border-border bg-surface p-6"
+                    className="rounded-2xl border border-border bg-surface shadow-xs p-6"
                   >
                     <h3 className="flex items-center gap-2 font-display text-lg font-semibold text-ink">
                       {country.of(a)}
@@ -130,7 +130,7 @@ export default async function ServicesPage({ params }: Props) {
                   return (
                     <li
                       key={category.id}
-                      className="flex gap-4 rounded-2xl border border-border bg-surface p-5"
+                      className="flex gap-4 rounded-2xl border border-border bg-surface shadow-xs p-5"
                     >
                       <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-tint text-primary">
                         <Icon className="size-5" aria-hidden="true" />
@@ -164,14 +164,14 @@ export default async function ServicesPage({ params }: Props) {
                 {t('paceTitle')}
               </h2>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border border-border bg-surface p-5">
+                <div className="rounded-2xl border border-border bg-surface shadow-xs p-5">
                   <Clock className="size-5 text-primary" aria-hidden="true" />
                   <h3 className="mt-3 font-semibold text-ink">{t('standard.title')}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                     {t('standard.body')}
                   </p>
                 </div>
-                <div className="rounded-2xl border border-border bg-surface p-5">
+                <div className="rounded-2xl border border-border bg-surface shadow-xs p-5">
                   <Zap className="size-5 text-accent" aria-hidden="true" />
                   <h3 className="mt-3 font-semibold text-ink">{t('express.title')}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
@@ -184,7 +184,7 @@ export default async function ServicesPage({ params }: Props) {
             {catalog && extras(catalog).length > 0 && (
               <div>
                 <h2 className="text-2xl font-semibold text-ink">{t('extrasTitle')}</h2>
-                <ul className="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface">
+                <ul className="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface shadow-xs">
                   {extras(catalog).map((option) => (
                     <li
                       key={option.code}

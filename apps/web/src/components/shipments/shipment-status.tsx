@@ -24,9 +24,16 @@ const TONE: Record<
   REFUNDED: 'neutral',
 };
 
+/** Statuses where something is actively happening get a pulsing dot. */
+const LIVE = new Set<ShipmentStatus>(['MATCHING', 'PICKED_UP', 'IN_TRANSIT']);
+
 export function ShipmentStatusBadge({ status }: { status: ShipmentStatus }) {
   const t = useTranslations('shipmentStatus');
-  return <Badge tone={TONE[status]}>{t(status)}</Badge>;
+  return (
+    <Badge tone={TONE[status]} live={LIVE.has(status)}>
+      {t(status)}
+    </Badge>
+  );
 }
 
 /** Who did it, from the viewer's point of view. */
@@ -50,9 +57,19 @@ export function ShipmentTimeline({
   const ordered = [...events].reverse();
 
   return (
-    <ol className="relative flex flex-col gap-5 ps-6 before:absolute before:inset-y-1 before:start-[0.4375rem] before:w-px before:bg-border">
+    <ol className="relative flex flex-col gap-5 ps-6 before:absolute before:inset-y-1 before:start-[0.4375rem] before:w-px before:bg-gradient-to-b before:from-primary/50 before:to-border">
       {ordered.map((event, index) => (
-        <li key={event.id} className="relative">
+        <li
+          key={event.id}
+          className="relative animate-fade-up"
+          style={{ animationDelay: `${Math.min(index, 8) * 60}ms` }}
+        >
+          {index === 0 && (
+            <span
+              className="absolute -start-6 top-1 size-3.5 animate-ping-soft rounded-full bg-primary/40"
+              aria-hidden="true"
+            />
+          )}
           <span
             className={cn(
               'absolute -start-6 top-1 size-3.5 rounded-full border-2 border-surface',

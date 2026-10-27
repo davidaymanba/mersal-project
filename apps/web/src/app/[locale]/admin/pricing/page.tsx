@@ -47,7 +47,10 @@ export default function AdminPricingPage() {
       <PageHeader title={t('title')} description={t('subtitle')} />
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {overview.data.map((corridor) => (
-          <section key={corridor.id} className="rounded-2xl border border-border bg-surface p-5">
+          <section
+            key={corridor.id}
+            className="rounded-2xl border border-border bg-surface shadow-xs p-5"
+          >
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h2 className="flex items-center gap-2 font-semibold text-ink">

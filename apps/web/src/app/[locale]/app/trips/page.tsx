@@ -38,7 +38,7 @@ export default function TripsPage() {
     return (
       <>
         <PageHeader title={t('title')} description={t('subtitle')} />
-        <div className="flex flex-col items-start gap-4 rounded-2xl bg-ink p-8 text-white">
+        <div className="flex flex-col items-start gap-4 rounded-2xl bg-deep-glow p-8 text-white shadow-md">
           <BadgeCheck className="size-8 text-accent" aria-hidden="true" />
           <p className="max-w-lg text-lg">{t('verifyFirst')}</p>
           <Button variant="inverse" asChild>
@@ -86,7 +86,7 @@ export default function TripsPage() {
               <li key={trip.id}>
                 <Link
                   href={`/app/trips/${trip.id}`}
-                  className="block rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-primary/40"
+                  className="block rounded-2xl border border-border bg-surface shadow-xs p-5 transition-colors hover:border-primary/40"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <p className="flex items-center gap-2 font-semibold text-ink">

@@ -2,10 +2,24 @@
 
 import type { AdminAnalytics, ShipmentStatus } from '@mersal/shared';
 import { useQuery } from '@tanstack/react-query';
-import { ArrowRight, BadgeCheck, PackageX, ShieldAlert } from 'lucide-react';
+import {
+  ArrowRight,
+  BadgeCheck,
+  Coins,
+  Gauge,
+  Hourglass,
+  Lock,
+  PackageX,
+  Percent,
+  Plane,
+  ShieldAlert,
+  Undo2,
+  Wallet,
+} from 'lucide-react';
 import { useFormatter, useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 import { BarList } from '@/components/charts/bar-list';
+import { CountUp } from '@/components/motion/count-up';
 import { LineChart } from '@/components/charts/line-chart';
 import { SERIES_COLORS } from '@/components/charts/palette';
 import { useAdminOverview } from '@/components/shell/admin-shell';
@@ -26,7 +40,7 @@ function Panel({
 }) {
   const t = useTranslations('admin.overview');
   return (
-    <section className="rounded-2xl border border-border bg-surface p-6">
+    <section className="animate-fade-up rounded-2xl border border-border bg-surface p-6 shadow-xs [animation-delay:0.2s]">
       <h2 className="mb-5 font-semibold text-ink">{title}</h2>
       {children}
       {table && (
@@ -55,11 +69,15 @@ function Attention({
   return (
     <Link
       href={href}
-      className={`flex items-center gap-3 rounded-xl border p-4 transition-colors ${count ? 'border-warning/40 bg-warning-tint/60 hover:bg-warning-tint' : 'border-border bg-surface hover:bg-muted'}`}
+      className={`group/link flex animate-fade-up items-center gap-3 rounded-2xl border p-4 shadow-xs transition-[background-color,box-shadow,translate] duration-200 ease-out-quart hover:-translate-y-0.5 hover:shadow-md ${count ? 'border-warning/30 bg-warning-tint/60 hover:bg-warning-tint' : 'border-border bg-surface'}`}
     >
-      <span className={count ? 'text-warning' : 'text-muted-foreground'}>{icon}</span>
+      <span
+        className={`flex size-9 items-center justify-center rounded-xl ${count ? 'bg-warning/10 text-warning' : 'bg-muted text-muted-foreground'}`}
+      >
+        {icon}
+      </span>
       <span className="flex-1 text-sm text-ink">{label}</span>
-      <span className="font-display text-xl font-semibold text-ink">{count}</span>
+      <span className="font-display text-xl font-semibold text-ink tabular-nums">{count}</span>
       <ArrowRight className="size-4 text-muted-foreground rtl:rotate-180" aria-hidden="true" />
     </Link>
   );
@@ -117,13 +135,33 @@ export default function AdminOverviewPage() {
       </div>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatCard label={t('gmv')} value={money(k.gmv, a.currency)} />
-        <StatCard label={t('commission')} value={money(k.commission, a.currency)} />
         <StatCard
-          label={t('matchRate')}
-          value={k.matchRate === null ? '—' : format.number(k.matchRate, { style: 'percent' })}
+          index={0}
+          icon={Coins}
+          label={t('gmv')}
+          value={<CountUp value={k.gmv} format={(v) => money(Math.round(v), a.currency)} />}
         />
         <StatCard
+          index={1}
+          icon={Percent}
+          label={t('commission')}
+          value={<CountUp value={k.commission} format={(v) => money(Math.round(v), a.currency)} />}
+        />
+        <StatCard
+          index={2}
+          icon={Gauge}
+          label={t('matchRate')}
+          value={
+            k.matchRate === null ? (
+              '—'
+            ) : (
+              <CountUp value={k.matchRate} format={(v) => format.number(v, { style: 'percent' })} />
+            )
+          }
+        />
+        <StatCard
+          index={3}
+          icon={Hourglass}
           label={t('timeToMatch')}
           value={
             k.avgHoursToMatch === null
@@ -133,10 +171,32 @@ export default function AdminOverviewPage() {
                 })
           }
         />
-        <StatCard label={t('heldFunds')} value={money(k.heldFunds, a.currency)} />
-        <StatCard label={t('availableToPay')} value={money(k.availableToPay, a.currency)} />
-        <StatCard label={t('refunds')} value={money(k.refunds, a.currency)} />
-        <StatCard label={t('activeTrips')} value={format.number(k.activeTrips)} />
+        <StatCard
+          index={4}
+          icon={Lock}
+          label={t('heldFunds')}
+          value={<CountUp value={k.heldFunds} format={(v) => money(Math.round(v), a.currency)} />}
+        />
+        <StatCard
+          index={5}
+          icon={Wallet}
+          label={t('availableToPay')}
+          value={
+            <CountUp value={k.availableToPay} format={(v) => money(Math.round(v), a.currency)} />
+          }
+        />
+        <StatCard
+          index={6}
+          icon={Undo2}
+          label={t('refunds')}
+          value={<CountUp value={k.refunds} format={(v) => money(Math.round(v), a.currency)} />}
+        />
+        <StatCard
+          index={7}
+          icon={Plane}
+          label={t('activeTrips')}
+          value={<CountUp value={k.activeTrips} format={(v) => format.number(Math.round(v))} />}
+        />
       </div>
 
       <div className="mt-6">

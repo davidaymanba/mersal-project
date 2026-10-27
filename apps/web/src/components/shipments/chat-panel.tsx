@@ -102,7 +102,7 @@ export function ChatPanel({
     });
 
   return (
-    <section className="flex flex-col rounded-2xl border border-border bg-surface">
+    <section className="flex flex-col rounded-2xl border border-border bg-surface shadow-xs">
       <header className="border-b border-border px-6 py-4">
         <h2 className="font-semibold text-ink">{t('title')}</h2>
         <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">

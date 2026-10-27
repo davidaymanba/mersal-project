@@ -96,7 +96,7 @@ export default function AdminUserPage({ params }: { params: Promise<{ id: string
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {(Object.keys(u.counts) as (keyof AdminUserDetail['counts'])[]).map((key) => (
-          <div key={key} className="rounded-xl border border-border bg-surface p-4">
+          <div key={key} className="rounded-xl border border-border bg-surface shadow-xs p-4">
             <p className="text-sm text-muted-foreground">{t(`counts.${key}`)}</p>
             <p className="mt-1 font-display text-2xl font-semibold text-ink tabular-nums">
               {u.counts[key]}
@@ -106,7 +106,7 @@ export default function AdminUserPage({ params }: { params: Promise<{ id: string
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_22rem]">
-        <section className="rounded-2xl border border-border bg-surface p-6">
+        <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
           <h2 className="font-semibold text-ink">{t('auditTrail')}</h2>
           <ul className="mt-4 divide-y divide-border text-sm">
             {u.auditTrail.map((entry) => (
@@ -121,7 +121,7 @@ export default function AdminUserPage({ params }: { params: Promise<{ id: string
         </section>
 
         <div className="flex flex-col gap-6">
-          <section className="rounded-2xl border border-border bg-surface p-6 text-sm">
+          <section className="rounded-2xl border border-border bg-surface shadow-xs p-6 text-sm">
             <dl className="grid grid-cols-2 gap-y-3">
               <dt className="text-muted-foreground">{t('joined')}</dt>
               <dd className="text-ink">{date(u.createdAt)}</dd>
@@ -149,7 +149,7 @@ export default function AdminUserPage({ params }: { params: Promise<{ id: string
           </section>
 
           {u.role !== 'ADMIN' && (
-            <section className="rounded-2xl border border-border bg-surface p-6">
+            <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
               {u.status === 'ACTIVE' ? (
                 <div className="flex flex-col gap-3">
                   <Field label={t('suspendReason')}>

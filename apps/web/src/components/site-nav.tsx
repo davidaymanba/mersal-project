@@ -6,6 +6,7 @@ import { useEffect, useId, useState } from 'react';
 import { Link, usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { LocaleSwitcher } from './locale-switcher';
+import { ThemeToggle } from './theme-toggle';
 import { Button } from './ui/button';
 
 const LINKS = [
@@ -42,7 +43,7 @@ export function SiteNav({ signedIn }: { signedIn: boolean }) {
             key={link.href}
             href={link.href}
             aria-current={current(link.href)}
-            className="text-muted-foreground hover:text-ink aria-[current=page]:text-ink"
+            className="relative py-1 text-muted-foreground transition-colors duration-200 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-center after:scale-x-0 after:rounded-full after:bg-primary after:transition-transform after:duration-300 after:ease-out-expo hover:text-ink hover:after:scale-x-100 aria-[current=page]:text-ink aria-[current=page]:after:scale-x-100"
           >
             {t(link.key)}
           </Link>
@@ -50,7 +51,8 @@ export function SiteNav({ signedIn }: { signedIn: boolean }) {
       </nav>
 
       <div className="ms-auto flex items-center gap-2">
-        <LocaleSwitcher className="hidden sm:flex" />
+        <LocaleSwitcher className="hidden sm:grid" />
+        <ThemeToggle />
         {signedIn ? (
           <Button size="sm" asChild>
             <Link href="/app">{t('account')}</Link>
@@ -85,12 +87,16 @@ export function SiteNav({ signedIn }: { signedIn: boolean }) {
       <div
         id={panelId}
         hidden={!open}
-        className="absolute inset-x-0 top-full border-b border-border bg-surface shadow-[0_16px_32px_-24px_rgb(11_46_51/0.4)] md:hidden"
+        className="absolute inset-x-0 top-full origin-top animate-pop-in border-b border-border bg-surface shadow-lg md:hidden"
       >
         <nav aria-label={t('main')} className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
           <ul>
-            {LINKS.map((link) => (
-              <li key={link.href}>
+            {LINKS.map((link, index) => (
+              <li
+                key={link.href}
+                className="animate-fade-up [animation-duration:0.45s]"
+                style={{ animationDelay: `${index * 40}ms` }}
+              >
                 <Link
                   href={link.href}
                   aria-current={current(link.href)}

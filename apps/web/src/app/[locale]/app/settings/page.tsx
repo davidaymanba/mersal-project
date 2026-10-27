@@ -34,7 +34,10 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 rounded-2xl border border-border bg-surface p-6">
+    <section
+      id={id}
+      className="scroll-mt-24 rounded-2xl border border-border bg-surface shadow-xs p-6"
+    >
       <h2 className="text-lg font-semibold text-ink">{title}</h2>
       {description && <p className="mt-1 text-sm text-muted-foreground">{description}</p>}
       <div className="mt-6">{children}</div>

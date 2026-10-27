@@ -5,6 +5,7 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { CheckCheck, ChevronRight } from 'lucide-react';
 import { useFormatter, useNow, useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { SlidingThumb } from '@/components/motion/sliding-thumb';
 import { Button } from '@/components/ui/button';
 import { EmptyState, PageHeader, Pagination } from '@/components/ui/page';
 import { PageSpinner } from '@/components/ui/spinner';
@@ -79,8 +80,9 @@ export function NotificationsView() {
       <div
         role="group"
         aria-label={t('page.filter')}
-        className="mb-6 inline-flex rounded-lg border border-border bg-surface p-1"
+        className="relative mb-6 inline-flex rounded-lg border border-border bg-surface p-1"
       >
+        <SlidingThumb />
         {(['all', 'unread'] as const).map((value) => (
           <button
             key={value}
@@ -88,8 +90,8 @@ export function NotificationsView() {
             aria-pressed={filter === value}
             onClick={() => choose(value)}
             className={cn(
-              'rounded-md px-3.5 py-1.5 text-sm font-medium transition-colors',
-              filter === value ? 'bg-ink text-white' : 'text-muted-foreground hover:text-ink',
+              'relative rounded-md px-3.5 py-1.5 text-sm font-medium transition-colors',
+              filter === value ? 'text-surface' : 'text-muted-foreground hover:text-ink',
             )}
           >
             {value === 'all' ? t('page.all') : t('page.unread', { count: unread })}
@@ -108,7 +110,7 @@ export function NotificationsView() {
               <h2 className="mb-3 text-sm font-medium text-muted-foreground">
                 {dayLabel(group.items[0]!.createdAt)}
               </h2>
-              <ul className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-surface">
+              <ul className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-surface shadow-xs">
                 {group.items.map((n) => {
                   const Icon = notificationIcon(n.type);
                   return (

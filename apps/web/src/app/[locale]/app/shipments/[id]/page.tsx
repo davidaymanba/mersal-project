@@ -31,7 +31,7 @@ const REFUNDABLE = ['PAID', 'MATCHING', 'NO_MATCH', 'MATCHED'];
 
 function Card({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-2xl border border-border bg-surface p-6">
+    <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
       <h2 className="mb-4 font-semibold text-ink">{title}</h2>
       {children}
     </section>
@@ -242,7 +242,7 @@ export default function ShipmentPage({
             />
           )}
 
-          <div className="rounded-2xl bg-ink p-6 text-white">
+          <div className="rounded-2xl bg-deep-glow p-6 text-white shadow-md">
             <p className="text-sm text-white/70">
               {s.viewerRole === 'traveller' ? t('earning') : t('price')}
             </p>

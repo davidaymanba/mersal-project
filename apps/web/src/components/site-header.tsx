@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import { Link } from '@/i18n/navigation';
 import { Logo } from './brand/logo';
+import { SiteHeaderFrame } from './site-header-frame';
 import { SiteNav } from './site-nav';
 
 export async function SiteHeader() {
@@ -8,13 +9,13 @@ export async function SiteHeader() {
   const signedIn = (await cookies()).has('mersal_rt');
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
+    <SiteHeaderFrame>
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-8 px-4 sm:px-6">
-        <Link href="/" aria-label="Mersal">
+        <Link href="/" aria-label="Mersal" className="group/logo">
           <Logo />
         </Link>
         <SiteNav signedIn={signedIn} />
       </div>
-    </header>
+    </SiteHeaderFrame>
   );
 }
