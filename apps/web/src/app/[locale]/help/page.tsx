@@ -78,7 +78,7 @@ export default async function HelpPage({ params }: Props) {
                 <h2 id={`${group.key}-title`} className="text-2xl font-semibold text-ink">
                   {t(`groups.${group.key}`)}
                 </h2>
-                <div className="mt-5 divide-y divide-border rounded-2xl border border-border bg-surface">
+                <div className="mt-5 divide-y divide-border rounded-2xl border border-border bg-surface shadow-xs">
                   {group.questions.map((question) => (
                     <details key={question} className="group px-5">
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-medium text-ink [&::-webkit-details-marker]:hidden">
@@ -143,7 +143,7 @@ export default async function HelpPage({ params }: Props) {
               </p>
             </section>
 
-            <section className="flex flex-col items-start gap-4 rounded-2xl border border-border bg-surface p-6 sm:flex-row sm:items-center sm:p-8">
+            <section className="flex flex-col items-start gap-4 rounded-2xl border border-border bg-surface shadow-xs p-6 sm:flex-row sm:items-center sm:p-8">
               <Package className="size-6 shrink-0 text-primary" aria-hidden="true" />
               <div>
                 <h2 className="text-lg font-semibold text-ink">{t('contactTitle')}</h2>

@@ -118,13 +118,13 @@ export default function AdminMatchingPage() {
         </div>
       )}
       <div className="grid gap-6 lg:grid-cols-2">
-        <section className="flex flex-col gap-5 rounded-2xl border border-border bg-surface p-6">
+        <section className="flex flex-col gap-5 rounded-2xl border border-border bg-surface shadow-xs p-6">
           {field('offerTtlMinutes', t('offerTtl'))}
           {field('maxAttempts', t('maxAttempts'))}
           {field('dateToleranceDays', t('tolerance'))}
           {field('minReliability', t('minReliability'))}
         </section>
-        <section className="rounded-2xl border border-border bg-surface p-6">
+        <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
           <h2 className="font-semibold text-ink">{t('weights')}</h2>
           <p className="mt-1 mb-5 text-sm text-muted-foreground">{t('weightsHint')}</p>
           <div className="flex flex-col gap-4">

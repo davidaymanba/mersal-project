@@ -7,6 +7,7 @@ import { useTranslations } from 'next-intl';
 import { useState, type FormEvent, type ReactNode } from 'react';
 import { toast } from 'sonner';
 import { FormAlert } from '@/components/auth/form-alert';
+import { SlidingThumb } from '@/components/motion/sliding-thumb';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Field } from '@/components/ui/field';
@@ -122,7 +123,7 @@ function AddForm({
         e.preventDefault();
         onSubmit();
       }}
-      className="mb-6 grid items-end gap-4 rounded-2xl border border-border bg-surface p-5 sm:grid-cols-2 lg:grid-cols-5"
+      className="mb-6 grid items-end gap-4 rounded-2xl border border-border bg-surface shadow-xs p-5 sm:grid-cols-2 lg:grid-cols-5"
     >
       {children}
       <Button type="submit" disabled={disabled}>
@@ -189,9 +190,10 @@ export default function AdminCatalogPage() {
     <>
       <PageHeader title={t('title')} />
       <div
-        className="mb-6 flex flex-wrap gap-1 rounded-lg border border-border bg-surface p-1 sm:w-fit"
+        className="relative mb-6 flex flex-wrap gap-1 rounded-lg border border-border bg-surface p-1 sm:w-fit"
         role="tablist"
       >
+        <SlidingThumb />
         {TABS.map((key) => (
           <button
             key={key}
@@ -200,8 +202,8 @@ export default function AdminCatalogPage() {
             aria-selected={tab === key}
             onClick={() => setTab(key)}
             className={cn(
-              'rounded-md px-4 py-1.5 text-sm font-medium transition-colors',
-              tab === key ? 'bg-ink text-white' : 'text-muted-foreground hover:text-ink',
+              'relative rounded-md px-4 py-1.5 text-sm font-medium transition-colors',
+              tab === key ? 'text-surface' : 'text-muted-foreground hover:text-ink',
             )}
           >
             {t(`tabs.${key}`)}

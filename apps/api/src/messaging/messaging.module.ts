@@ -1,10 +1,10 @@
 import { Global, Module } from '@nestjs/common';
-import { MessagingController } from './messaging.controller';
+import { ConversationsController, MessagingController } from './messaging.controller';
 import { MessagingService } from './messaging.service';
 
 @Global()
 @Module({
-  controllers: [MessagingController],
+  controllers: [MessagingController, ConversationsController],
   providers: [MessagingService],
   exports: [MessagingService],
 })

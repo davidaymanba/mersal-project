@@ -1,52 +1,75 @@
 /*
  * Mersal design tokens. Components only ever reference these variables, so a
  * partner theme is a single [data-brand] block below.
+ *
+ * Every colour is light-dark(light, dark). <html> follows the visitor's system
+ * setting unless data-theme="light" | "dark" pins it (set by the theme toggle).
+ * --brand-ink is the text colour (dark on light, light on dark); --brand-deep is
+ * the dark emphasis surface, which stays dark in both themes.
  */
+
+:root {
+  color-scheme: light dark;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+}
 
 :root,
 [data-brand='mersal'] {
-  --brand-ink: #0b2e33;
-  --brand-primary: #0f766e;
-  --brand-primary-hover: #0b5f59;
-  --brand-primary-fg: #ffffff;
-  --brand-tint: #e6f4f2;
+  --brand-ink: light-dark(#0b2e33, #e3eeec);
+  --brand-deep: light-dark(#0b2e33, #0f3238);
+  --brand-primary: light-dark(#0f766e, #2fb3a2);
+  --brand-primary-hover: light-dark(#0b5f59, #45c4b3);
+  --brand-primary-fg: light-dark(#ffffff, #032421);
+  --brand-tint: light-dark(#e6f4f2, #0f302f);
   --brand-accent: #e2643b;
-  --brand-accent-strong: #b9471f;
-  --brand-sand: #f7f2ea;
+  --brand-accent-strong: light-dark(#b9471f, #f19a77);
+  --brand-sand: light-dark(#f7f2ea, #111f1e);
 
-  --background: #ffffff;
-  --surface: #ffffff;
+  --background: light-dark(#ffffff, #071619);
+  --surface: light-dark(#ffffff, #0c1f23);
   --foreground: var(--brand-ink);
-  --muted: #f2f5f5;
-  --muted-foreground: #52676a;
-  --border: #dde5e4;
+  --muted: light-dark(#f2f5f5, #12292d);
+  --muted-foreground: light-dark(#52676a, #94abad);
+  --border: light-dark(#dde5e4, #1e3a3f);
   --ring: var(--brand-primary);
+  --shadow-tint: light-dark(#0b2e33, #000000);
 
-  --success: #15803d;
-  --success-tint: #e7f6ec;
-  --warning: #b45309;
-  --warning-tint: #fdf3e2;
-  --danger: #b91c1c;
-  --danger-tint: #fdecec;
-  --info: #1d4ed8;
-  --info-tint: #e9effd;
+  --success: light-dark(#15803d, #4cc27a);
+  --success-tint: light-dark(#e7f6ec, #102a1c);
+  --warning: light-dark(#b45309, #e9a24c);
+  --warning-tint: light-dark(#fdf3e2, #2b2112);
+  --danger: light-dark(#b91c1c, #f07a7a);
+  --danger-tint: light-dark(#fdecec, #2e1618);
+  --info: light-dark(#1d4ed8, #7aa7ff);
+  --info-tint: light-dark(#e9effd, #131f3b);
 
   --radius: 0.75rem;
 }
 
 [data-brand='wassla'] {
-  --brand-ink: #071b33;
-  --brand-primary: #092b65;
-  --brand-primary-hover: #071f4a;
-  --brand-primary-fg: #ffffff;
-  --brand-tint: #eaf0fa;
+  --brand-ink: light-dark(#071b33, #e6ecf5);
+  --brand-deep: light-dark(#071b33, #0f2142);
+  --brand-primary: light-dark(#092b65, #7ea6ff);
+  --brand-primary-hover: light-dark(#071f4a, #98b8ff);
+  --brand-primary-fg: light-dark(#ffffff, #06142b);
+  --brand-tint: light-dark(#eaf0fa, #13213a);
   --brand-accent: #ffd200;
-  --brand-accent-strong: #7a5f00;
-  --brand-sand: #f5f7fb;
+  --brand-accent-strong: light-dark(#7a5f00, #ffdd55);
+  --brand-sand: light-dark(#f5f7fb, #0e1729);
 
-  --muted: #f3f5f9;
-  --muted-foreground: #4d5b70;
-  --border: #dfe4ec;
+  --background: light-dark(#ffffff, #060c18);
+  --surface: light-dark(#ffffff, #0b1424);
+  --muted: light-dark(#f3f5f9, #111c30);
+  --muted-foreground: light-dark(#4d5b70, #9aa8be);
+  --border: light-dark(#dfe4ec, #1f2d47);
+  --shadow-tint: light-dark(#071b33, #000000);
 
   --radius: 0.5rem;
 }

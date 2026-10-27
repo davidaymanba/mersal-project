@@ -135,7 +135,10 @@ export default function VerificationPage() {
           />
 
           {canSubmit && (
-            <form onSubmit={submit} className="rounded-2xl border border-border bg-surface p-6">
+            <form
+              onSubmit={submit}
+              className="rounded-2xl border border-border bg-surface shadow-xs p-6"
+            >
               <h2 className="text-lg font-semibold text-ink">{t('form.title')}</h2>
               {error && (
                 <div className="mt-4">
@@ -209,7 +212,7 @@ export default function VerificationPage() {
         </div>
 
         <aside className="flex flex-col gap-4">
-          <div className="rounded-2xl border border-border bg-surface p-5">
+          <div className="rounded-2xl border border-border bg-surface shadow-xs p-5">
             <p className="font-semibold text-ink">{t('requirementsTitle')}</p>
             <ul className="mt-4 flex flex-col gap-3">
               {requirements.map(({ key, done, href }) => (

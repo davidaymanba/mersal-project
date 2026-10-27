@@ -47,7 +47,7 @@ export default async function TrackingPage({ params }: Props) {
       <SiteHeader />
       <main id="main" className="mx-auto max-w-2xl px-4 py-14 sm:px-6">
         {!data ? (
-          <p className="rounded-2xl border border-border bg-surface p-8 text-center text-muted-foreground">
+          <p className="rounded-2xl border border-border bg-surface shadow-xs p-8 text-center text-muted-foreground">
             {t('notFound')}
           </p>
         ) : (
@@ -74,7 +74,7 @@ export default async function TrackingPage({ params }: Props) {
             )}
 
             {data.deliveryCode && (
-              <section className="mt-6 rounded-2xl bg-ink p-6 text-white">
+              <section className="mt-6 rounded-2xl bg-deep-glow p-6 text-white shadow-md">
                 <p className="flex items-center gap-2 text-sm text-white/70">
                   <KeyRound className="size-4" aria-hidden="true" />
                   {t('codeTitle')}
@@ -86,7 +86,7 @@ export default async function TrackingPage({ params }: Props) {
               </section>
             )}
 
-            <section className="mt-6 rounded-2xl border border-border bg-surface p-6">
+            <section className="mt-6 rounded-2xl border border-border bg-surface shadow-xs p-6">
               <h2 className="mb-5 font-semibold text-ink">{t('history')}</h2>
               <ol className="flex flex-col gap-4">
                 {STEPS.map((step) => {

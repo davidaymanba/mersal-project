@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { PageIntro } from '@/components/marketing/page-intro';
 import { PricingPageClient } from '@/components/pricing/pricing-page-client';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
@@ -23,10 +24,10 @@ export default async function PricingPage({ params }: Props) {
     <>
       <SiteHeader />
       <main id="main" className="mx-auto max-w-6xl px-4 pt-14 pb-20 sm:px-6">
-        <p className="text-sm font-medium text-accent-strong">{t('eyebrow')}</p>
-        <h1 className="mt-3 text-4xl font-semibold text-ink sm:text-5xl">{t('title')}</h1>
-        <p className="mt-4 mb-10 max-w-2xl text-lg text-muted-foreground">{t('subtitle')}</p>
-        <PricingPageClient />
+        <PageIntro eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
+        <div className="mt-10 animate-fade-up [animation-delay:0.3s]">
+          <PricingPageClient />
+        </div>
       </main>
       <SiteFooter />
     </>

@@ -76,7 +76,7 @@ export function ShipmentOperations({
   });
 
   return (
-    <section className="flex flex-col gap-6 rounded-2xl border border-border bg-surface p-6">
+    <section className="flex flex-col gap-6 rounded-2xl border border-border bg-surface shadow-xs p-6">
       {HANDOVER.includes(status) && (pickupCode || deliveryCode) && (
         <div>
           <h2 className="flex items-center gap-2 font-semibold text-ink">

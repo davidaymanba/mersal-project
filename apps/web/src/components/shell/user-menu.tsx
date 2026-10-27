@@ -19,7 +19,7 @@ export function Avatar({
 }) {
   return (
     <span
-      className={`flex shrink-0 items-center justify-center rounded-full bg-tint font-display text-sm font-semibold text-primary ${className}`}
+      className={`flex shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-tint to-[color-mix(in_oklab,var(--brand-primary)_22%,var(--surface))] font-display text-sm font-semibold text-primary ring-2 ring-surface ${className}`}
     >
       {(firstName[0] ?? '').toUpperCase()}
       {(lastName[0] ?? '').toUpperCase()}
@@ -41,13 +41,13 @@ export function UserMenu({ me }: { me: MeResponse }) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="flex items-center gap-2 rounded-full p-0.5 transition-colors hover:bg-muted sm:pe-3"
+        className="flex items-center gap-2 rounded-full p-0.5 transition-colors hover:bg-muted aria-expanded:bg-muted sm:pe-3"
       >
         <Avatar firstName={me.firstName} lastName={me.lastName} />
         <span className="hidden text-sm font-medium text-ink sm:inline">{me.firstName}</span>
       </button>
       {open && (
-        <div className="absolute end-0 z-50 mt-2 w-60 overflow-hidden rounded-xl border border-border bg-surface py-1 shadow-xl">
+        <div className="absolute end-0 z-50 mt-2 w-60 origin-top-right animate-pop-in overflow-hidden rounded-xl border border-border bg-surface py-1 shadow-lg rtl:origin-top-left">
           <div className="border-b border-border px-4 py-3">
             <p className="font-medium text-ink">
               {me.firstName} {me.lastName}

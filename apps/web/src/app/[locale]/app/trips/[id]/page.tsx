@@ -65,14 +65,14 @@ export default function TripPage({ params }: { params: Promise<{ id: string }> }
       </div>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
-        <div className="rounded-2xl border border-border bg-surface p-5">
+        <div className="rounded-2xl border border-border bg-surface shadow-xs p-5">
           <p className="text-sm text-muted-foreground">{td('dates')}</p>
           <p className="mt-1 font-medium text-ink">{day(tr.departureDate)}</p>
           {tr.arrivalDate && (
             <p className="text-sm text-muted-foreground">→ {day(tr.arrivalDate)}</p>
           )}
         </div>
-        <div className="rounded-2xl border border-border bg-surface p-5">
+        <div className="rounded-2xl border border-border bg-surface shadow-xs p-5">
           <p className="text-sm text-muted-foreground">{td('space')}</p>
           <p className="mt-1 font-medium text-ink">
             {t('capacity', {
@@ -84,7 +84,7 @@ export default function TripPage({ params }: { params: Promise<{ id: string }> }
             {t('items', { count: tr.itemsAccepted })} / {tr.maxItems}
           </p>
         </div>
-        <div className="rounded-2xl border border-border bg-surface p-5">
+        <div className="rounded-2xl border border-border bg-surface shadow-xs p-5">
           <p className="text-sm text-muted-foreground">{td('categories')}</p>
           <p className="mt-1 text-sm font-medium text-ink">
             {tr.categories.length
@@ -94,7 +94,7 @@ export default function TripPage({ params }: { params: Promise<{ id: string }> }
         </div>
       </div>
 
-      <section className="mt-6 rounded-2xl border border-border bg-surface p-6">
+      <section className="mt-6 rounded-2xl border border-border bg-surface shadow-xs p-6">
         <h2 className="font-semibold text-ink">{td('parcels')}</h2>
         {tr.shipments.length === 0 ? (
           <p className="mt-3 text-sm text-muted-foreground">{td('noParcels')}</p>

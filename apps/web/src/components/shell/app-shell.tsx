@@ -2,11 +2,21 @@
 
 import type { MeResponse, OfferView } from '@mersal/shared';
 import { useQuery } from '@tanstack/react-query';
-import { BadgeCheck, Inbox, LayoutDashboard, Package, Plane, Settings, Wallet } from 'lucide-react';
+import {
+  BadgeCheck,
+  Inbox,
+  LayoutDashboard,
+  MessagesSquare,
+  Package,
+  Plane,
+  Settings,
+  Wallet,
+} from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import type { ReactNode } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { api } from '@/lib/api';
+import { useConversations } from '@/lib/conversations';
 import { AuthGate } from './auth-gate';
 import { Shell, type NavSection } from './shell';
 
@@ -27,12 +37,20 @@ function AppNav({ me, children }: { me: MeResponse; children: ReactNode }) {
   const isTraveller = me.travellerStatus === 'APPROVED';
   const offers = useOpenOffers(isTraveller);
   const open = offers.data?.length ?? 0;
+  const conversations = useConversations();
+  const unreadMessages = conversations.data?.reduce((sum, c) => sum + c.unread, 0) ?? 0;
 
   const sections: NavSection[] = [
     {
       items: [
         { href: '/app', label: t('overview'), icon: LayoutDashboard, exact: true },
         { href: '/app/shipments', label: ts('title'), icon: Package },
+        {
+          href: '/app/messages',
+          label: t('messages'),
+          icon: MessagesSquare,
+          badge: unreadMessages ? <Badge tone="primary">{unreadMessages}</Badge> : undefined,
+        },
       ],
     },
     {

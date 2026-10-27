@@ -1,10 +1,19 @@
 import { Injectable } from '@nestjs/common';
+import {
+  paginate,
+  type NotificationItem,
+  type NotificationsPage,
+  type NotificationsQuerySchema,
+} from '@mersal/shared';
 import type { Prisma } from '@prisma/client';
+import type { z } from 'zod';
 import { AppConfig } from '../config/config.module';
 import { MailService } from '../mail/mail.service';
 import type { MailTemplate } from '../mail/templates';
 import { PrismaService } from '../prisma/prisma.service';
 import { RealtimeGateway } from '../realtime/realtime.gateway';
+
+type NotificationsQuery = z.output<typeof NotificationsQuerySchema>;
 
 export interface NotifyOptions {
   /** Path inside the web app, e.g. /app/shipments/abc. */
@@ -82,16 +91,33 @@ export class NotificationsService {
       this.realtime.toUser(admin.id, 'notification', { type, data, link });
   }
 
-  async list(userId: string) {
-    const [items, unread] = await Promise.all([
+  async list(userId: string, query: NotificationsQuery): Promise<NotificationsPage> {
+    const where = { userId, ...(query.filter === 'unread' && { readAt: null }) };
+    const [items, total, unread] = await Promise.all([
       this.prisma.notification.findMany({
-        where: { userId },
+        where,
         orderBy: { createdAt: 'desc' },
-        take: 50,
+        skip: (query.page - 1) * query.pageSize,
+        take: query.pageSize,
       }),
+      this.prisma.notification.count({ where }),
       this.prisma.notification.count({ where: { userId, readAt: null } }),
     ]);
-    return { items, unread };
+    return {
+      ...paginate(
+        items.map((n) => ({
+          id: n.id,
+          type: n.type,
+          data: n.data as NotificationItem['data'],
+          link: n.link,
+          readAt: n.readAt?.toISOString() ?? null,
+          createdAt: n.createdAt.toISOString(),
+        })),
+        total,
+        query,
+      ),
+      unread,
+    };
   }
 
   async markRead(userId: string, id: string): Promise<void> {

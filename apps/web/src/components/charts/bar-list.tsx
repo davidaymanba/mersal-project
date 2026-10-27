@@ -16,7 +16,7 @@ export function BarList({
   const max = Math.max(1, ...items.map((i) => i.value));
   return (
     <ul className="flex flex-col gap-2.5">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <li
           key={item.key}
           className="grid grid-cols-[minmax(7rem,10rem)_1fr] items-center gap-3 text-sm"
@@ -29,8 +29,12 @@ export function BarList({
             title={`${item.label}: ${formatValue(item.value)}`}
           >
             <span
-              className="h-5 rounded-e-[4px] transition-[width]"
-              style={{ width: `${Math.max(2, (item.value / max) * 85)}%`, background: color }}
+              className="h-5 origin-left animate-grow-x rounded-e-[4px] transition-[width] duration-500 rtl:origin-right"
+              style={{
+                width: `${Math.max(2, (item.value / max) * 85)}%`,
+                background: color,
+                animationDelay: `${index * 50}ms`,
+              }}
               aria-hidden="true"
             />
             <span className="font-medium text-ink">{formatValue(item.value)}</span>

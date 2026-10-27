@@ -22,6 +22,7 @@ import { PrismaService } from '../prisma/prisma.service';
 import { ReliabilityService } from '../reliability/reliability.service';
 import { SettingsService } from '../settings/settings.service';
 import { ShipmentStateService } from '../shipments/shipment-state.service';
+import { startOfTodayUtc } from '../common/duration';
 
 const DAY = 86_400_000;
 /** A trip keeps taking parcels until departure, even after a first pickup. */
@@ -34,11 +35,6 @@ interface RunOutcome {
   offer?: { id: string; travellerId: string; shipmentReference: string };
   noMatch?: { senderId: string; shipmentId: string; reference: string };
 }
-
-const startOfTodayUtc = () => {
-  const now = new Date();
-  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
-};
 
 const sixDigits = () => randomInt(0, 1_000_000).toString().padStart(6, '0');
 

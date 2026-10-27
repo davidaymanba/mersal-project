@@ -130,7 +130,7 @@ export default function AdminDisputePage({ params }: { params: Promise<{ id: str
           value={money(d.blockedAmount || s.travellerEarning, s.currency)}
         />
         <StatCard label={t('refundable')} value={money(d.refundable, s.currency)} />
-        <div className="rounded-xl border border-border bg-surface p-5 text-sm">
+        <div className="rounded-xl border border-border bg-surface shadow-xs p-5 text-sm">
           <p className="text-muted-foreground">{t('sender')}</p>
           <Link
             href={`/admin/users/${s.sender.id}`}
@@ -159,7 +159,7 @@ export default function AdminDisputePage({ params }: { params: Promise<{ id: str
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_24rem]">
         <div className="flex flex-col gap-6">
-          <section className="rounded-2xl border border-border bg-surface p-6">
+          <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
             <h2 className="font-semibold text-ink">{t('description')}</h2>
             <p className="mt-2 whitespace-pre-wrap text-ink">{d.description}</p>
             {d.evidence.length > 0 && (
@@ -187,7 +187,7 @@ export default function AdminDisputePage({ params }: { params: Promise<{ id: str
 
         <aside className="flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
           {d.status === 'RESOLVED' ? (
-            <section className="rounded-2xl border border-border bg-surface p-6 text-sm">
+            <section className="rounded-2xl border border-border bg-surface shadow-xs p-6 text-sm">
               <p className="font-semibold text-ink">
                 {d.resolution === 'PARTIAL_REFUND'
                   ? td('resolution.PARTIAL_REFUND', { amount: money(d.refundAmount, s.currency) })
@@ -205,7 +205,7 @@ export default function AdminDisputePage({ params }: { params: Promise<{ id: str
               )}
             </section>
           ) : (
-            <section className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6">
+            <section className="flex flex-col gap-4 rounded-2xl border border-border bg-surface shadow-xs p-6">
               {d.status === 'OPEN' && (
                 <Button
                   variant="secondary"

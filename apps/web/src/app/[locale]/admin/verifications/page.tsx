@@ -5,6 +5,7 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { useFormatter, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { VerificationBadge } from '@/components/admin/status-badges';
+import { SlidingThumb } from '@/components/motion/sliding-thumb';
 import { EmptyState, PageHeader, Pagination, Table } from '@/components/ui/page';
 import { PageSpinner } from '@/components/ui/spinner';
 import { Link } from '@/i18n/navigation';
@@ -40,9 +41,10 @@ export default function AdminVerificationsPage() {
     <>
       <PageHeader title={t('title')} />
       <div
-        className="mb-4 flex gap-1 rounded-lg border border-border bg-surface p-1 sm:w-fit"
+        className="relative mb-4 flex gap-1 rounded-lg border border-border bg-surface p-1 sm:w-fit"
         role="tablist"
       >
+        <SlidingThumb />
         {STATUSES.map((s) => (
           <button
             key={s}
@@ -54,8 +56,8 @@ export default function AdminVerificationsPage() {
               setPage(1);
             }}
             className={cn(
-              'flex-1 rounded-md px-4 py-1.5 text-sm font-medium transition-colors',
-              status === s ? 'bg-ink text-white' : 'text-muted-foreground hover:text-ink',
+              'relative flex-1 rounded-md px-4 py-1.5 text-sm font-medium transition-colors',
+              status === s ? 'text-surface' : 'text-muted-foreground hover:text-ink',
             )}
           >
             {t(`status.${s}`)}

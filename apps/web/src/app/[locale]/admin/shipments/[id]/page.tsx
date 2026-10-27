@@ -37,7 +37,7 @@ interface AdminShipment extends Omit<ShipmentView, 'sender' | 'traveller'> {
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="rounded-2xl border border-border bg-surface p-6">
+    <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
       <h2 className="mb-4 font-semibold text-ink">{title}</h2>
       {children}
     </section>

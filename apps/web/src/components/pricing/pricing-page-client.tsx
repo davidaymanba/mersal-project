@@ -19,7 +19,7 @@ export function RestrictedItemsList() {
       {data.restrictedItems.map((item) => (
         <li
           key={item.id}
-          className="flex items-start gap-3 rounded-lg bg-surface px-4 py-3 text-sm"
+          className="flex items-start gap-3 rounded-xl bg-surface px-4 py-3 text-sm shadow-xs"
         >
           {item.level === 'PROHIBITED' ? (
             <Ban className="mt-0.5 size-4 shrink-0 text-danger" aria-label={t('prohibited')} />
@@ -56,7 +56,7 @@ export function PricingPageClient() {
         }}
       />
 
-      <section id="restricted" className="mt-16 rounded-2xl bg-sand p-6 sm:p-8">
+      <section id="restricted" data-reveal className="mt-16 rounded-3xl bg-sand p-6 sm:p-8">
         <h2 className="text-2xl font-semibold text-ink">{t('restrictedTitle')}</h2>
         <p className="mt-2 max-w-2xl text-muted-foreground">{t('restrictedBody')}</p>
         <div className="mt-6">

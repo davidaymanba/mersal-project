@@ -67,7 +67,10 @@
       "pickedUp": "تم الاستلام · تم التحقق من الرمز",
       "delivery": "التسليم برمز",
       "traveller": "مسافر موثّق",
-      "rating": "4.9 · 31 توصيلة"
+      "rating": "4.9 · 31 توصيلة",
+      "from": "باريس",
+      "to": "الجزائر العاصمة",
+      "protected": "المبلغ محفوظ حتى التسليم"
     },
     "travellerTitle": "مسافر بالفعل؟",
     "travellerBody": "انشر رحلتك، واقبل الطرود التي تناسبك، واستلم أرباحك كل أسبوع.",
@@ -280,7 +283,8 @@
       "sectionTravel": "السفر",
       "trips": "رحلاتي",
       "offers": "العروض",
-      "wallet": "المحفظة"
+      "wallet": "المحفظة",
+      "messages": "الرسائل"
     },
     "travellerStatus": {
       "NOT_STARTED": "غير موثّق",
@@ -438,6 +442,17 @@
         "opened": "أبلغ المرسل عن مشكلة في {reference}. سيراجعها فريقنا.",
         "resolved": "تم حل المشكلة المبلغ عنها في {reference}."
       }
+    },
+    "seeAll": "عرض كل الإشعارات",
+    "page": {
+      "subtitle": "مستجدات طرودك ورحلاتك ومدفوعاتك وحسابك.",
+      "filter": "عرض",
+      "all": "الكل",
+      "unread": "غير المقروءة ({count})",
+      "noUnread": "لا توجد إشعارات غير مقروءة.",
+      "today": "اليوم",
+      "yesterday": "أمس",
+      "unreadMarker": "غير مقروء"
     }
   },
   "admin": {
@@ -460,7 +475,8 @@
       "reports": "التقارير",
       "settings": "الإعدادات",
       "audit": "سجل التدقيق",
-      "sectionInsights": "التحليل"
+      "sectionInsights": "التحليل",
+      "travellers": "المسافرون"
     },
     "overview": {
       "title": "نظرة عامة",
@@ -826,6 +842,45 @@
         "entity": "السجل"
       },
       "system": "النظام"
+    },
+    "travellers": {
+      "title": "المسافرون",
+      "subtitle": "كل من بدأ توثيق هويته، مع موثوقيته ونشاطه وأرصدته.",
+      "searchPlaceholder": "الاسم أو البريد أو الهاتف",
+      "status": "التوثيق",
+      "sort": "الترتيب",
+      "sorts": {
+        "recent": "الأحدث",
+        "reliability": "الموثوقية",
+        "parcels": "الأكثر طروداً"
+      },
+      "summary": {
+        "approved": "مسافرون موثّقون",
+        "pending": "بانتظار المراجعة",
+        "review": "مراجعة طلبات التوثيق",
+        "withOpenTrips": "لديهم رحلة قادمة",
+        "avgReliability": "متوسط الموثوقية"
+      },
+      "columns": {
+        "traveller": "المسافر",
+        "verification": "التوثيق",
+        "reliability": "الموثوقية",
+        "rating": "التقييم",
+        "response": "نسبة الاستجابة",
+        "parcels": "الطرود",
+        "nextTrip": "الرحلة القادمة",
+        "wallet": "المحفظة"
+      },
+      "noRating": "لا تقييم بعد",
+      "parcels": "{delivered} مسلَّمة · {active} جارية",
+      "disputed": "قيد النزاع: {count}",
+      "openTrips": "{count, plural, zero {لا رحلات مفتوحة} one {رحلة مفتوحة واحدة} two {رحلتان مفتوحتان} few {# رحلات مفتوحة} many {# رحلة مفتوحة} other {# رحلة مفتوحة}}",
+      "noTrip": "لا رحلة قادمة",
+      "available": "متاح: {amount}",
+      "held": "محجوز: {amount}",
+      "blocked": "مجمّد: {amount}",
+      "payoutsReady": "التحويلات جاهزة",
+      "payoutsMissing": "لا يوجد حساب تحويل"
     }
   },
   "shipmentStatus": {
@@ -1540,5 +1595,27 @@
     "home": "العودة إلى البداية",
     "help": "زيارة مركز المساعدة",
     "reference": "المرجع: {digest}"
+  },
+  "inbox": {
+    "title": "الرسائل",
+    "subtitle": "كل المحادثات عن الطرود التي ترسلها أو تنقلها. تبقى أرقام الهواتف والبريد الإلكتروني مخفية.",
+    "listLabel": "المحادثات",
+    "emptyTitle": "لا توجد محادثات بعد",
+    "emptyBody": "تُفتح المحادثة فور قبول مسافر لطرد، لتتفقا هنا على التسليم.",
+    "noMessages": "لا توجد رسائل بعد",
+    "you": "أنت: {text}",
+    "unread": "غير مقروءة",
+    "back": "كل المحادثات",
+    "openShipment": "فتح الشحنة",
+    "select": "اختر محادثة لقراءتها.",
+    "noTraveller": "لا يوجد مسافر بعد",
+    "noSender": "المرسل",
+    "roles": {
+      "sender": "المرسل",
+      "traveller": "المسافر"
+    }
+  },
+  "theme": {
+    "toggle": "التبديل بين الوضع الفاتح والداكن"
   }
 }

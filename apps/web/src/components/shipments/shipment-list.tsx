@@ -59,11 +59,16 @@ export function ShipmentList({ role }: { role: 'sender' | 'traveller' }) {
   return (
     <>
       <ul className="flex flex-col gap-3">
-        {list.data.items.map((s) => (
-          <li key={s.id}>
+        {list.data.items.map((s, index) => (
+          <li
+            key={s.id}
+            className="animate-fade-up"
+            style={{ animationDelay: `${Math.min(index, 10) * 40}ms` }}
+          >
             <Link
               href={`/app/shipments/${s.id}`}
-              className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-xl border border-border bg-surface p-4 transition-colors hover:border-primary/40 hover:bg-tint/20"
+              data-spotlight
+              className="group/link relative flex flex-wrap items-center gap-x-6 gap-y-3 rounded-2xl border border-border bg-surface p-4 shadow-xs transition-[border-color,box-shadow,translate] duration-200 ease-out-quart hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
             >
               <div className="min-w-48 flex-1">
                 <p className="flex items-center gap-2 font-semibold text-ink">

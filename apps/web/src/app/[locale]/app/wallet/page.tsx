@@ -7,6 +7,7 @@ import { useFormatter, useLocale, useTranslations } from 'next-intl';
 import { useState, type FormEvent, type ReactNode } from 'react';
 import { toast } from 'sonner';
 import { FormAlert } from '@/components/auth/form-alert';
+import { CountUp } from '@/components/motion/count-up';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Field } from '@/components/ui/field';
@@ -35,15 +36,17 @@ function Balance({
 }: {
   label: string;
   hint: string;
-  amount: string;
+  amount: ReactNode;
   icon: ReactNode;
   highlight?: boolean;
 }) {
   return (
     <div
       className={cn(
-        'rounded-2xl p-5',
-        highlight ? 'bg-ink text-white' : 'border border-border bg-surface',
+        'animate-fade-up rounded-2xl p-5',
+        highlight
+          ? 'bg-deep-glow text-white shadow-md'
+          : 'border border-border bg-surface shadow-xs',
       )}
     >
       <p
@@ -100,7 +103,7 @@ function PayoutAccount({ wallet }: { wallet: WalletView }) {
   }
 
   return (
-    <section className="rounded-2xl border border-border bg-surface p-6">
+    <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
       <h2 className="flex items-center gap-2 font-semibold text-ink">
         <Building2 className="size-5 text-primary" aria-hidden="true" />
         {t('title')}
@@ -189,20 +192,29 @@ export default function WalletPage() {
         <Balance
           label={t('available')}
           hint={t('availableHint', { date: date(w.nextPayoutAt) })}
-          amount={money(w.balances.available, w.currency)}
+          amount={
+            <CountUp
+              value={w.balances.available}
+              format={(v) => money(Math.round(v), w.currency)}
+            />
+          }
           icon={<Wallet className="size-4" aria-hidden="true" />}
           highlight
         />
         <Balance
           label={t('held')}
           hint={t('heldHint')}
-          amount={money(w.balances.held, w.currency)}
+          amount={
+            <CountUp value={w.balances.held} format={(v) => money(Math.round(v), w.currency)} />
+          }
           icon={<Hourglass className="size-4" aria-hidden="true" />}
         />
         <Balance
           label={t('expected')}
           hint={t('expectedHint')}
-          amount={money(w.balances.expected, w.currency)}
+          amount={
+            <CountUp value={w.balances.expected} format={(v) => money(Math.round(v), w.currency)} />
+          }
           icon={<Clock className="size-4" aria-hidden="true" />}
         />
         <Balance
@@ -210,7 +222,9 @@ export default function WalletPage() {
           hint={
             w.balances.blocked ? `${t('blocked')}: ${money(w.balances.blocked, w.currency)}` : ' '
           }
-          amount={money(w.balances.paidOut, w.currency)}
+          amount={
+            <CountUp value={w.balances.paidOut} format={(v) => money(Math.round(v), w.currency)} />
+          }
           icon={<Banknote className="size-4" aria-hidden="true" />}
         />
       </div>
@@ -220,7 +234,7 @@ export default function WalletPage() {
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
-        <section className="rounded-2xl border border-border bg-surface p-6">
+        <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
           <h2 className="font-semibold text-ink">{t('activity')}</h2>
           {w.entries.length === 0 ? (
             <div className="mt-4">
@@ -257,7 +271,7 @@ export default function WalletPage() {
           )}
         </section>
 
-        <section className="rounded-2xl border border-border bg-surface p-6 lg:self-start">
+        <section className="rounded-2xl border border-border bg-surface shadow-xs p-6 lg:self-start">
           <h2 className="font-semibold text-ink">{t('payouts')}</h2>
           <ul className="mt-4 flex flex-col gap-3">
             {w.payouts.length === 0 && <li className="text-sm text-muted-foreground">—</li>}

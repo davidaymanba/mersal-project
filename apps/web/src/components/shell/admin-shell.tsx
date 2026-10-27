@@ -8,6 +8,7 @@ import {
   CreditCard,
   FileDown,
   LayoutDashboard,
+  Luggage,
   Map as MapIcon,
   Package,
   ScrollText,
@@ -77,6 +78,7 @@ function AdminNav({
       title: t('nav.sectionPeople'),
       items: [
         { href: '/admin/users', label: t('nav.users'), icon: Users },
+        { href: '/admin/travellers', label: t('nav.travellers'), icon: Luggage },
         {
           href: '/admin/verifications',
           label: t('nav.verifications'),

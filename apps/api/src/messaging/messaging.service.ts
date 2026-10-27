@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { maskContactDetails } from '@mersal/shared';
+import { maskContactDetails, type ConversationSummary, type LocalizedText } from '@mersal/shared';
 import type { Prisma, ShipmentStatus } from '@prisma/client';
 import type { AuthUser } from '../common/auth-user';
 import { conflict, notFound } from '../common/errors';
@@ -10,6 +10,8 @@ import { RealtimeGateway } from '../realtime/realtime.gateway';
 /** Chat is open from matching until the parcel is delivered (and during disputes). */
 const CHAT_OPEN: ShipmentStatus[] = ['MATCHED', 'PICKED_UP', 'IN_TRANSIT', 'DELIVERED', 'DISPUTED'];
 const NOTIFY_COOLDOWN_MS = 10 * 60_000;
+/** Enough for an MVP inbox; older conversations stay reachable from each shipment page. */
+const INBOX_LIMIT = 100;
 
 export interface MessageView {
   id: string;
@@ -67,6 +69,72 @@ export class MessagingService {
     };
   }
 
+  /** The viewer's conversations (as sender or traveller), most recent activity first. */
+  async inbox(viewer: AuthUser): Promise<ConversationSummary[]> {
+    const person = { select: { id: true, firstName: true, lastName: true } };
+    const conversations = await this.prisma.conversation.findMany({
+      where: { shipment: { OR: [{ senderId: viewer.id }, { travellerId: viewer.id }] } },
+      include: {
+        shipment: {
+          include: {
+            sender: person,
+            traveller: person,
+            originCity: { select: { names: true } },
+            destinationCity: { select: { names: true } },
+          },
+        },
+        messages: { orderBy: { createdAt: 'desc' }, take: 1 },
+      },
+      orderBy: { createdAt: 'desc' },
+      take: INBOX_LIMIT,
+    });
+    const unread = await this.prisma.message.groupBy({
+      by: ['conversationId'],
+      where: {
+        conversationId: { in: conversations.map((c) => c.id) },
+        isSystem: false,
+        readAt: null,
+        senderId: { not: viewer.id },
+      },
+      _count: { _all: true },
+    });
+    const unreadBy = new Map(unread.map((u) => [u.conversationId, u._count._all]));
+
+    return conversations
+      .map(({ id, shipment, messages: [last] }): ConversationSummary => {
+        const role = shipment.senderId === viewer.id ? 'sender' : 'traveller';
+        const other = role === 'sender' ? shipment.traveller : shipment.sender;
+        return {
+          shipmentId: shipment.id,
+          reference: shipment.reference,
+          status: shipment.status,
+          role,
+          counterpart: other && {
+            id: other.id,
+            firstName: other.firstName,
+            lastInitial: other.lastName.slice(0, 1),
+          },
+          route: {
+            from: shipment.originCity.names as LocalizedText,
+            to: shipment.destinationCity.names as LocalizedText,
+          },
+          lastMessage: last
+            ? {
+                body: last.body,
+                isSystem: last.isSystem,
+                fromMe: last.senderId === viewer.id,
+                createdAt: last.createdAt.toISOString(),
+              }
+            : null,
+          unread: unreadBy.get(id) ?? 0,
+          open: CHAT_OPEN.includes(shipment.status),
+        };
+      })
+      .sort((a, b) =>
+        (b.lastMessage?.createdAt ?? '').localeCompare(a.lastMessage?.createdAt ?? ''),
+      );
+  }
+
   async send(viewer: AuthUser, shipmentId: string, body: string) {
     const shipment = await this.participant(viewer, shipmentId);
     if (
@@ -97,6 +165,10 @@ export class MessagingService {
     this.realtime.toShipment(shipmentId, 'message', view);
 
     const recipientId = viewer.id === shipment.senderId ? shipment.travellerId : shipment.senderId;
+    // Lets both parties' inboxes refresh, including tabs not showing this conversation.
+    for (const userId of [viewer.id, recipientId]) {
+      if (userId) this.realtime.toUser(userId, 'conversation', { shipmentId });
+    }
     if (recipientId) await this.notifyRecipient(recipientId, shipmentId, shipment.reference);
     return view;
   }
@@ -115,7 +187,7 @@ export class MessagingService {
       where: {
         userId: recipientId,
         type: 'message.received',
-        link: `/app/shipments/${shipmentId}`,
+        link: `/app/messages?s=${shipmentId}`,
         createdAt: { gt: new Date(Date.now() - NOTIFY_COOLDOWN_MS) },
       },
     });
@@ -124,7 +196,7 @@ export class MessagingService {
         recipientId,
         'message.received',
         { reference },
-        { link: `/app/shipments/${shipmentId}` },
+        { link: `/app/messages?s=${shipmentId}` },
       );
   }
 

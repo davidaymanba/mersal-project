@@ -140,7 +140,7 @@ function Panel({
   className?: string;
 }) {
   return (
-    <section className={cn('rounded-2xl border border-border bg-surface p-6', className)}>
+    <section className={cn('rounded-2xl border border-border bg-surface shadow-xs p-6', className)}>
       <h2 className="mb-5 font-semibold text-ink">{title}</h2>
       {children}
     </section>

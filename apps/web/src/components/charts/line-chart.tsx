@@ -167,15 +167,18 @@ export function LineChart({
               strokeWidth={1}
             />
           )}
-          {series.map((s) => (
+          {series.map((s, index) => (
             <path
               key={s.key}
               d={data.map((d, i) => `${i ? 'L' : 'M'}${x(i)},${y(d.values[s.key] ?? 0)}`).join('')}
+              pathLength={1}
               fill="none"
               stroke={s.color}
               strokeWidth={2}
               strokeLinejoin="round"
               strokeLinecap="round"
+              className="animate-draw [stroke-dasharray:1]"
+              style={{ animationDelay: `${index * 120}ms` }}
             />
           ))}
           {series.map((s) => {

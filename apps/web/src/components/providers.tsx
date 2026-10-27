@@ -4,7 +4,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useLocale } from 'next-intl';
 import { useState, type ReactNode } from 'react';
 import { Toaster } from 'sonner';
+import { MotionObserver } from '@/components/motion/motion-observer';
 import { ApiError } from '@/lib/api';
+import { useResolvedTheme } from '@/lib/theme-client';
 
 function shouldRetry(failureCount: number, error: unknown): boolean {
   if (error instanceof ApiError && error.status > 0 && error.status < 500) return false;
@@ -13,6 +15,7 @@ function shouldRetry(failureCount: number, error: unknown): boolean {
 
 export function Providers({ children }: { children: ReactNode }) {
   const locale = useLocale();
+  const theme = useResolvedTheme();
   const [client] = useState(
     () =>
       new QueryClient({
@@ -25,7 +28,14 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={client}>
       {children}
-      <Toaster position="top-center" richColors dir={locale === 'ar' ? 'rtl' : 'ltr'} closeButton />
+      <MotionObserver />
+      <Toaster
+        position="top-center"
+        richColors
+        closeButton
+        theme={theme}
+        dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      />
     </QueryClientProvider>
   );
 }

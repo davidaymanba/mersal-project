@@ -80,10 +80,13 @@ export function pngFile(name: string): { name: string; mimeType: string; buffer:
   return { name, mimeType: 'image/png', buffer };
 }
 
-/** Runs SQL against the local dev database (test setup only). */
+/** Database the API under test uses; set E2E_DB_NAME when it is not the dev database. */
+const DB_NAME = process.env.E2E_DB_NAME ?? 'mersal';
+
+/** Runs SQL against the local database (test setup only). */
 export function sql(query: string): string {
   return execSync(
-    `docker exec mersal-postgres-1 psql -U mersal -d mersal -tAc ${JSON.stringify(query)}`,
+    `docker exec mersal-postgres-1 psql -U mersal -d ${DB_NAME} -tAc ${JSON.stringify(query)}`,
   )
     .toString()
     .trim();

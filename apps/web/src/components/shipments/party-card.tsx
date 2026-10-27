@@ -19,7 +19,7 @@ export function PartyCard({
   const format = useFormatter();
 
   return (
-    <section className="rounded-2xl border border-border bg-surface p-6">
+    <section className="rounded-2xl border border-border bg-surface shadow-xs p-6">
       <h2 className="mb-4 font-semibold text-ink">{title}</h2>
       <div className="flex items-center gap-3">
         <Avatar
@@ -29,7 +29,9 @@ export function PartyCard({
         />
         <div>
           <p className="flex items-center gap-1.5 font-medium text-ink">
-            {profile.firstName} {profile.lastInitial}.
+            <bdi>
+              {profile.firstName} {profile.lastInitial}.
+            </bdi>
             {profile.verified && (
               <BadgeCheck className="size-4 text-primary" aria-label={t('verifiedTraveller')} />
             )}

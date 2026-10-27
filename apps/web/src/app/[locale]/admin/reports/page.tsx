@@ -38,7 +38,7 @@ export default function AdminReportsPage() {
         {REPORTS.map(({ type, icon: Icon }) => (
           <section
             key={type}
-            className="flex flex-col rounded-2xl border border-border bg-surface p-6"
+            className="flex flex-col rounded-2xl border border-border bg-surface shadow-xs p-6"
           >
             <Icon className="size-6 text-primary" aria-hidden="true" />
             <h2 className="mt-4 font-semibold text-ink">{t(`types.${type}.title`)}</h2>
