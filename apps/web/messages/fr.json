@@ -280,7 +280,8 @@
       "sectionTravel": "Voyager",
       "trips": "Mes trajets",
       "offers": "Propositions",
-      "wallet": "Portefeuille"
+      "wallet": "Portefeuille",
+      "messages": "Messages"
     },
     "travellerStatus": {
       "NOT_STARTED": "Non vérifié",
@@ -438,6 +439,17 @@
         "opened": "L'expéditeur a signalé un problème sur {reference}. Notre équipe va l'examiner.",
         "resolved": "Le problème signalé sur {reference} a été résolu."
       }
+    },
+    "seeAll": "Voir toutes les notifications",
+    "page": {
+      "subtitle": "Les nouvelles de vos colis, trajets, paiements et de votre compte.",
+      "filter": "Afficher",
+      "all": "Toutes",
+      "unread": "Non lues ({count})",
+      "noUnread": "Aucune notification non lue.",
+      "today": "Aujourd’hui",
+      "yesterday": "Hier",
+      "unreadMarker": "Non lue"
     }
   },
   "admin": {
@@ -460,7 +472,8 @@
       "reports": "Rapports",
       "settings": "Paramètres",
       "audit": "Journal d'audit",
-      "sectionInsights": "Analyse"
+      "sectionInsights": "Analyse",
+      "travellers": "Voyageurs"
     },
     "overview": {
       "title": "Vue d'ensemble",
@@ -826,6 +839,45 @@
         "entity": "Élément"
       },
       "system": "Système"
+    },
+    "travellers": {
+      "title": "Voyageurs",
+      "subtitle": "Toutes les personnes ayant commencé la vérification d’identité, avec leur fiabilité, leur activité et leurs soldes.",
+      "searchPlaceholder": "Nom, e-mail ou téléphone",
+      "status": "Vérification",
+      "sort": "Trier",
+      "sorts": {
+        "recent": "Plus récents",
+        "reliability": "Fiabilité",
+        "parcels": "Plus de colis"
+      },
+      "summary": {
+        "approved": "Voyageurs vérifiés",
+        "pending": "En attente d’examen",
+        "review": "Examiner les vérifications",
+        "withOpenTrips": "Avec un trajet à venir",
+        "avgReliability": "Fiabilité moyenne"
+      },
+      "columns": {
+        "traveller": "Voyageur",
+        "verification": "Vérification",
+        "reliability": "Fiabilité",
+        "rating": "Note",
+        "response": "Taux de réponse",
+        "parcels": "Colis",
+        "nextTrip": "Prochain trajet",
+        "wallet": "Portefeuille"
+      },
+      "noRating": "Pas encore noté",
+      "parcels": "{delivered} livrés · {active} en cours",
+      "disputed": "{count, plural, one {# en litige} other {# en litige}}",
+      "openTrips": "{count, plural, one {# trajet ouvert} other {# trajets ouverts}}",
+      "noTrip": "Aucun trajet à venir",
+      "available": "{amount} disponibles",
+      "held": "{amount} en attente",
+      "blocked": "{amount} gelés",
+      "payoutsReady": "Virements prêts",
+      "payoutsMissing": "Aucun compte de virement"
     }
   },
   "shipmentStatus": {
@@ -1540,5 +1592,24 @@
     "home": "Retour à l’accueil",
     "help": "Consulter l’aide",
     "reference": "Référence : {digest}"
+  },
+  "inbox": {
+    "title": "Messages",
+    "subtitle": "Toutes les conversations sur les colis que vous envoyez ou transportez. Les numéros et e-mails restent masqués.",
+    "listLabel": "Conversations",
+    "emptyTitle": "Aucune conversation pour l’instant",
+    "emptyBody": "Une conversation s’ouvre dès qu’un voyageur accepte un colis, pour organiser la remise ici.",
+    "noMessages": "Aucun message pour l’instant",
+    "you": "Vous : {text}",
+    "unread": "non lus",
+    "back": "Toutes les conversations",
+    "openShipment": "Voir l’envoi",
+    "select": "Choisissez une conversation pour la lire.",
+    "noTraveller": "Pas encore de voyageur",
+    "noSender": "Expéditeur",
+    "roles": {
+      "sender": "Expéditeur",
+      "traveller": "Voyageur"
+    }
   }
 }

@@ -280,7 +280,8 @@
       "sectionTravel": "Travelling",
       "trips": "My trips",
       "offers": "Proposals",
-      "wallet": "Wallet"
+      "wallet": "Wallet",
+      "messages": "Messages"
     },
     "travellerStatus": {
       "NOT_STARTED": "Not verified",
@@ -438,6 +439,17 @@
         "opened": "The sender reported a problem with {reference}. Our team will review it.",
         "resolved": "The problem reported on {reference} has been resolved."
       }
+    },
+    "seeAll": "See all notifications",
+    "page": {
+      "subtitle": "Updates about your parcels, trips, payments and account.",
+      "filter": "Show",
+      "all": "All",
+      "unread": "Unread ({count})",
+      "noUnread": "No unread notifications.",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "unreadMarker": "Unread"
     }
   },
   "admin": {
@@ -460,7 +472,8 @@
       "reports": "Reports",
       "settings": "Settings",
       "audit": "Audit log",
-      "sectionInsights": "Insights"
+      "sectionInsights": "Insights",
+      "travellers": "Travellers"
     },
     "overview": {
       "title": "Overview",
@@ -826,6 +839,45 @@
         "entity": "Record"
       },
       "system": "System"
+    },
+    "travellers": {
+      "title": "Travellers",
+      "subtitle": "Everyone who has started identity verification, with their reliability, activity and balances.",
+      "searchPlaceholder": "Name, email or phone",
+      "status": "Verification",
+      "sort": "Sort",
+      "sorts": {
+        "recent": "Newest",
+        "reliability": "Reliability",
+        "parcels": "Most parcels"
+      },
+      "summary": {
+        "approved": "Verified travellers",
+        "pending": "Waiting for review",
+        "review": "Review identity checks",
+        "withOpenTrips": "With an upcoming trip",
+        "avgReliability": "Average reliability"
+      },
+      "columns": {
+        "traveller": "Traveller",
+        "verification": "Verification",
+        "reliability": "Reliability",
+        "rating": "Rating",
+        "response": "Response rate",
+        "parcels": "Parcels",
+        "nextTrip": "Next trip",
+        "wallet": "Wallet"
+      },
+      "noRating": "No rating yet",
+      "parcels": "{delivered} delivered · {active} active",
+      "disputed": "{count, plural, one {# in dispute} other {# in dispute}}",
+      "openTrips": "{count, plural, one {# open trip} other {# open trips}}",
+      "noTrip": "No upcoming trip",
+      "available": "{amount} available",
+      "held": "{amount} held",
+      "blocked": "{amount} blocked",
+      "payoutsReady": "Payouts ready",
+      "payoutsMissing": "No payout account"
     }
   },
   "shipmentStatus": {
@@ -1540,5 +1592,24 @@
     "home": "Back to home",
     "help": "Visit the help centre",
     "reference": "Reference: {digest}"
+  },
+  "inbox": {
+    "title": "Messages",
+    "subtitle": "Every conversation about the parcels you send or carry. Phone numbers and emails stay hidden.",
+    "listLabel": "Conversations",
+    "emptyTitle": "No conversations yet",
+    "emptyBody": "A conversation opens as soon as a traveller accepts a parcel, so you can arrange the handover here.",
+    "noMessages": "No messages yet",
+    "you": "You: {text}",
+    "unread": "unread",
+    "back": "All conversations",
+    "openShipment": "Open shipment",
+    "select": "Choose a conversation to read it.",
+    "noTraveller": "No traveller yet",
+    "noSender": "Sender",
+    "roles": {
+      "sender": "Sender",
+      "traveller": "Traveller"
+    }
   }
 }

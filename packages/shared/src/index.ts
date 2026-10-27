@@ -12,3 +12,4 @@ export * from './schemas/wallet';
 export * from './masking';
 export * from './reliability';
 export * from './schemas/operations';
+export * from './schemas/inbox';

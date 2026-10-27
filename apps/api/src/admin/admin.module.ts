@@ -3,6 +3,7 @@ import { AdminAnalyticsController } from './admin-analytics.controller';
 import { AdminOverviewController } from './admin-overview.controller';
 import { AdminAuditController, AdminSettingsController } from './admin-settings.controller';
 import { AdminUsersController } from './admin-users.controller';
+import { AdminTravellersController } from './admin-travellers.controller';
 
 @Module({
   controllers: [
@@ -11,6 +12,7 @@ import { AdminUsersController } from './admin-users.controller';
     AdminSettingsController,
     AdminAuditController,
     AdminUsersController,
+    AdminTravellersController,
   ],
 })
 export class AdminModule {}

@@ -6,3 +6,9 @@ export function parseDurationSeconds(value: string): number {
   if (!match) throw new Error(`Invalid duration: ${value}`);
   return Number(match[1]) * UNIT_SECONDS[match[2] || 's']!;
 }
+
+/** Midnight UTC today: dates in the database are stored as UTC calendar days. */
+export function startOfTodayUtc(): Date {
+  const now = new Date();
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+}

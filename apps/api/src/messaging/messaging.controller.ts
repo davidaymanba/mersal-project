@@ -36,3 +36,16 @@ export class MessagingController {
     await this.messaging.markRead(user, id);
   }
 }
+
+@ApiTags('messages')
+@ApiBearerAuth()
+@Controller('conversations')
+export class ConversationsController {
+  constructor(private readonly messaging: MessagingService) {}
+
+  /** The signed-in user's message inbox. */
+  @Get()
+  inbox(@CurrentUser() user: AuthUser) {
+    return this.messaging.inbox(user);
+  }
+}

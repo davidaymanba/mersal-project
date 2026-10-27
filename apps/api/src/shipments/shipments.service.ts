@@ -19,6 +19,7 @@ import { PrismaService } from '../prisma/prisma.service';
 import { StorageService, type UploadedFileLike } from '../storage/storage.service';
 import { shipmentInclude, toShipmentSummary, toShipmentView } from './shipment.mapper';
 import { ShipmentStateService } from './shipment-state.service';
+import { startOfTodayUtc } from '../common/duration';
 
 type CreateShipmentInput = z.output<typeof CreateShipmentSchema>;
 
@@ -42,11 +43,6 @@ const pickContact = (u: {
   email: u.email,
   phone: u.phone,
 });
-
-const startOfTodayUtc = () => {
-  const now = new Date();
-  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
-};
 
 @Injectable()
 export class ShipmentsService {

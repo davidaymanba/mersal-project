@@ -1,31 +1,26 @@
 'use client';
 
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import type { NotificationItem, NotificationsPage } from '@mersal/shared';
+import { useQuery } from '@tanstack/react-query';
 import { Bell, CheckCheck } from 'lucide-react';
-import { useFormatter, useTranslations } from 'next-intl';
+import { useFormatter, useNow, useTranslations } from 'next-intl';
 import { useCallback, useRef, useState } from 'react';
+import {
+  notificationsQueryKey,
+  useNotificationActions,
+} from '@/components/notifications/use-notifications';
 import { Button } from '@/components/ui/button';
-import { useRouter } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { api } from '@/lib/api';
 import { useClickOutside } from '@/lib/use-click-outside';
 import { cn } from '@/lib/utils';
 
-interface NotificationItem {
-  id: string;
-  type: string;
-  data: Record<string, string | number>;
-  link: string | null;
-  readAt: string | null;
-  createdAt: string;
-}
-
-export const notificationsQueryKey = ['notifications'] as const;
-
 export function NotificationBell() {
   const t = useTranslations('notifications');
   const format = useFormatter();
-  const router = useRouter();
-  const queryClient = useQueryClient();
+  const now = useNow({ updateInterval: 60_000 });
+  const pathname = usePathname();
+  const { text, open: openItem, markAllRead } = useNotificationActions();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const close = useCallback(() => setOpen(false), []);
@@ -33,30 +28,17 @@ export function NotificationBell() {
 
   const { data } = useQuery({
     queryKey: notificationsQueryKey,
-    queryFn: () => api<{ items: NotificationItem[]; unread: number }>('/notifications'),
+    queryFn: () => api<NotificationsPage>('/notifications?pageSize=20'),
     refetchInterval: 30_000,
   });
-  const invalidate = () => queryClient.invalidateQueries({ queryKey: notificationsQueryKey });
-  const markAll = useMutation({
-    mutationFn: () => api('/notifications/read-all', { method: 'POST' }),
-    onSuccess: invalidate,
-  });
 
-  const text = (n: NotificationItem) => {
-    const key = `types.${n.type}` as 'types.verification.approved';
-    return t.has(key) ? t(key, n.data as Record<string, string>) : n.type;
-  };
-
-  async function openItem(n: NotificationItem) {
+  function choose(n: NotificationItem) {
     setOpen(false);
-    if (!n.readAt)
-      await api(`/notifications/${n.id}/read`, { method: 'POST' })
-        .then(invalidate)
-        .catch(() => undefined);
-    if (n.link) router.push(n.link);
+    void openItem(n);
   }
 
   const unread = data?.unread ?? 0;
+  const allHref = pathname.startsWith('/admin') ? '/admin/notifications' : '/app/notifications';
 
   return (
     <div ref={ref} className="relative">
@@ -87,7 +69,7 @@ export function NotificationBell() {
               <Button
                 variant="link"
                 size="sm"
-                onClick={() => markAll.mutate()}
+                onClick={() => void markAllRead()}
                 className="gap-1 text-xs"
               >
                 <CheckCheck aria-hidden="true" />
@@ -103,7 +85,7 @@ export function NotificationBell() {
               <li key={n.id}>
                 <button
                   type="button"
-                  onClick={() => openItem(n)}
+                  onClick={() => choose(n)}
                   className={cn(
                     'flex w-full gap-3 px-4 py-3 text-start text-sm transition-colors hover:bg-muted',
                     !n.readAt && 'bg-tint/40',
@@ -118,13 +100,20 @@ export function NotificationBell() {
                   <span className="flex-1">
                     <span className="block text-ink">{text(n)}</span>
                     <span className="mt-0.5 block text-xs text-muted-foreground">
-                      {format.relativeTime(new Date(n.createdAt))}
+                      {format.relativeTime(new Date(n.createdAt), now)}
                     </span>
                   </span>
                 </button>
               </li>
             ))}
           </ul>
+          <Link
+            href={allHref}
+            onClick={close}
+            className="block border-t border-border px-4 py-3 text-center text-sm font-medium text-primary hover:bg-muted"
+          >
+            {t('seeAll')}
+          </Link>
         </div>
       )}
     </div>

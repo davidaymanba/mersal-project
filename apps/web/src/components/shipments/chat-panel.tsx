@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Spinner } from '@/components/ui/spinner';
 import { api } from '@/lib/api';
+import { conversationsQueryKey } from '@/lib/conversations';
 import { useShipmentChannel } from '@/lib/realtime';
 import { useErrorMessage } from '@/lib/use-error-message';
 import { cn } from '@/lib/utils';
@@ -69,8 +70,10 @@ export function ChatPanel({
   useEffect(() => {
     bottom.current?.scrollIntoView({ block: 'nearest' });
     if (count && !readOnly)
-      void api(`/shipments/${shipmentId}/messages/read`, { method: 'POST' }).catch(() => undefined);
-  }, [count, shipmentId, readOnly]);
+      void api(`/shipments/${shipmentId}/messages/read`, { method: 'POST' })
+        .then(() => queryClient.invalidateQueries({ queryKey: conversationsQueryKey }))
+        .catch(() => undefined);
+  }, [count, shipmentId, readOnly, queryClient]);
 
   async function send(event: FormEvent) {
     event.preventDefault();
@@ -139,6 +142,7 @@ export function ChatPanel({
                     ? 'rounded-ee-sm bg-primary text-primary-foreground'
                     : 'rounded-es-sm bg-muted text-ink',
                 )}
+                dir="auto"
               >
                 {m.body}
               </p>

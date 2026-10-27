@@ -24,7 +24,10 @@ export function disconnectSocket() {
   socket = null;
 }
 
-/** Refreshes notification and offer queries as soon as the server pushes a notification. */
+/**
+ * Refreshes notification, offer and inbox queries as soon as the server pushes an event.
+ * Status changes add system messages to conversations, so notifications refresh the inbox too.
+ */
 export function useRealtimeNotifications() {
   const queryClient = useQueryClient();
   useEffect(() => {
@@ -32,10 +35,14 @@ export function useRealtimeNotifications() {
     const onNotification = () => {
       queryClient.invalidateQueries({ queryKey: ['notifications'] });
       queryClient.invalidateQueries({ queryKey: ['offers'] });
+      queryClient.invalidateQueries({ queryKey: ['conversations'] });
     };
+    const onConversation = () => queryClient.invalidateQueries({ queryKey: ['conversations'] });
     s.on('notification', onNotification);
+    s.on('conversation', onConversation);
     return () => {
       s.off('notification', onNotification);
+      s.off('conversation', onConversation);
     };
   }, [queryClient]);
 }

@@ -1,6 +1,9 @@
 import { Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { NotificationsQuerySchema } from '@mersal/shared';
+import type { z } from 'zod';
 import { CurrentUser, type AuthUser } from '../common/auth-user';
+import { ZodQuery } from '../common/zod';
 import { NotificationsService } from './notifications.service';
 
 @ApiTags('notifications')
@@ -10,8 +13,11 @@ export class NotificationsController {
   constructor(private readonly notifications: NotificationsService) {}
 
   @Get()
-  list(@CurrentUser() user: AuthUser) {
-    return this.notifications.list(user.id);
+  list(
+    @CurrentUser() user: AuthUser,
+    @ZodQuery(NotificationsQuerySchema) query: z.output<typeof NotificationsQuerySchema>,
+  ) {
+    return this.notifications.list(user.id, query);
   }
 
   @Post('read-all')
