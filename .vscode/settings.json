@@ -1,0 +1,6 @@
+{
+  "python.terminal.useEnvFile": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "css.lint.unknownAtRules": "ignore"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "mersal",
+  "private": true,
+  "description": "Mersal — peer-to-peer logistics marketplace connecting senders with verified travellers.",
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "env:init": "node scripts/env-init.mjs",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:e2e": "pnpm --filter @mersal/web test:e2e",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "infra:up": "docker compose up -d --wait",
+    "infra:down": "docker compose down",
+    "db:migrate": "pnpm --filter @mersal/api db:migrate",
+    "db:seed": "pnpm --filter @mersal/api db:seed",
+    "db:reset": "pnpm --filter @mersal/api db:reset",
+    "db:studio": "pnpm --filter @mersal/api db:studio",
+    "demo:seed": "pnpm --filter @mersal/api demo:seed",
+    "demo:reset": "pnpm db:reset && pnpm demo:seed"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^16.0.0",
+    "eslint": "^10.0.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.8",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.50.0"
+  }
+}

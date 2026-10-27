@@ -1,0 +1,16 @@
+packages:
+  - apps/*
+  - packages/*
+
+# pnpm only runs dependency install scripts for packages listed here.
+allowBuilds:
+  '@prisma/client': true
+  '@prisma/engines': true
+  prisma: true
+  msgpackr-extract: true
+  '@parcel/watcher': true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  '@swc/core': false
+  '@scarf/scarf': false

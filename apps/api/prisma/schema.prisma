@@ -1,0 +1,774 @@
+// Mersal data model.
+// Conventions: money is an Int in the currency's minor unit, weights are grams,
+// dimensions are centimetres, percentages are basis points (1% = 100 bps).
+// Enums mirror packages/shared/src/enums.ts.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum VerificationStatus {
+  NOT_STARTED
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum IdentityDocumentType {
+  PASSPORT
+  NATIONAL_ID
+  RESIDENCE_PERMIT
+  DRIVING_LICENSE
+}
+
+enum OneTimeCodePurpose {
+  EMAIL_VERIFY
+  PHONE_VERIFY
+  PASSWORD_RESET
+}
+
+enum ShipmentStatus {
+  DRAFT
+  QUOTED
+  PAID
+  MATCHING
+  MATCHED
+  PICKED_UP
+  IN_TRANSIT
+  DELIVERED
+  COMPLETED
+  NO_MATCH
+  CANCELLED
+  DISPUTED
+  REFUNDED
+}
+
+enum Urgency {
+  STANDARD
+  EXPRESS
+}
+
+enum ActorType {
+  USER
+  ADMIN
+  SYSTEM
+}
+
+enum TripStatus {
+  PUBLISHED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum PricingVersionStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum MatchTrigger {
+  PAYMENT
+  NEW_TRIP
+  OFFER_REJECTED
+  OFFER_EXPIRED
+  RETRY
+  ADMIN
+}
+
+enum MatchRunResult {
+  OFFERED
+  NO_CANDIDATES
+  EXHAUSTED
+}
+
+enum MatchOfferStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  EXPIRED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  REQUIRES_PAYMENT
+  PROCESSING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum LedgerBucket {
+  PENDING
+  HELD
+  AVAILABLE
+  BLOCKED
+  PAID_OUT
+  REVERSED
+}
+
+enum LedgerEntryType {
+  EARNING_CREATED
+  HOLD_STARTED
+  HOLD_RELEASED
+  DISPUTE_BLOCKED
+  DISPUTE_RELEASED
+  DISPUTE_REVERSED
+  PAYOUT_SENT
+  PAYOUT_FAILED
+  ADJUSTMENT
+}
+
+enum PayoutStatus {
+  SCHEDULED
+  PROCESSING
+  PAID
+  FAILED
+}
+
+enum DisputeReason {
+  NOT_DELIVERED
+  DAMAGED
+  ITEM_MISSING
+  LATE
+  OTHER
+  CHARGEBACK
+}
+
+enum DisputeStatus {
+  OPEN
+  UNDER_REVIEW
+  RESOLVED
+}
+
+enum DisputeResolution {
+  FULL_REFUND
+  PARTIAL_REFUND
+  RELEASE_TO_TRAVELLER
+}
+
+enum RestrictionLevel {
+  PROHIBITED
+  RESTRICTED
+}
+
+// ─── Identity & access ────────────────────────────────────────────────────────
+
+model User {
+  id              String     @id @default(cuid())
+  email           String     @unique
+  phone           String?    @unique
+  passwordHash    String
+  role            UserRole   @default(USER)
+  status          UserStatus @default(ACTIVE)
+  firstName       String
+  lastName        String
+  locale          String     @default("en")
+  avatarKey       String?
+  emailVerifiedAt DateTime?
+  phoneVerifiedAt DateTime?
+  lastLoginAt     DateTime?
+
+  // Traveller mode: unlocked after identity verification is approved.
+  travellerStatus  VerificationStatus @default(NOT_STARTED)
+  reliabilityScore Float              @default(0.8)
+  ratingAvg        Float?
+  ratingCount      Int                @default(0)
+  offersReceived   Int                @default(0)
+  offersAnswered   Int                @default(0)
+
+  // Payout account at the payment provider (Stripe Connect in test mode).
+  payoutAccountId    String?
+  /// Masked, human-readable account label shown to the traveller (e.g. "S. Haddad · ••3456").
+  payoutAccountLabel String?
+  payoutsEnabled     Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  refreshTokens         RefreshToken[]
+  oneTimeCodes          OneTimeCode[]
+  verifications         IdentityVerification[] @relation("verificationSubject")
+  reviewedVerifications IdentityVerification[] @relation("verificationReviewer")
+  shipmentsSent         Shipment[]             @relation("sender")
+  shipmentsCarried      Shipment[]             @relation("traveller")
+  trips                 Trip[]
+  matchOffers           MatchOffer[]
+  payments              Payment[]
+  ledgerEntries         LedgerEntry[]
+  payouts               Payout[]
+  disputesOpened        Dispute[]              @relation("disputeOpener")
+  disputesResolved      Dispute[]              @relation("disputeResolver")
+  messages              Message[]
+  notifications         Notification[]
+  reviewsWritten        Review[]               @relation("reviewAuthor")
+  reviewsReceived       Review[]               @relation("reviewTarget")
+  auditLogs             AuditLog[]
+  quotes                Quote[]
+  pricingVersions       PricingVersion[]
+}
+
+model RefreshToken {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  revokedAt DateTime?
+  userAgent String?
+  ip        String?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model OneTimeCode {
+  id         String             @id @default(cuid())
+  userId     String
+  purpose    OneTimeCodePurpose
+  codeHash   String
+  target     String
+  attempts   Int                @default(0)
+  expiresAt  DateTime
+  consumedAt DateTime?
+  createdAt  DateTime           @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, purpose])
+}
+
+model IdentityVerification {
+  id              String               @id @default(cuid())
+  userId          String
+  status          VerificationStatus   @default(PENDING)
+  documentType    IdentityDocumentType
+  documentCountry String
+  documentFrontKey String
+  documentBackKey String?
+  selfieKey       String
+  provider        String               @default("manual")
+  providerRef     String?
+  reviewedById    String?
+  reviewedAt      DateTime?
+  rejectionReason String?
+  createdAt       DateTime             @default(now())
+
+  user       User  @relation("verificationSubject", fields: [userId], references: [id], onDelete: Cascade)
+  reviewedBy User? @relation("verificationReviewer", fields: [reviewedById], references: [id])
+
+  @@index([status, createdAt])
+}
+
+// ─── Geography & catalogue ────────────────────────────────────────────────────
+
+/// A one-way route between two countries, e.g. FR → DZ. Each direction is priced separately.
+model Corridor {
+  id                 String   @id @default(cuid())
+  code               String   @unique // e.g. "FR-DZ"
+  originCountry      String // ISO 3166-1 alpha-2
+  destinationCountry String
+  currency           String   @default("EUR")
+  active             Boolean  @default(true)
+  createdAt          DateTime @default(now())
+
+  pricingVersions PricingVersion[]
+  shipments       Shipment[]
+  trips           Trip[]
+  quotes          Quote[]
+  matchingConfig  MatchingConfig?
+}
+
+model City {
+  id          String  @id @default(cuid())
+  countryCode String
+  slug        String  @unique
+  /// { en, fr, ar }
+  names       Json
+  latitude    Float?
+  longitude   Float?
+  active      Boolean @default(true)
+
+  shipmentsFrom Shipment[] @relation("shipmentOrigin")
+  shipmentsTo   Shipment[] @relation("shipmentDestination")
+  tripsFrom     Trip[]     @relation("tripOrigin")
+  tripsTo       Trip[]     @relation("tripDestination")
+
+  @@index([countryCode])
+}
+
+model Category {
+  id           String  @id @default(cuid())
+  code         String  @unique
+  /// { en, fr, ar }
+  names        Json
+  descriptions Json?
+  icon         String?
+  /// Requires the sender to attach photos / declare contents in detail.
+  requiresPhotos Boolean @default(false)
+  maxWeightGrams Int?
+  active       Boolean @default(true)
+  sortOrder    Int     @default(0)
+
+  shipments Shipment[]
+  trips     TripCategory[]
+}
+
+model RestrictedItem {
+  id           String           @id @default(cuid())
+  level        RestrictionLevel
+  /// { en, fr, ar }
+  names        Json
+  descriptions Json?
+  active       Boolean          @default(true)
+  sortOrder    Int              @default(0)
+}
+
+// ─── Pricing ──────────────────────────────────────────────────────────────────
+
+/// Versioned tariff for a corridor. Exactly one ACTIVE version per corridor; quotes
+/// keep a reference to the version they were priced with.
+model PricingVersion {
+  id          String               @id @default(cuid())
+  corridorId  String
+  version     Int
+  status      PricingVersionStatus @default(DRAFT)
+  /// Validated by PricingRulesSchema in @mersal/shared.
+  rules       Json
+  notes       String?
+  createdById String?
+  activatedAt DateTime?
+  createdAt   DateTime             @default(now())
+
+  corridor  Corridor @relation(fields: [corridorId], references: [id])
+  createdBy User?    @relation(fields: [createdById], references: [id])
+  quotes    Quote[]
+
+  @@unique([corridorId, version])
+  @@index([corridorId, status])
+}
+
+model Quote {
+  id               String   @id @default(cuid())
+  userId           String?
+  corridorId       String
+  pricingVersionId String
+  inputs           Json
+  breakdown        Json
+  total            Int
+  travellerEarning Int
+  commission       Int
+  currency         String
+  expiresAt        DateTime
+  createdAt        DateTime @default(now())
+
+  user           User?          @relation(fields: [userId], references: [id])
+  corridor       Corridor       @relation(fields: [corridorId], references: [id])
+  pricingVersion PricingVersion @relation(fields: [pricingVersionId], references: [id])
+  shipment       Shipment?
+}
+
+// ─── Shipments ────────────────────────────────────────────────────────────────
+
+model Shipment {
+  id                  String         @id @default(cuid())
+  reference           String         @unique
+  senderId            String
+  corridorId          String
+  originCityId        String
+  destinationCityId   String
+  categoryId          String
+  status              ShipmentStatus @default(DRAFT)
+  description         String
+  weightGrams         Int
+  lengthCm            Int
+  widthCm             Int
+  heightCm            Int
+  declaredValue       Int
+  urgency             Urgency        @default(STANDARD)
+  options             String[]
+  earliestDate        DateTime
+  latestDate          DateTime
+  photoKeys           String[]
+  restrictedItemsAckAt DateTime?
+
+  quoteId          String? @unique
+  price            Int?
+  travellerEarning Int?
+  commission       Int?
+  currency         String  @default("EUR")
+
+  recipientName    String
+  recipientPhone   String
+  recipientEmail   String?
+  /// Secret used in the public tracking link sent to the recipient.
+  trackingToken    String  @unique
+
+  pickupCode     String?
+  deliveryCode   String?
+  codeAttempts   Int     @default(0)
+
+  travellerId String?
+  tripId      String?
+
+  paidAt      DateTime?
+  matchedAt   DateTime?
+  pickedUpAt  DateTime?
+  deliveredAt DateTime?
+  completedAt DateTime?
+  cancelledAt DateTime?
+  cancelReason String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sender       User      @relation("sender", fields: [senderId], references: [id])
+  traveller    User?     @relation("traveller", fields: [travellerId], references: [id])
+  corridor     Corridor  @relation(fields: [corridorId], references: [id])
+  originCity   City      @relation("shipmentOrigin", fields: [originCityId], references: [id])
+  destinationCity City   @relation("shipmentDestination", fields: [destinationCityId], references: [id])
+  category     Category  @relation(fields: [categoryId], references: [id])
+  quote        Quote?    @relation(fields: [quoteId], references: [id])
+  trip         Trip?     @relation(fields: [tripId], references: [id])
+
+  events        ShipmentEvent[]
+  matchRuns     MatchRun[]
+  matchOffers   MatchOffer[]
+  payments      Payment[]
+  ledgerEntries LedgerEntry[]
+  disputes      Dispute[]
+  conversation  Conversation?
+  reviews       Review[]
+
+  @@index([senderId, createdAt])
+  @@index([travellerId, status])
+  @@index([status, corridorId])
+}
+
+/// Append-only status history for a shipment.
+model ShipmentEvent {
+  id         String          @id @default(cuid())
+  shipmentId String
+  fromStatus ShipmentStatus?
+  toStatus   ShipmentStatus
+  actorType  ActorType
+  actorId    String?
+  note       String?
+  meta       Json?
+  createdAt  DateTime        @default(now())
+
+  shipment Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  @@index([shipmentId, createdAt])
+}
+
+// ─── Trips & matching ─────────────────────────────────────────────────────────
+
+model Trip {
+  id                String     @id @default(cuid())
+  travellerId       String
+  corridorId        String
+  originCityId      String
+  destinationCityId String
+  departureDate     DateTime
+  arrivalDate       DateTime?
+  capacityGrams     Int
+  remainingGrams    Int
+  maxLengthCm       Int?
+  maxItems          Int        @default(3)
+  itemsAccepted     Int        @default(0)
+  notes             String?
+  status            TripStatus @default(PUBLISHED)
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+
+  traveller       User           @relation(fields: [travellerId], references: [id])
+  corridor        Corridor       @relation(fields: [corridorId], references: [id])
+  originCity      City           @relation("tripOrigin", fields: [originCityId], references: [id])
+  destinationCity City           @relation("tripDestination", fields: [destinationCityId], references: [id])
+  categories      TripCategory[]
+  shipments       Shipment[]
+  matchOffers     MatchOffer[]
+
+  @@index([corridorId, status, departureDate])
+  @@index([travellerId, status])
+}
+
+model TripCategory {
+  tripId     String
+  categoryId String
+
+  trip     Trip     @relation(fields: [tripId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id])
+
+  @@id([tripId, categoryId])
+}
+
+/// Matching rules. corridorId = null is the global default.
+model MatchingConfig {
+  id                 String   @id @default(cuid())
+  corridorId         String?  @unique
+  offerTtlMinutes    Int      @default(360)
+  maxAttempts        Int      @default(5)
+  dateToleranceDays  Int      @default(3)
+  minReliability     Float    @default(0.3)
+  /// { reliability, dateProximity, capacityFit, rating, responseRate } — relative weights.
+  weights            Json
+  updatedById        String?
+  updatedAt          DateTime @updatedAt
+
+  corridor Corridor? @relation(fields: [corridorId], references: [id])
+}
+
+/// One execution of the matching engine, kept for auditability.
+model MatchRun {
+  id             String         @id @default(cuid())
+  shipmentId     String
+  trigger        MatchTrigger
+  configSnapshot Json
+  /// [{ tripId, travellerId, score, components, excludedReason? }]
+  candidates     Json
+  result         MatchRunResult
+  createdAt      DateTime       @default(now())
+
+  shipment Shipment     @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+  offers   MatchOffer[]
+
+  @@index([shipmentId, createdAt])
+}
+
+model MatchOffer {
+  id           String           @id @default(cuid())
+  shipmentId   String
+  tripId       String
+  travellerId  String
+  matchRunId   String
+  rank         Int
+  score        Float
+  status       MatchOfferStatus @default(PENDING)
+  expiresAt    DateTime
+  respondedAt  DateTime?
+  rejectReason String?
+  createdAt    DateTime         @default(now())
+
+  shipment  Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+  trip      Trip     @relation(fields: [tripId], references: [id])
+  traveller User     @relation(fields: [travellerId], references: [id])
+  matchRun  MatchRun @relation(fields: [matchRunId], references: [id])
+
+  @@index([travellerId, status])
+  @@index([shipmentId, status])
+  @@index([status, expiresAt])
+}
+
+// ─── Money ────────────────────────────────────────────────────────────────────
+
+model Payment {
+  id                String        @id @default(cuid())
+  shipmentId        String
+  userId            String
+  provider          String        @default("stripe")
+  providerPaymentId String?       @unique
+  /// Underlying payment intent (Stripe), used to match chargebacks.
+  providerIntentId  String?       @unique
+  amount            Int
+  currency          String
+  status            PaymentStatus @default(REQUIRES_PAYMENT)
+  refundedAmount    Int           @default(0)
+  failureReason     String?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  shipment Shipment @relation(fields: [shipmentId], references: [id])
+  user     User     @relation(fields: [userId], references: [id])
+
+  @@index([shipmentId])
+}
+
+/// Provider webhooks already processed — makes webhook handling idempotent.
+model WebhookEvent {
+  id          String   @id // provider event id
+  provider    String
+  type        String
+  payload     Json
+  processedAt DateTime @default(now())
+}
+
+/// Double-entry style wallet ledger. A movement between buckets is two entries
+/// sharing a transactionId (−amount from one bucket, +amount to another).
+model LedgerEntry {
+  id            String          @id @default(cuid())
+  userId        String
+  transactionId String
+  type          LedgerEntryType
+  bucket        LedgerBucket
+  amount        Int
+  currency      String
+  shipmentId    String?
+  payoutId      String?
+  /// For HELD entries: when the hold may be released.
+  releaseAt     DateTime?
+  note          String?
+  createdAt     DateTime        @default(now())
+
+  user     User      @relation(fields: [userId], references: [id])
+  shipment Shipment? @relation(fields: [shipmentId], references: [id])
+  payout   Payout?   @relation(fields: [payoutId], references: [id])
+
+  @@index([userId, bucket])
+  @@index([transactionId])
+  @@index([bucket, releaseAt])
+}
+
+model Payout {
+  id                 String       @id @default(cuid())
+  travellerId        String
+  amount             Int
+  currency           String
+  status             PayoutStatus @default(SCHEDULED)
+  periodStart        DateTime
+  periodEnd          DateTime
+  providerTransferId String?
+  failureReason      String?
+  attempts           Int          @default(0)
+  paidAt             DateTime?
+  createdAt          DateTime     @default(now())
+
+  traveller     User          @relation(fields: [travellerId], references: [id])
+  ledgerEntries LedgerEntry[]
+
+  @@index([travellerId, createdAt])
+  @@index([status])
+}
+
+// ─── Disputes, messaging, reviews ────────────────────────────────────────────
+
+model Dispute {
+  id             String             @id @default(cuid())
+  shipmentId     String
+  openedById     String?
+  reason         DisputeReason
+  description    String
+  evidenceKeys   String[]
+  status         DisputeStatus      @default(OPEN)
+  resolution     DisputeResolution?
+  refundAmount   Int?
+  resolutionNote String?
+  resolvedById   String?
+  resolvedAt     DateTime?
+  createdAt      DateTime           @default(now())
+
+  shipment   Shipment @relation(fields: [shipmentId], references: [id])
+  openedBy   User?    @relation("disputeOpener", fields: [openedById], references: [id])
+  resolvedBy User?    @relation("disputeResolver", fields: [resolvedById], references: [id])
+
+  @@index([status, createdAt])
+}
+
+model Conversation {
+  id         String   @id @default(cuid())
+  shipmentId String   @unique
+  createdAt  DateTime @default(now())
+
+  shipment Shipment  @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+  messages Message[]
+}
+
+model Message {
+  id             String    @id @default(cuid())
+  conversationId String
+  senderId       String?
+  /// What participants see (contact details masked).
+  body           String
+  /// Original text, visible to admins only when masking changed it.
+  originalBody   String?
+  isSystem       Boolean   @default(false)
+  readAt         DateTime?
+  createdAt      DateTime  @default(now())
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender       User?        @relation(fields: [senderId], references: [id])
+
+  @@index([conversationId, createdAt])
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  /// i18n key, e.g. "offer.received"; rendered client-side with `data`.
+  type      String
+  data      Json
+  link      String?
+  readAt    DateTime?
+  emailedAt DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt])
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  shipmentId String
+  authorId   String
+  targetId   String
+  rating     Int
+  comment    String?
+  createdAt  DateTime @default(now())
+
+  shipment Shipment @relation(fields: [shipmentId], references: [id])
+  author   User     @relation("reviewAuthor", fields: [authorId], references: [id])
+  target   User     @relation("reviewTarget", fields: [targetId], references: [id])
+
+  @@unique([shipmentId, authorId])
+  @@index([targetId])
+}
+
+// ─── Platform ─────────────────────────────────────────────────────────────────
+
+model AuditLog {
+  id         String    @id @default(cuid())
+  actorId    String?
+  actorType  ActorType
+  action     String
+  entityType String
+  entityId   String?
+  before     Json?
+  after      Json?
+  ip         String?
+  userAgent  String?
+  createdAt  DateTime  @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id])
+
+  @@index([entityType, entityId])
+  @@index([actorId, createdAt])
+  @@index([createdAt])
+}
+
+/// Admin-editable platform settings (hold duration, payout weekday, …).
+model AppSetting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}

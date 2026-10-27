@@ -1,0 +1,52 @@
+/*
+ * Mersal design tokens. Components only ever reference these variables, so a
+ * partner theme is a single [data-brand] block below.
+ */
+
+:root,
+[data-brand='mersal'] {
+  --brand-ink: #0b2e33;
+  --brand-primary: #0f766e;
+  --brand-primary-hover: #0b5f59;
+  --brand-primary-fg: #ffffff;
+  --brand-tint: #e6f4f2;
+  --brand-accent: #e2643b;
+  --brand-accent-strong: #b9471f;
+  --brand-sand: #f7f2ea;
+
+  --background: #ffffff;
+  --surface: #ffffff;
+  --foreground: var(--brand-ink);
+  --muted: #f2f5f5;
+  --muted-foreground: #52676a;
+  --border: #dde5e4;
+  --ring: var(--brand-primary);
+
+  --success: #15803d;
+  --success-tint: #e7f6ec;
+  --warning: #b45309;
+  --warning-tint: #fdf3e2;
+  --danger: #b91c1c;
+  --danger-tint: #fdecec;
+  --info: #1d4ed8;
+  --info-tint: #e9effd;
+
+  --radius: 0.75rem;
+}
+
+[data-brand='wassla'] {
+  --brand-ink: #071b33;
+  --brand-primary: #092b65;
+  --brand-primary-hover: #071f4a;
+  --brand-primary-fg: #ffffff;
+  --brand-tint: #eaf0fa;
+  --brand-accent: #ffd200;
+  --brand-accent-strong: #7a5f00;
+  --brand-sand: #f5f7fb;
+
+  --muted: #f3f5f9;
+  --muted-foreground: #4d5b70;
+  --border: #dfe4ec;
+
+  --radius: 0.5rem;
+}

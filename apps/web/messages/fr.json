@@ -1,0 +1,1544 @@
+{
+  "meta": {
+    "title": "Mersal — envoyez vos colis avec des voyageurs vérifiés",
+    "description": "Mersal confie votre colis à un voyageur vérifié qui fait déjà le trajet. Prix fixé à l'avance, paiement protégé jusqu'à la livraison."
+  },
+  "nav": {
+    "howItWorks": "Comment ça marche",
+    "pricing": "Tarifs",
+    "help": "Aide",
+    "login": "Se connecter",
+    "signup": "S'inscrire",
+    "menu": "Menu",
+    "services": "Services",
+    "account": "Mon compte",
+    "close": "Fermer le menu",
+    "main": "Principal",
+    "skipToContent": "Aller au contenu"
+  },
+  "locale": {
+    "label": "Langue",
+    "en": "English",
+    "fr": "Français",
+    "ar": "العربية"
+  },
+  "home": {
+    "eyebrow": "France ⇄ Algérie · Maroc · Tunisie",
+    "title": "Votre colis voyage avec quelqu'un qui part déjà.",
+    "subtitle": "Mersal confie votre colis à un voyageur vérifié sur le même trajet. Vous voyez le prix total avant de payer, et votre paiement reste protégé jusqu'à la confirmation de livraison.",
+    "ctaSend": "Obtenir un prix",
+    "ctaTravel": "Voyager et gagner",
+    "stepsTitle": "Comment ça marche",
+    "steps": {
+      "describe": {
+        "title": "Décrivez votre colis",
+        "body": "Trajet, taille, poids et contenu. Le prix total s'affiche avant le paiement."
+      },
+      "match": {
+        "title": "Nous trouvons un voyageur",
+        "body": "Notre moteur de mise en relation propose votre colis à des voyageurs vérifiés sur votre trajet. Vous n'avez rien à chercher."
+      },
+      "handover": {
+        "title": "Remise avec un code",
+        "body": "La prise en charge et la livraison sont confirmées par des codes à usage unique, et vous suivez chaque étape."
+      }
+    },
+    "trustTitle": "Fondé sur la confiance",
+    "trust": {
+      "verified": {
+        "title": "Voyageurs vérifiés",
+        "body": "Chaque voyageur passe une vérification d'identité avant de transporter un colis."
+      },
+      "protected": {
+        "title": "Paiement protégé",
+        "body": "Le voyageur n'est payé qu'après confirmation de la livraison."
+      },
+      "rules": {
+        "title": "Règles claires",
+        "body": "Une liste publique des objets interdits, et un support en cas de problème."
+      }
+    },
+    "preview": {
+      "label": "Aperçu du suivi",
+      "route": "Paris → Alger",
+      "status": "En transit",
+      "paid": "Payé · 24,50 €",
+      "matched": "Voyageur trouvé",
+      "pickedUp": "Pris en charge · code vérifié",
+      "delivery": "Livraison avec code",
+      "traveller": "Voyageur vérifié",
+      "rating": "4,9 · 31 livraisons"
+    },
+    "travellerTitle": "Vous voyagez déjà ?",
+    "travellerBody": "Publiez votre trajet, acceptez les colis qui vous conviennent et recevez vos gains chaque semaine.",
+    "stepsMore": "Voir le parcours complet"
+  },
+  "footer": {
+    "rights": "© {year} Mersal. Tous droits réservés.",
+    "brand": "Charte de marque",
+    "terms": "Conditions",
+    "privacy": "Confidentialité",
+    "tagline": "Votre colis voyage avec quelqu’un qui part déjà. Entre la France et l’Afrique du Nord, avec des voyageurs vérifiés.",
+    "product": "Produit",
+    "support": "Aide",
+    "company": "Mentions",
+    "prohibited": "Objets interdits",
+    "becomeTraveller": "Devenir voyageur"
+  },
+  "brandGuide": {
+    "metaTitle": "Charte de marque",
+    "eyebrow": "Charte de marque",
+    "title": "Mersal — le messager",
+    "intro": "Mersal (مرسال) est le messager qui apporte quelque chose à son destinataire. L'identité est calme et digne de confiance, avec la chaleur de la Méditerranée qui relie nos trajets.",
+    "logoTitle": "Logo",
+    "logoBody": "Un m minuscule dessiné comme un trajet en deux étapes : départ, remise à un voyageur, arrivée. Le point terracotta marque la destination.",
+    "logoFull": "Logo principal",
+    "logoArabic": "Logo arabe",
+    "logoMark": "Symbole",
+    "logoInverse": "Sur fond sombre",
+    "colorTitle": "Couleurs",
+    "colorBody": "Des mises en page à dominante blanche, du texte Deep Sea et des actions teal. La terracotta est un accent pour les icônes et illustrations — jamais pour du texte long.",
+    "contrastOnWhite": "sur blanc",
+    "contrastInkOn": "texte foncé dessus",
+    "semanticTitle": "Couleurs d'état",
+    "typeTitle": "Typographie",
+    "typeBody": "Readex Pro pour les titres en caractères latins et arabes ; IBM Plex Sans et IBM Plex Sans Arabic pour l'interface.",
+    "typeDisplay": "Titres · Readex Pro",
+    "typeBodyLabel": "Texte · IBM Plex Sans / Arabic",
+    "typeSample": "Votre colis voyage avec quelqu'un qui part déjà.",
+    "voiceTitle": "Ton",
+    "voiceBody": "Clair, chaleureux, rassurant. Des phrases courtes. Nous expliquons la suite et ne nous comparons jamais aux autres.",
+    "voiceDo": "À faire",
+    "voiceDont": "À éviter",
+    "voiceDoItems": [
+      "Votre voyageur a confirmé la prise en charge.",
+      "Vous serez débité de 24,50 €. Rien de plus.",
+      "Nous conservons le paiement jusqu'à la confirmation de livraison."
+    ],
+    "voiceDontItems": [
+      "La livraison la moins chère du monde !!!",
+      "30 % moins cher que le transporteur X",
+      "Vite, l'offre se termine bientôt"
+    ],
+    "themeTitle": "Thème partenaire (marque blanche)",
+    "themeBody": "Chaque couleur, arrondi et nom provient d'une seule configuration de marque. Changez de thème pour voir la plateforme aux couleurs d'un partenaire.",
+    "themeCurrent": "Thème actif",
+    "colors": {
+      "ink": "Titres, texte, surfaces sombres",
+      "primary": "Actions principales, liens, focus",
+      "tint": "Fonds légers, états sélectionnés, badges",
+      "accent": "Accents d'icônes et d'illustrations uniquement",
+      "accentStrong": "Texte d'accent sur fond clair",
+      "sand": "Fonds de section chaleureux",
+      "surface": "Cartes et surface de page",
+      "success": "Livré, payé, approuvé",
+      "warning": "Action requise, offres qui expirent",
+      "danger": "Erreurs, litiges, refus",
+      "info": "Informations système neutres"
+    }
+  },
+  "common": {
+    "loading": "Chargement…",
+    "save": "Enregistrer",
+    "saved": "Enregistré",
+    "cancel": "Annuler",
+    "back": "Retour",
+    "continue": "Continuer",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "all": "Tous",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "pageOf": "Page {page} sur {pages}",
+    "results": "{count, plural, =0 {Aucun résultat} one {# résultat} other {# résultats}}",
+    "empty": "Rien pour le moment.",
+    "optional": "facultatif",
+    "view": "Voir",
+    "never": "Jamais",
+    "logout": "Se déconnecter",
+    "demoCode": "Mode démo — votre code est {code}"
+  },
+  "errors": {
+    "generic": "Une erreur est survenue. Veuillez réessayer.",
+    "network": "Impossible de joindre le serveur. Vérifiez votre connexion.",
+    "email_taken": "Un compte existe déjà avec cet e-mail.",
+    "phone_taken": "Ce numéro est utilisé par un autre compte.",
+    "invalid_credentials": "E-mail ou mot de passe incorrect.",
+    "account_suspended": "Ce compte est suspendu. Contactez le support.",
+    "invalid_code": "Le code est invalide ou a expiré.",
+    "too_many_attempts": "Trop de tentatives. Demandez un nouveau code.",
+    "code_recently_sent": "Un code vient d'être envoyé. Patientez un instant avant d'en demander un autre.",
+    "email_not_verified": "Confirmez d'abord votre e-mail.",
+    "phone_not_verified": "Confirmez d'abord votre numéro de téléphone.",
+    "verification_pending": "Votre vérification d'identité est déjà en cours d'examen.",
+    "already_verified": "Cela a déjà été examiné.",
+    "not_found": "Nous n'avons pas trouvé ce que vous cherchez.",
+    "forbidden": "Vous n'avez pas accès à cette ressource.",
+    "unauthorized": "Veuillez vous reconnecter.",
+    "invalid_file": "Ce fichier ne peut pas être utilisé. Utilisez JPG, PNG, WEBP ou PDF de moins de 8 Mo.",
+    "wrong_password": "Votre mot de passe actuel est incorrect.",
+    "validation_failed": "Certains champs doivent être corrigés.",
+    "field": {
+      "required": "Obligatoire",
+      "invalid": "Valeur invalide",
+      "tooShort": "Au moins {min} caractères",
+      "tooLong": "Au plus {max} caractères",
+      "email": "Saisissez une adresse e-mail valide",
+      "phone": "Format international, par ex. +33612345678",
+      "code": "Saisissez le code à 6 chiffres"
+    },
+    "invalid_status": "Cette action n'est pas possible à cette étape de l'envoi.",
+    "route_not_served": "Nous ne desservons pas encore ce trajet.",
+    "no_active_tariff": "Les tarifs de ce trajet ne sont pas encore disponibles.",
+    "too_heavy": "Ce colis dépasse le poids autorisé sur ce trajet.",
+    "category_weight_limit": "Cette catégorie a une limite de poids plus basse. Réduisez le poids ou choisissez une autre catégorie.",
+    "unknown_option": "Une des options choisies n'est plus disponible.",
+    "quote_expired": "Ce prix a expiré. Veuillez en calculer un nouveau.",
+    "quote_used": "Ce prix a déjà été utilisé pour un envoi.",
+    "invalid_dates": "Choisissez des dates à partir d'aujourd'hui, sur 60 jours maximum.",
+    "photos_required": "Ajoutez au moins une photo du contenu pour cette catégorie.",
+    "not_cancellable": "Cet envoi ne peut plus être annulé depuis votre compte.",
+    "already_exists": "Un élément avec le même identifiant existe déjà.",
+    "traveller_not_verified": "Vérifiez votre identité avant de transporter des colis.",
+    "trip_has_shipments": "Ce trajet transporte déjà des colis. Contactez le support pour l'annuler.",
+    "trip_full": "Ce trajet n'a plus de place pour ce colis.",
+    "offer_expired": "Cette proposition a expiré.",
+    "offer_not_pending": "Cette proposition n'est plus ouverte.",
+    "payment_provider_error": "Le prestataire de paiement est indisponible. Réessayez dans un instant.",
+    "payment_not_pending": "Ce paiement n'est plus en attente.",
+    "payout_account_required": "Ajoutez vos coordonnées bancaires pour recevoir vos virements.",
+    "nothing_to_refund": "Il ne reste rien à rembourser sur ce paiement.",
+    "dispute_window_closed": "Les problèmes peuvent être signalés jusqu'à la fin de la période de réclamation.",
+    "dispute_exists": "Un problème est déjà en cours d'examen pour cet envoi.",
+    "review_exists": "Vous avez déjà évalué cette livraison.",
+    "review_not_allowed": "Vous pourrez laisser un avis une fois le colis livré.",
+    "too_many_requests": "Trop de tentatives. Patientez une minute, puis réessayez.",
+    "internal_error": "Un problème est survenu de notre côté. Réessayez dans un instant."
+  },
+  "auth": {
+    "panelTitle": "Envoyez avec ceux qui partent déjà.",
+    "panelBody": "Des voyageurs vérifiés, un prix fixé avant de payer, et un paiement protégé jusqu'à la livraison.",
+    "login": {
+      "title": "Bon retour",
+      "subtitle": "Connectez-vous pour suivre vos colis et vos trajets.",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "forgot": "Mot de passe oublié ?",
+      "noAccount": "Nouveau sur Mersal ?",
+      "signupLink": "Créer un compte"
+    },
+    "signup": {
+      "title": "Créez votre compte",
+      "subtitle": "Un seul compte pour envoyer des colis et, une fois vérifié, en transporter.",
+      "travellerSubtitle": "Créez votre compte, puis vérifiez votre identité pour transporter des colis.",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "E-mail",
+      "password": "Mot de passe",
+      "passwordHint": "Au moins 8 caractères.",
+      "acceptTerms": "J'accepte les <terms>conditions d'utilisation</terms> et la <privacy>politique de confidentialité</privacy>.",
+      "submit": "Créer le compte",
+      "haveAccount": "Vous avez déjà un compte ?",
+      "loginLink": "Se connecter"
+    },
+    "verifyEmail": {
+      "title": "Vérifiez vos e-mails",
+      "body": "Nous avons envoyé un code à 6 chiffres à {email}.",
+      "code": "Code de vérification",
+      "submit": "Confirmer l'e-mail",
+      "resend": "Envoyer un nouveau code",
+      "resent": "Un nouveau code est en route.",
+      "done": "E-mail confirmé.",
+      "later": "Je le ferai plus tard"
+    },
+    "forgot": {
+      "title": "Réinitialiser le mot de passe",
+      "body": "Saisissez l'e-mail de votre compte et nous vous enverrons un code.",
+      "email": "E-mail",
+      "submit": "Envoyer le code",
+      "sent": "Si un compte existe pour cet e-mail, un code est en route.",
+      "haveCode": "J'ai un code"
+    },
+    "reset": {
+      "title": "Choisissez un nouveau mot de passe",
+      "body": "Saisissez le code reçu par e-mail et un nouveau mot de passe.",
+      "email": "E-mail",
+      "code": "Code",
+      "password": "Nouveau mot de passe",
+      "submit": "Mettre à jour",
+      "done": "Mot de passe mis à jour. Vous pouvez vous connecter."
+    }
+  },
+  "app": {
+    "nav": {
+      "overview": "Vue d'ensemble",
+      "settings": "Paramètres",
+      "verification": "Vérification voyageur",
+      "admin": "Administration",
+      "sectionAccount": "Compte",
+      "sectionTravel": "Voyager",
+      "trips": "Mes trajets",
+      "offers": "Propositions",
+      "wallet": "Portefeuille"
+    },
+    "travellerStatus": {
+      "NOT_STARTED": "Non vérifié",
+      "PENDING": "En cours d'examen",
+      "APPROVED": "Voyageur vérifié",
+      "REJECTED": "Nouveaux documents requis"
+    },
+    "overview": {
+      "greeting": "Bonjour {name}",
+      "subtitle": "Voici où en est votre compte.",
+      "checklistTitle": "Préparez votre compte",
+      "checklistDone": "Votre compte est prêt.",
+      "steps": {
+        "email": {
+          "title": "Confirmez votre e-mail",
+          "body": "Nous l'utilisons pour les reçus et les informations importantes.",
+          "action": "Confirmer"
+        },
+        "phone": {
+          "title": "Confirmez votre numéro",
+          "body": "Les voyageurs et notre équipe peuvent vous joindre pendant une livraison.",
+          "action": "Ajouter"
+        },
+        "traveller": {
+          "title": "Vérifiez votre identité pour voyager",
+          "body": "Nécessaire uniquement pour transporter des colis.",
+          "action": "Commencer"
+        }
+      },
+      "sendTitle": "Envoyer un colis",
+      "sendBody": "Obtenez un prix fixe, payez, et nous trouvons un voyageur vérifié sur votre trajet.",
+      "sendAction": "Obtenir un prix",
+      "travelTitle": "Transportez des colis pendant vos trajets",
+      "travelBody": "Publiez votre trajet et recevez des propositions adaptées à votre itinéraire et à votre place.",
+      "travelAction": "Devenir voyageur"
+    }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "profile": {
+      "title": "Profil",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "E-mail",
+      "language": "Langue",
+      "save": "Enregistrer le profil"
+    },
+    "phone": {
+      "title": "Numéro de téléphone",
+      "body": "Nous envoyons un code à 6 chiffres par SMS pour le confirmer.",
+      "number": "Numéro de téléphone",
+      "send": "Envoyer le code",
+      "code": "Code",
+      "verify": "Confirmer le numéro",
+      "verified": "Confirmé",
+      "change": "Changer de numéro"
+    },
+    "password": {
+      "title": "Mot de passe",
+      "current": "Mot de passe actuel",
+      "new": "Nouveau mot de passe",
+      "submit": "Changer le mot de passe",
+      "done": "Mot de passe modifié. Les autres sessions ont été déconnectées."
+    }
+  },
+  "verification": {
+    "title": "Vérification voyageur",
+    "subtitle": "Chaque voyageur est vérifié avant de transporter un colis. Cela prend généralement moins d'une journée.",
+    "privacy": "Vos documents ne sont visibles que par notre équipe de vérification et ne sont jamais partagés avec les expéditeurs.",
+    "requirementsTitle": "Avant de commencer",
+    "requirements": {
+      "email": "E-mail confirmé",
+      "phone": "Numéro de téléphone confirmé"
+    },
+    "status": {
+      "PENDING": {
+        "title": "En cours d'examen",
+        "body": "Nous avons reçu vos documents le {date}. Nous vous préviendrons dès qu'ils seront examinés."
+      },
+      "APPROVED": {
+        "title": "Vous êtes vérifié",
+        "body": "Vous pouvez publier des trajets et recevoir des propositions de colis."
+      },
+      "REJECTED": {
+        "title": "Nouveaux documents nécessaires",
+        "body": "Motif indiqué par notre équipe : {reason}"
+      }
+    },
+    "form": {
+      "title": "Pièce d'identité",
+      "documentType": "Type de document",
+      "documentTypes": {
+        "PASSPORT": "Passeport",
+        "NATIONAL_ID": "Carte nationale d'identité",
+        "RESIDENCE_PERMIT": "Titre de séjour",
+        "DRIVING_LICENSE": "Permis de conduire"
+      },
+      "country": "Pays d'émission",
+      "front": "Recto du document",
+      "back": "Verso du document",
+      "selfie": "Selfie",
+      "selfieHint": "Une photo nette de votre visage, sans lunettes ni chapeau.",
+      "fileHint": "JPG, PNG, WEBP ou PDF · 8 Mo maximum",
+      "choose": "Choisir un fichier",
+      "replace": "Remplacer",
+      "submit": "Envoyer pour examen",
+      "submitted": "Documents envoyés. Nous les examinons rapidement."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "Vous êtes à jour.",
+    "markAll": "Tout marquer comme lu",
+    "types": {
+      "verification": {
+        "approved": "Votre vérification d'identité est approuvée. Vous pouvez publier des trajets.",
+        "rejected": "Votre vérification nécessite de nouveaux documents : {reason}"
+      },
+      "admin": {
+        "verificationSubmitted": "Nouvelle vérification d'identité envoyée par {name}",
+        "noMatch": "Le colis {reference} n'a pas de voyageur.",
+        "payoutFailed": "Un virement a échoué : {reason}",
+        "chargeback": "Un paiement par carte a été contesté par la banque.",
+        "disputeOpened": "Nouveau problème signalé sur {reference}."
+      },
+      "offer": {
+        "received": "Un colis correspondant à votre trajet attend votre réponse ({reference}).",
+        "expired": "Une proposition a expiré avant votre réponse."
+      },
+      "shipment": {
+        "matched": "Un voyageur vérifié a accepté votre colis {reference}.",
+        "noMatch": "Nous n'avons pas encore trouvé de voyageur pour {reference}.",
+        "refunded": "Le colis {reference} a été annulé et remboursé.",
+        "cancelled": "Le colis {reference} a été annulé ; la place sur votre trajet est de nouveau libre.",
+        "pickedUp": "Votre colis {reference} a été pris en charge par le voyageur.",
+        "inTransit": "Votre colis {reference} est en route.",
+        "delivered": "Votre colis {reference} a été livré.",
+        "withdrawn": "Le voyageur ne peut plus prendre {reference}. Nous cherchons un autre voyageur."
+      },
+      "payment": {
+        "succeeded": "Paiement reçu pour {reference}. Nous cherchons un voyageur."
+      },
+      "message": {
+        "received": "Nouveau message concernant {reference}."
+      },
+      "wallet": {
+        "earningHeld": "Livraison confirmée pour {reference}. Votre gain est conservé pendant la période de réclamation.",
+        "released": "Votre gain pour {reference} est disponible pour le prochain virement."
+      },
+      "payout": {
+        "paid": "Votre virement hebdomadaire a été envoyé.",
+        "failed": "Votre virement n'a pas pu être envoyé. Vérifiez vos coordonnées bancaires."
+      },
+      "dispute": {
+        "opened": "L'expéditeur a signalé un problème sur {reference}. Notre équipe va l'examiner.",
+        "resolved": "Le problème signalé sur {reference} a été résolu."
+      }
+    }
+  },
+  "admin": {
+    "title": "Administration",
+    "nav": {
+      "overview": "Vue d'ensemble",
+      "users": "Utilisateurs",
+      "verifications": "Vérifications",
+      "backToApp": "Retour à mon compte",
+      "sectionPeople": "Personnes",
+      "sectionOperations": "Opérations",
+      "shipments": "Envois",
+      "sectionConfig": "Configuration",
+      "pricing": "Tarifs",
+      "catalog": "Trajets et catalogue",
+      "matching": "Mise en relation",
+      "payments": "Paiements",
+      "payouts": "Virements",
+      "disputes": "Litiges",
+      "reports": "Rapports",
+      "settings": "Paramètres",
+      "audit": "Journal d'audit",
+      "sectionInsights": "Analyse"
+    },
+    "overview": {
+      "title": "Vue d'ensemble",
+      "users": "Utilisateurs",
+      "travellers": "Voyageurs vérifiés",
+      "pendingVerifications": "Vérifications à examiner",
+      "suspended": "Comptes suspendus",
+      "review": "Examiner",
+      "gmv": "Volume payé (net)",
+      "commission": "Commission gagnée",
+      "refunds": "Remboursé",
+      "matchRate": "Mis en relation après paiement",
+      "timeToMatch": "Délai moyen de mise en relation",
+      "hours": "{value} h",
+      "activeTrips": "Trajets actifs",
+      "openDisputes": "Litiges ouverts",
+      "heldFunds": "Conservé pour les voyageurs",
+      "availableToPay": "Dû au prochain virement",
+      "noMatch": "Colis sans voyageur",
+      "activity": "Activité, 30 derniers jours",
+      "series": {
+        "created": "Créés",
+        "paid": "Payés",
+        "delivered": "Livrés"
+      },
+      "byStatus": "Envois par statut",
+      "byCorridor": "Volume payé par trajet",
+      "showTable": "Afficher en tableau",
+      "date": "Date",
+      "count": "Envois",
+      "route": "Trajet",
+      "volume": "Volume"
+    },
+    "userStatus": {
+      "ACTIVE": "Actif",
+      "SUSPENDED": "Suspendu"
+    },
+    "users": {
+      "title": "Utilisateurs",
+      "searchPlaceholder": "Nom, e-mail ou téléphone",
+      "status": "Compte",
+      "traveller": "Voyageur",
+      "columns": {
+        "name": "Nom",
+        "contact": "Contact",
+        "traveller": "Voyageur",
+        "status": "Compte",
+        "joined": "Inscription"
+      },
+      "detail": {
+        "counts": {
+          "shipmentsSent": "Colis envoyés",
+          "shipmentsCarried": "Colis transportés",
+          "trips": "Trajets",
+          "disputesOpened": "Litiges ouverts"
+        },
+        "lastLogin": "Dernière connexion",
+        "joined": "Inscription",
+        "suspend": "Suspendre le compte",
+        "suspendReason": "Motif (conservé dans le journal d'audit)",
+        "reactivate": "Réactiver le compte",
+        "verifications": "Vérifications d'identité",
+        "auditTrail": "Activité"
+      }
+    },
+    "verifications": {
+      "title": "Vérifications d'identité",
+      "empty": "Aucune vérification dans cette liste.",
+      "columns": {
+        "user": "Utilisateur",
+        "document": "Document",
+        "submitted": "Envoyé le",
+        "status": "Statut"
+      },
+      "status": {
+        "PENDING": "En attente",
+        "APPROVED": "Approuvée",
+        "REJECTED": "Refusée"
+      },
+      "detail": {
+        "documentFront": "Document — recto",
+        "documentBack": "Document — verso",
+        "selfie": "Selfie",
+        "noBack": "Non fourni",
+        "approve": "Approuver",
+        "reject": "Refuser",
+        "rejectReason": "Motif affiché à l'utilisateur",
+        "rejectPlaceholder": "ex. La photo du document est floue — merci d'envoyer une image plus nette.",
+        "reviewed": "Examiné par {name} le {date}",
+        "approved": "Vérification approuvée.",
+        "rejected": "Vérification refusée."
+      }
+    },
+    "shipments": {
+      "title": "Envois",
+      "searchPlaceholder": "Référence, e-mail de l'expéditeur ou destinataire",
+      "status": "Statut",
+      "columns": {
+        "reference": "Référence",
+        "route": "Trajet",
+        "sender": "Expéditeur",
+        "traveller": "Voyageur",
+        "status": "Statut",
+        "price": "Prix",
+        "created": "Créé le"
+      },
+      "detail": {
+        "money": "Montants",
+        "price": "Payé par l'expéditeur",
+        "commission": "Commission plateforme",
+        "earning": "Gain du voyageur",
+        "tariff": "Version du tarif",
+        "sender": "Expéditeur",
+        "traveller": "Voyageur",
+        "none": "Non attribué",
+        "codes": "Codes de remise",
+        "pickupCode": "Prise en charge",
+        "deliveryCode": "Livraison",
+        "resetAttempts": "Réinitialiser les essais",
+        "attemptsReset": "Essais réinitialisés.",
+        "payments": "Paiements",
+        "cancelRefund": "Annuler et rembourser",
+        "cancelReason": "Motif de l'annulation",
+        "cancelled": "Envoi annulé et remboursé.",
+        "conversation": "Conversation"
+      }
+    },
+    "pricing": {
+      "title": "Tarifs",
+      "subtitle": "Les tarifs sont versionnés par trajet. Modifiez un brouillon, testez-le avec le simulateur, puis activez-le. Les devis existants gardent la version utilisée.",
+      "version": "Version {version}",
+      "status": {
+        "DRAFT": "Brouillon",
+        "ACTIVE": "Actif",
+        "ARCHIVED": "Archivé"
+      },
+      "newDraft": "Nouveau brouillon à partir de cette version",
+      "open": "Ouvrir",
+      "activate": "Activer cette version",
+      "activateConfirm": "Activer ce tarif ? Les nouveaux devis de ce trajet l'utiliseront immédiatement.",
+      "activated": "Tarif activé.",
+      "saveDraft": "Enregistrer le brouillon",
+      "saved": "Brouillon enregistré.",
+      "draftCreated": "Brouillon créé.",
+      "readOnly": "Les versions actives et archivées sont en lecture seule. Créez un brouillon pour modifier les prix.",
+      "notes": "Notes",
+      "noTariff": "Pas encore de tarif",
+      "editor": {
+        "general": "Général",
+        "minimumPrice": "Prix minimum",
+        "commission": "Commission plateforme (%)",
+        "roundTo": "Arrondir à",
+        "volumetricDivisor": "Diviseur volumétrique (cm³/kg)",
+        "maxWeight": "Poids maximum (kg)",
+        "brackets": "Tranches de poids",
+        "upTo": "Jusqu'à (kg)",
+        "price": "Prix",
+        "addBracket": "Ajouter une tranche",
+        "extraPerKg": "Chaque kg au-delà de la dernière tranche",
+        "categoryMultipliers": "Coefficients par catégorie",
+        "declaredValue": "Valeur déclarée",
+        "freeUpTo": "Couverte gratuitement jusqu'à",
+        "feePercent": "Frais au-delà (%)",
+        "urgency": "Coefficients de rapidité",
+        "options": "Options payantes",
+        "simulator": "Simulateur",
+        "simulatorBody": "Calcule le prix d'un colis exemple avec les règles affichées, avant d'enregistrer.",
+        "run": "Simuler",
+        "commissionLine": "Commission",
+        "earningLine": "Gain du voyageur"
+      }
+    },
+    "catalog": {
+      "title": "Trajets et catalogue",
+      "tabs": {
+        "corridors": "Trajets",
+        "cities": "Villes",
+        "categories": "Catégories",
+        "restricted": "Objets réglementés"
+      },
+      "active": "Actif",
+      "inactive": "Inactif",
+      "enable": "Activer",
+      "disable": "Désactiver",
+      "add": "Ajouter",
+      "added": "Ajouté.",
+      "updated": "Mis à jour.",
+      "nameEn": "Nom (anglais)",
+      "nameFr": "Nom (français)",
+      "nameAr": "Nom (arabe)",
+      "country": "Pays",
+      "origin": "Pays de départ",
+      "destination": "Pays d'arrivée",
+      "currency": "Devise",
+      "tariff": "Tarif",
+      "corridorHint": "Les nouveaux trajets sont inactifs. Créez et activez un tarif, puis activez le trajet.",
+      "code": "Code",
+      "requiresPhotos": "Photos obligatoires",
+      "maxWeight": "Poids max (kg)",
+      "level": "Niveau"
+    },
+    "matching": {
+      "title": "Règles de mise en relation",
+      "subtitle": "Comment les colis sont proposés aux voyageurs. Les changements s'appliquent à la prochaine exécution.",
+      "offerTtl": "Délai de réponse à une proposition (minutes)",
+      "maxAttempts": "Propositions avant « aucun voyageur »",
+      "tolerance": "Accepter les trajets jusqu'à N jours après la période",
+      "minReliability": "Fiabilité minimale du voyageur (0–1)",
+      "weights": "Pondérations",
+      "weightsHint": "Importance relative de chaque critère. La date de départ compte double pour l'express.",
+      "weight": {
+        "reliability": "Fiabilité",
+        "dateProximity": "Départ le plus tôt",
+        "capacityFit": "Adéquation de la place",
+        "rating": "Note",
+        "responseRate": "Taux de réponse",
+        "originMatch": "Même ville de départ"
+      },
+      "save": "Enregistrer les règles",
+      "saved": "Règles enregistrées.",
+      "log": "Journal de mise en relation",
+      "noRuns": "La mise en relation n'a pas encore été exécutée pour ce colis.",
+      "run": "Exécution {trigger} · {result}",
+      "candidates": "Candidats",
+      "eligible": "Éligible",
+      "score": "Score",
+      "reason": {
+        "own_shipment": "Trajet de l'expéditeur",
+        "traveller_not_verified": "Voyageur non vérifié",
+        "traveller_suspended": "Voyageur suspendu",
+        "low_reliability": "Fiabilité trop basse",
+        "already_offered": "Déjà proposé",
+        "destination_mismatch": "Autre destination",
+        "date_out_of_window": "Hors dates",
+        "insufficient_capacity": "Place insuffisante",
+        "max_items_reached": "Limite de colis atteinte",
+        "too_large": "Trop grand",
+        "category_not_accepted": "Catégorie refusée"
+      },
+      "offers": "Propositions",
+      "rerun": "Lancer la mise en relation",
+      "rerunDone": "Mise en relation : {result}",
+      "propose": "Proposer à un trajet",
+      "proposeAction": "Proposer",
+      "proposed": "Proposition envoyée au voyageur.",
+      "noTrips": "Aucun trajet à venir sur cet itinéraire."
+    },
+    "payments": {
+      "title": "Paiements",
+      "status": {
+        "REQUIRES_PAYMENT": "En attente",
+        "PROCESSING": "En cours",
+        "SUCCEEDED": "Payé",
+        "FAILED": "Échoué",
+        "REFUNDED": "Remboursé",
+        "PARTIALLY_REFUNDED": "Remboursé en partie"
+      },
+      "columns": {
+        "shipment": "Envoi",
+        "payer": "Payeur",
+        "amount": "Montant",
+        "refunded": "Remboursé",
+        "status": "Statut",
+        "date": "Date",
+        "provider": "Prestataire"
+      },
+      "refund": "Rembourser",
+      "refundAmount": "Montant à rembourser (€)",
+      "refundReason": "Motif",
+      "refunded": "Remboursement effectué."
+    },
+    "payouts": {
+      "title": "Virements",
+      "subtitle": "Les voyageurs sont payés une fois par semaine pour les gains sortis de la période de réclamation.",
+      "available": "Prêt pour le prochain virement",
+      "run": "Lancer les virements",
+      "ran": "Virements : {paid} payés, {failed} échoués, {skipped} en attente de coordonnées bancaires.",
+      "release": "Débloquer les gains échus",
+      "released": "{count, plural, =0 {Rien à débloquer} one {# gain débloqué} other {# gains débloqués}}",
+      "retry": "Réessayer",
+      "columns": {
+        "traveller": "Voyageur",
+        "account": "Compte",
+        "amount": "Montant",
+        "status": "Statut",
+        "date": "Date"
+      }
+    },
+    "disputes": {
+      "title": "Litiges",
+      "empty": "Aucun litige dans cette liste.",
+      "columns": {
+        "shipment": "Envoi",
+        "reason": "Motif",
+        "openedBy": "Signalé par",
+        "amount": "En jeu",
+        "status": "Statut",
+        "date": "Signalé le"
+      },
+      "detail": {
+        "description": "Description de l'expéditeur",
+        "evidence": "Preuves",
+        "blocked": "Gain du voyageur gelé",
+        "refundable": "Remboursable à l'expéditeur",
+        "startReview": "Commencer l'examen",
+        "resolve": "Résoudre",
+        "resolution": "Décision",
+        "refundAmount": "Montant remboursé (€)",
+        "note": "Note de décision (visible des deux parties)",
+        "resolved": "Litige résolu.",
+        "sender": "Expéditeur",
+        "traveller": "Voyageur",
+        "reliability": "Fiabilité {value}",
+        "conversation": "Conversation",
+        "system": "Automatique (banque)"
+      }
+    },
+    "reports": {
+      "title": "Rapports",
+      "subtitle": "Exportez des fichiers CSV pour la finance et les opérations. Ils s'ouvrent dans Excel, Numbers et Google Sheets.",
+      "from": "Du",
+      "to": "Au",
+      "download": "Télécharger le CSV",
+      "types": {
+        "shipments": {
+          "title": "Envois",
+          "body": "Chaque envoi avec trajet, prix, commission, gain du voyageur et dates clés."
+        },
+        "payments": {
+          "title": "Paiements",
+          "body": "Paiements des expéditeurs et remboursements par prestataire."
+        },
+        "payouts": {
+          "title": "Virements",
+          "body": "Virements hebdomadaires aux voyageurs, y compris les échecs."
+        }
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "subtitle": "Règles de la plateforme. Les changements s'appliquent immédiatement et sont enregistrés dans le journal d'audit.",
+      "save": "Enregistrer",
+      "saved": "Paramètres enregistrés.",
+      "demoMode": "Le mode démo est activé : des délais plus courts permettent de montrer le parcours complet en direct.",
+      "provider": "Prestataire de paiement : {provider}",
+      "fields": {
+        "walletHoldHours": "Conservation après livraison (heures)",
+        "walletDemoHoldMinutes": "Conservation en mode démo (minutes)",
+        "payoutsWeekday": "Jour du virement hebdomadaire",
+        "matchingDemoOfferTtlMinutes": "Délai de réponse en mode démo (minutes)",
+        "quotesTtlMinutes": "Validité des prix (minutes)",
+        "disputesWindowHours": "Période de réclamation (heures)"
+      }
+    },
+    "audit": {
+      "title": "Journal d'audit",
+      "subtitle": "Chaque action sensible, qui l'a faite et quand.",
+      "filter": "Filtrer par action",
+      "columns": {
+        "date": "Date",
+        "actor": "Auteur",
+        "action": "Action",
+        "entity": "Élément"
+      },
+      "system": "Système"
+    }
+  },
+  "shipmentStatus": {
+    "DRAFT": "Brouillon",
+    "QUOTED": "En attente de paiement",
+    "PAID": "Payé",
+    "MATCHING": "Recherche d'un voyageur",
+    "MATCHED": "Voyageur attribué",
+    "PICKED_UP": "Pris en charge",
+    "IN_TRANSIT": "En transit",
+    "DELIVERED": "Livré",
+    "COMPLETED": "Terminé",
+    "NO_MATCH": "Pas encore de voyageur",
+    "CANCELLED": "Annulé",
+    "DISPUTED": "En litige",
+    "REFUNDED": "Remboursé"
+  },
+  "pricing": {
+    "metaTitle": "Tarifs",
+    "eyebrow": "Tarifs",
+    "title": "Connaissez votre prix avant de payer",
+    "subtitle": "Le prix dépend du trajet, de la taille et du poids du colis et des options choisies. Le prix affiché est celui que vous payez.",
+    "form": {
+      "from": "Départ",
+      "to": "Arrivée",
+      "chooseCity": "Choisir une ville",
+      "noRoutes": "Aucun trajet depuis cette ville pour l'instant",
+      "category": "Que souhaitez-vous envoyer ?",
+      "weight": "Poids (kg)",
+      "dimensions": "Dimensions (cm)",
+      "length": "Longueur",
+      "width": "Largeur",
+      "height": "Hauteur",
+      "declaredValue": "Valeur déclarée (€)",
+      "declaredValueHint": "Valeur du contenu. Jusqu'à 100 € sont couverts sans frais.",
+      "urgency": "Rapidité",
+      "urgencyOptions": {
+        "STANDARD": {
+          "title": "Standard",
+          "body": "Confié au prochain voyageur adapté"
+        },
+        "EXPRESS": {
+          "title": "Express",
+          "body": "Mise en relation prioritaire avec les premiers départs"
+        }
+      },
+      "options": "Options",
+      "submit": "Calculer le prix",
+      "recalculate": "Mettre à jour le prix"
+    },
+    "result": {
+      "title": "Votre prix",
+      "validFor": "Prix garanti {minutes} minutes",
+      "volumetric": "Calculé sur le poids volumétrique : {kg} kg",
+      "cta": "Envoyer ce colis",
+      "ctaSignedOut": "Créer un compte pour envoyer",
+      "placeholder": "Renseignez les détails du colis pour voir votre prix.",
+      "lines": {
+        "base": "Transport ({kg} kg)",
+        "category": "Ajustement catégorie",
+        "urgency": "Express",
+        "declaredValue": "Couverture de la valeur déclarée",
+        "minimum": "Ajustement prix minimum",
+        "rounding": "Arrondi"
+      }
+    },
+    "restrictedTitle": "Ce que nous ne transportons pas",
+    "restrictedBody": "Les voyageurs transportent les colis dans leurs bagages : certains objets sont interdits, d'autres sont limités par les règles douanières.",
+    "prohibited": "Interdit",
+    "restricted": "Limité"
+  },
+  "shipments": {
+    "title": "Envois",
+    "newAction": "Envoyer un colis",
+    "tabs": {
+      "sending": "J'envoie",
+      "carrying": "Je transporte"
+    },
+    "empty": "Vous n'avez encore envoyé aucun colis.",
+    "emptyCarrying": "Les colis que vous transportez apparaîtront ici.",
+    "columns": {
+      "reference": "Référence",
+      "route": "Trajet",
+      "status": "Statut",
+      "price": "Prix",
+      "dates": "Dates"
+    },
+    "new": {
+      "title": "Envoyer un colis",
+      "steps": {
+        "quote": "Prix",
+        "details": "Détails"
+      },
+      "priceStepBody": "Commencez par le trajet et les détails du colis pour obtenir votre prix.",
+      "continue": "Continuer avec ce prix",
+      "changePrice": "Modifier le colis ou le trajet",
+      "quoteExpired": "Ce prix a expiré. Recalculez-le pour continuer.",
+      "description": "Que contient le colis ?",
+      "descriptionHint": "Décrivez honnêtement le contenu. Le voyageur et la douane peuvent le vérifier.",
+      "dates": "Quand doit-il partir ?",
+      "earliest": "À partir du",
+      "latest": "Jusqu'au",
+      "datesHint": "Une période plus large nous aide à trouver un voyageur plus vite.",
+      "recipient": "Destinataire",
+      "recipientName": "Nom complet",
+      "recipientPhone": "Téléphone",
+      "recipientEmail": "E-mail",
+      "photos": "Photos du contenu",
+      "photosHint": "Jusqu'à 4 photos. Obligatoire pour cette catégorie.",
+      "photosOptional": "Jusqu'à 4 photos. Facultatif, mais rassurant pour les voyageurs.",
+      "addPhoto": "Ajouter une photo",
+      "restrictedAck": "Je confirme que mon colis ne contient aucun des objets interdits listés et que je suis responsable de son contenu.",
+      "seeList": "Voir la liste",
+      "submit": "Créer l'envoi",
+      "created": "Envoi créé."
+    },
+    "detail": {
+      "route": "Trajet",
+      "parcel": "Colis",
+      "weight": "Poids",
+      "size": "Dimensions",
+      "declaredValue": "Valeur déclarée",
+      "speed": "Rapidité",
+      "options": "Options",
+      "dates": "Période de départ",
+      "datesValue": "{from} – {to}",
+      "recipient": "Destinataire",
+      "price": "Prix",
+      "earning": "Votre gain",
+      "photos": "Photos",
+      "timeline": "Historique",
+      "cancel": "Annuler l'envoi",
+      "cancelConfirm": "Annuler cet envoi ? Cette action est définitive.",
+      "cancelled": "Envoi annulé.",
+      "awaitingPayment": "Prochaine étape : payer pour lancer la recherche d'un voyageur.",
+      "by": {
+        "USER": "par vous",
+        "ADMIN": "par notre équipe",
+        "SYSTEM": "automatiquement",
+        "SENDER": "par l'expéditeur",
+        "TRAVELLER": "par le voyageur"
+      },
+      "matching": "Nous proposons votre colis à des voyageurs vérifiés sur votre trajet. Vous serez prévenu dès que l'un d'eux accepte.",
+      "noMatch": "Aucun voyageur n'est encore disponible pour vos dates. Notre équipe a été prévenue.",
+      "traveller": "Votre voyageur",
+      "sender": "Expéditeur",
+      "departure": "Départ le {date}",
+      "rating": "{rating} · {count, plural, one {# avis} other {# avis}}",
+      "newMember": "Nouveau sur Mersal",
+      "verifiedTraveller": "Voyageur vérifié"
+    }
+  },
+  "trips": {
+    "title": "Mes trajets",
+    "subtitle": "Publiez les trajets que vous faites déjà. Nous vous proposerons des colis adaptés à votre itinéraire, vos dates et votre place.",
+    "newAction": "Publier un trajet",
+    "empty": "Vous n'avez publié aucun trajet.",
+    "verifyFirst": "Vérifiez votre identité pour publier des trajets et recevoir des propositions de colis.",
+    "verifyAction": "Commencer la vérification",
+    "status": {
+      "PUBLISHED": "Publié",
+      "IN_PROGRESS": "En cours",
+      "COMPLETED": "Terminé",
+      "CANCELLED": "Annulé"
+    },
+    "capacity": "{remaining} kg libres sur {total}",
+    "items": "{count, plural, =0 {Aucun colis} one {# colis} other {# colis}}",
+    "new": {
+      "title": "Publier un trajet",
+      "from": "Ville de départ",
+      "to": "Ville d'arrivée",
+      "departure": "Date de départ",
+      "arrival": "Date d'arrivée",
+      "capacity": "Place disponible (kg)",
+      "capacityHint": "Poids total que vous acceptez de transporter pour d'autres.",
+      "maxItems": "Nombre maximum de colis",
+      "maxLength": "Plus grand côté accepté (cm)",
+      "categories": "Catégories acceptées",
+      "categoriesHint": "Ne cochez rien pour accepter toutes les catégories.",
+      "notes": "Notes pour notre équipe",
+      "submit": "Publier le trajet",
+      "published": "Trajet publié. Nous vous enverrons les colis correspondants."
+    },
+    "detail": {
+      "route": "Itinéraire",
+      "dates": "Dates",
+      "space": "Place",
+      "categories": "Catégories acceptées",
+      "allCategories": "Toutes les catégories",
+      "parcels": "Colis sur ce trajet",
+      "noParcels": "Pas encore de colis. Nous vous préviendrons dès qu'un colis correspond.",
+      "cancel": "Annuler le trajet",
+      "cancelConfirm": "Annuler ce trajet ? Les propositions ouvertes iront à d'autres voyageurs.",
+      "cancelled": "Trajet annulé."
+    }
+  },
+  "offers": {
+    "title": "Propositions de colis",
+    "subtitle": "Les colis associés à vos trajets. Acceptez ceux qui vous conviennent avant l'expiration.",
+    "tabs": {
+      "open": "Ouvertes",
+      "history": "Historique"
+    },
+    "empty": "Aucune proposition ouverte. Nous vous préviendrons dès qu'un colis correspond à un de vos trajets.",
+    "emptyHistory": "Vos propositions passées apparaîtront ici.",
+    "expiresIn": "Expire {time}",
+    "earning": "Vous gagnez",
+    "onTrip": "Pour votre trajet du {date}",
+    "window": "Départ entre le {from} et le {to}",
+    "accept": "Accepter",
+    "reject": "Refuser",
+    "rejectReason": "Motif (facultatif)",
+    "confirmReject": "Refuser la proposition",
+    "accepted": "Accepté. L'expéditeur a été prévenu.",
+    "rejected": "Proposition refusée.",
+    "status": {
+      "PENDING": "Ouverte",
+      "ACCEPTED": "Acceptée",
+      "REJECTED": "Refusée",
+      "EXPIRED": "Expirée",
+      "CANCELLED": "Retirée"
+    },
+    "express": "Express"
+  },
+  "payment": {
+    "pay": "Payer {amount}",
+    "secure": "Votre paiement est conservé en sécurité et le voyageur n'est payé qu'après la livraison.",
+    "redirecting": "Redirection vers le paiement sécurisé…",
+    "succeeded": "Paiement confirmé. Nous cherchons un voyageur.",
+    "cancelled": "Paiement annulé. Vous pouvez réessayer quand vous voulez.",
+    "checking": "Confirmation de votre paiement…",
+    "demo": {
+      "title": "Paiement sécurisé",
+      "notice": "Mode démo — aucune carte réelle n'est débitée.",
+      "card": "Numéro de carte",
+      "expiry": "Expiration",
+      "cvc": "CVC",
+      "name": "Nom sur la carte",
+      "submit": "Payer {amount}"
+    },
+    "cancelRefund": "Annuler et être remboursé",
+    "cancelRefundConfirm": "Annuler cet envoi ? Vous serez remboursé intégralement.",
+    "refunded": "Envoi annulé. Votre remboursement est en cours."
+  },
+  "handover": {
+    "title": "Remise du colis",
+    "pickupCodeTitle": "Code de prise en charge",
+    "pickupCodeBody": "Donnez ce code au voyageur au moment de lui remettre le colis — pas avant.",
+    "deliveryCodeTitle": "Code de livraison",
+    "deliveryCodeBody": "Le destinataire donne ce code au voyageur à la livraison. Partagez-lui la page de suivi.",
+    "copyLink": "Copier le lien de suivi",
+    "copied": "Lien copié.",
+    "openTracking": "Ouvrir la page de suivi",
+    "travellerPickupTitle": "Confirmer la prise en charge",
+    "travellerPickupBody": "Demandez à l'expéditeur son code à 6 chiffres en recevant le colis. Vérifiez que le contenu correspond à la description.",
+    "travellerDeliveryTitle": "Confirmer la livraison",
+    "travellerDeliveryBody": "Demandez au destinataire son code à 6 chiffres en lui remettant le colis.",
+    "code": "Code",
+    "confirmPickup": "Confirmer la prise en charge",
+    "confirmDelivery": "Confirmer la livraison",
+    "startJourney": "Je suis en route",
+    "pickedUp": "Prise en charge confirmée.",
+    "delivered": "Livraison confirmée. Votre gain est conservé pendant la période de réclamation.",
+    "inTransit": "Marqué comme en route.",
+    "attemptsLeft": "{count, plural, one {# essai restant} other {# essais restants}}",
+    "recipient": "Destinataire : {name}"
+  },
+  "chat": {
+    "title": "Messages",
+    "placeholder": "Écrire un message…",
+    "send": "Envoyer",
+    "closed": "La conversation est fermée.",
+    "empty": "Utilisez cette conversation pour convenir du lieu et de l'heure de la remise.",
+    "maskedNote": "Les coordonnées sont masquées pour que votre échange reste protégé par Mersal.",
+    "you": "Vous",
+    "system": {
+      "matched": "Un voyageur a accepté ce colis. Convenez ici du lieu et de l'heure du rendez-vous.",
+      "pickedUp": "Colis pris en charge — code confirmé.",
+      "inTransit": "Le voyageur est en route.",
+      "delivered": "Colis livré — code de livraison confirmé.",
+      "disputed": "Un problème a été signalé. Notre équipe l'examine.",
+      "disputeResolved": "Notre équipe a résolu le problème signalé.",
+      "withdrawn": "Le voyageur s'est retiré. Nous cherchons un autre voyageur."
+    }
+  },
+  "tracking": {
+    "metaTitle": "Suivre un colis",
+    "title": "Colis {reference}",
+    "for": "Pour {name}",
+    "travellerWith": "Voyage avec {name}",
+    "departure": "Départ {date}",
+    "codeTitle": "Votre code de livraison",
+    "codeBody": "Donnez ce code au voyageur seulement quand vous avez le colis en main.",
+    "history": "Progression",
+    "notFound": "Nous n'avons pas trouvé ce colis. Vérifiez le lien reçu."
+  },
+  "wallet": {
+    "title": "Portefeuille",
+    "subtitle": "Vos gains sur les colis livrés. Ils sont conservés {hours} après la livraison pour les réclamations, puis versés chaque semaine.",
+    "expected": "À venir",
+    "expectedHint": "Colis que vous transportez",
+    "held": "En attente",
+    "heldHint": "Période de réclamation",
+    "available": "Disponible",
+    "availableHint": "Versé le {date}",
+    "blocked": "Bloqué",
+    "blockedHint": "Litige en cours",
+    "paidOut": "Versé",
+    "account": {
+      "title": "Compte de versement",
+      "none": "Ajoutez vos coordonnées bancaires pour recevoir vos virements hebdomadaires.",
+      "ready": "Les virements vont vers {label}.",
+      "holder": "Titulaire du compte",
+      "iban": "IBAN",
+      "save": "Enregistrer",
+      "saved": "Coordonnées bancaires enregistrées.",
+      "stripe": "Configurer les virements avec Stripe",
+      "stripeBody": "Vous remplirez un court formulaire sécurisé sur Stripe pour recevoir vos virements.",
+      "change": "Modifier"
+    },
+    "activity": "Activité",
+    "noActivity": "Pas encore de gains. Livrez votre premier colis pour les voir ici.",
+    "entry": {
+      "EARNING_CREATED": "Gain en attente",
+      "HOLD_RELEASED": "Gain disponible",
+      "PAYOUT_SENT": "Virement envoyé",
+      "PAYOUT_FAILED": "Virement échoué — de nouveau disponible",
+      "DISPUTE_BLOCKED": "Bloqué par un litige",
+      "DISPUTE_RELEASED": "Litige résolu — débloqué",
+      "DISPUTE_REVERSED": "Litige résolu — remboursé à l'expéditeur",
+      "ADJUSTMENT": "Ajustement"
+    },
+    "releases": "Disponible {date}",
+    "payouts": "Virements",
+    "payoutStatus": {
+      "SCHEDULED": "Programmé",
+      "PROCESSING": "En cours",
+      "PAID": "Versé",
+      "FAILED": "Échoué"
+    }
+  },
+  "dispute": {
+    "report": "Signaler un problème",
+    "title": "Signaler un problème",
+    "body": "Expliquez-nous ce qui s'est passé. Le gain du voyageur reste gelé jusqu'à l'examen de notre équipe.",
+    "reason": "Quel est le problème ?",
+    "reasons": {
+      "NOT_DELIVERED": "Non livré",
+      "DAMAGED": "Endommagé",
+      "ITEM_MISSING": "Il manque quelque chose",
+      "LATE": "Très en retard",
+      "OTHER": "Autre chose",
+      "CHARGEBACK": "Contestation bancaire"
+    },
+    "description": "Décrivez le problème",
+    "photos": "Photos (facultatif)",
+    "submit": "Envoyer le signalement",
+    "sent": "Signalement envoyé. Nous revenons vers vous rapidement.",
+    "status": {
+      "OPEN": "Signalé",
+      "UNDER_REVIEW": "En cours d'examen",
+      "RESOLVED": "Résolu"
+    },
+    "resolution": {
+      "FULL_REFUND": "Remboursé intégralement",
+      "PARTIAL_REFUND": "Remboursé en partie ({amount})",
+      "RELEASE_TO_TRAVELLER": "Clôturé en faveur du voyageur"
+    },
+    "panelTitle": "Problème signalé",
+    "teamNote": "Notre équipe : {note}"
+  },
+  "review": {
+    "title": "Comment ça s'est passé ?",
+    "rateTraveller": "Évaluez votre voyageur",
+    "rateSender": "Évaluez l'expéditeur",
+    "comment": "Commentaire (facultatif)",
+    "submit": "Envoyer l'avis",
+    "sent": "Merci pour votre avis.",
+    "yours": "Votre avis",
+    "stars": "{count, plural, one {# étoile} other {# étoiles}}"
+  },
+  "withdraw": {
+    "action": "Je ne peux plus prendre ce colis",
+    "title": "Rendre ce colis",
+    "body": "Nous le proposerons à un autre voyageur. Se retirer affecte votre score de fiabilité : ne le faites que si vous ne pouvez vraiment pas le transporter.",
+    "reason": "Motif",
+    "submit": "Me retirer",
+    "done": "Vous vous êtes retiré de ce colis."
+  },
+  "howItWorks": {
+    "metaTitle": "Comment ça marche",
+    "eyebrow": "Comment ça marche",
+    "title": "Un colis, un voyageur, chaque étape confirmée.",
+    "subtitle": "Mersal s’occupe du prix, de la mise en relation et du paiement. Vous ne rencontrez le voyageur que pour la remise du colis, et un code confirme chaque remise.",
+    "senders": {
+      "title": "Envoyer un colis",
+      "steps": {
+        "quote": {
+          "title": "Obtenez un prix fixe",
+          "body": "Choisissez le trajet, la catégorie, le poids et les dimensions. Le prix vient du tarif publié, et vous voyez chaque ligne avant de payer."
+        },
+        "pay": {
+          "title": "Payez pour lancer la recherche",
+          "body": "Votre paiement est conservé par Mersal, pas par le voyageur. Si personne ne peut prendre votre colis, vous êtes remboursé intégralement."
+        },
+        "match": {
+          "title": "Nous trouvons le voyageur",
+          "body": "Votre colis est proposé à un voyageur vérifié à la fois, choisi selon le trajet, les dates, la place disponible et sa fiabilité. Vous êtes prévenu dès que quelqu’un accepte."
+        },
+        "pickup": {
+          "title": "Remettez-le avec votre code de prise en charge",
+          "body": "Retrouvez le voyageur, vérifiez son nom et donnez-lui votre code à 6 chiffres ou laissez-le scanner le QR code. Votre colis est en route."
+        },
+        "delivery": {
+          "title": "Votre destinataire confirme la livraison",
+          "body": "Votre destinataire reçoit un lien de suivi et un code de livraison. Le colis n’est considéré comme livré qu’une fois ce code saisi par le voyageur."
+        }
+      }
+    },
+    "travellers": {
+      "title": "Voyager avec de la place libre",
+      "steps": {
+        "verify": {
+          "title": "Vérifiez votre identité",
+          "body": "Envoyez une pièce d’identité et un selfie. Notre équipe les examine avant votre premier colis."
+        },
+        "publish": {
+          "title": "Publiez votre trajet",
+          "body": "Trajet, date et la place que vous pouvez offrir : poids, dimensions et nombre de colis."
+        },
+        "offers": {
+          "title": "Acceptez les colis qui vous conviennent",
+          "body": "Les propositions arrivent une par une avec le détail du colis et votre gain. Acceptez ou refusez avant qu’elles n’expirent."
+        },
+        "handover": {
+          "title": "Prise en charge et livraison avec des codes",
+          "body": "Le code de l’expéditeur confirme la prise en charge et celui du destinataire confirme la livraison. Utilisez la messagerie de l’application pour convenir du lieu de rendez-vous."
+        },
+        "paid": {
+          "title": "Soyez payé chaque semaine",
+          "body": "Vos gains sont débloqués {holdHours} heures après la livraison et versés chaque {weekday}."
+        }
+      }
+    },
+    "money": {
+      "title": "Le parcours de l’argent",
+      "subtitle": "Personne n’est payé avant l’arrivée du colis.",
+      "stages": {
+        "paid": {
+          "title": "L’expéditeur paie",
+          "body": "Le prix total est encaissé avant le début de la recherche."
+        },
+        "held": {
+          "title": "Mersal le conserve",
+          "body": "L’argent reste bloqué pendant le voyage du colis."
+        },
+        "delivered": {
+          "title": "La livraison est confirmée",
+          "body": "Le code du destinataire ouvre un délai de {holdHours} heures pour signaler un problème."
+        },
+        "available": {
+          "title": "Le solde du voyageur",
+          "body": "Sans réclamation, les gains deviennent disponibles."
+        },
+        "payout": {
+          "title": "Virement hebdomadaire",
+          "body": "Les soldes disponibles sont virés chaque {weekday}."
+        }
+      }
+    },
+    "safety": {
+      "title": "La sécurité à chaque étape",
+      "items": {
+        "identity": {
+          "title": "Identités vérifiées",
+          "body": "Un membre de notre équipe examine chaque voyageur avant son premier trajet."
+        },
+        "codes": {
+          "title": "Codes de remise à usage unique",
+          "body": "Chaque code ne fonctionne qu’une fois et se bloque après plusieurs essais erronés."
+        },
+        "chat": {
+          "title": "Messagerie privée",
+          "body": "Les numéros de téléphone et adresses e-mail sont masqués dans les messages : les échanges restent sur la plateforme et sont conservés."
+        },
+        "disputes": {
+          "title": "Litiges traités par notre équipe",
+          "body": "Signalez un problème dans les {disputeHours} heures suivant la livraison. Les gains du voyageur restent gelés jusqu’à notre décision."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à envoyer ?",
+      "body": "Obtenez un prix en moins d’une minute. Vous ne payez que si vous décidez de continuer.",
+      "send": "Obtenir un prix",
+      "travel": "Publier un trajet"
+    }
+  },
+  "services": {
+    "metaTitle": "Services",
+    "eyebrow": "Services",
+    "title": "Ce que vous pouvez envoyer, et où.",
+    "subtitle": "Documents, vêtements, cadeaux et objets du quotidien entre la France et l’Afrique du Nord, transportés par des voyageurs vérifiés.",
+    "unavailable": "Les trajets et catégories ne peuvent pas être chargés pour le moment. Réessayez dans un instant.",
+    "routesTitle": "Trajets",
+    "routesBody": "Chaque trajet fonctionne dans les deux sens. De nouvelles villes s’ajoutent à mesure que des voyageurs nous rejoignent.",
+    "bothWays": "dans les deux sens",
+    "cityCount": "{count, plural, one {# ville} other {# villes}}",
+    "categoriesTitle": "Ce que vous pouvez envoyer",
+    "categoriesBody": "Chaque catégorie a son propre coefficient de prix et sa limite de poids.",
+    "maxWeight": "Jusqu’à {kg} kg",
+    "noWeightLimit": "Selon la place du voyageur",
+    "photosRequired": "Photos obligatoires",
+    "paceTitle": "Choisissez votre rythme",
+    "standard": {
+      "title": "Standard",
+      "body": "Dates flexibles, le plus grand choix de voyageurs et le prix le plus bas."
+    },
+    "express": {
+      "title": "Express",
+      "body": "Les voyageurs qui partent le plus tôt sont proposés en premier, avec un supplément."
+    },
+    "extrasTitle": "Options",
+    "from": "à partir de {price}",
+    "extrasNote": "Ajoutez-les lors de la création de l’envoi. Les prix peuvent varier selon le trajet.",
+    "prohibitedTitle": "Objets interdits et réglementés",
+    "prohibitedBody": "Certains objets ne peuvent pas voyager avec Mersal, d’autres demandent des vérifications supplémentaires.",
+    "prohibitedLink": "Voir la liste",
+    "cta": {
+      "title": "Vous savez ce que vous envoyez ?",
+      "body": "Indiquez le trajet et la taille de votre colis pour voir le prix complet.",
+      "action": "Obtenir un prix"
+    }
+  },
+  "help": {
+    "metaTitle": "Aide et FAQ",
+    "eyebrow": "Aide",
+    "title": "Vos questions, nos réponses.",
+    "subtitle": "Des réponses courtes sur l’envoi, le voyage, les paiements et la sécurité.",
+    "topics": "Rubriques",
+    "groups": {
+      "sending": "Envoyer",
+      "travelling": "Voyager",
+      "payments": "Paiements",
+      "safety": "Sécurité et problèmes"
+    },
+    "faq": {
+      "price": {
+        "q": "Comment le prix est-il calculé ?",
+        "a": "Chaque trajet a un tarif publié : un prix par tranche de poids, appliqué au plus élevé entre le poids réel et le poids volumétrique (longueur × largeur × hauteur ÷ un diviseur fixé). La catégorie, la valeur déclarée, la rapidité et les options l’ajustent ensuite. Vous voyez chaque ligne avant de payer."
+      },
+      "noMatch": {
+        "q": "Et si aucun voyageur ne prend mon colis ?",
+        "a": "Votre colis est proposé à des voyageurs adaptés, l’un après l’autre. Si personne n’accepte à temps, nous vous prévenons : vous pouvez réessayer avec de nouvelles dates ou annuler pour un remboursement intégral."
+      },
+      "cancel": {
+        "q": "Puis-je annuler un envoi ?",
+        "a": "Oui, tant que le voyageur n’a pas pris en charge le colis, et votre paiement est remboursé intégralement. Après la prise en charge, utilisez « Signaler un problème » en cas de souci."
+      },
+      "recipient": {
+        "q": "Mon destinataire doit-il créer un compte ?",
+        "a": "Non. Il reçoit un lien de suivi privé et le code de livraison par SMS ou e-mail, et donne le code au voyageur à l’arrivée."
+      },
+      "who": {
+        "q": "Qui peut voyager avec Mersal ?",
+        "a": "Toute personne majeure ayant confirmé son adresse e-mail et son numéro de téléphone. Notre équipe examine votre pièce d’identité et votre selfie avant votre premier trajet."
+      },
+      "choose": {
+        "q": "Dois-je accepter tous les colis ?",
+        "a": "Non. Chaque proposition indique le colis, sa taille et votre gain, et vous pouvez la refuser. Les propositions laissées sans réponse font baisser votre taux de réponse, pris en compte dans la mise en relation."
+      },
+      "check": {
+        "q": "Puis-je vérifier le contenu d’un colis ?",
+        "a": "Oui, et c’est conseillé. Avant de saisir le code de prise en charge, vérifiez que le colis correspond à sa description et à ses photos. Si ce n’est pas le cas, ou s’il contient un objet interdit, ne le prenez pas : retirez-vous du colis dans l’application."
+      },
+      "withdraw": {
+        "q": "Et si mes projets changent ?",
+        "a": "Vous pouvez vous retirer d’un colis tant que vous ne l’avez pas pris en charge ; il est alors proposé à un autre voyageur. Les retraits font baisser votre score de fiabilité, prévenez donc le plus tôt possible."
+      },
+      "when": {
+        "q": "Quand suis-je débité ?",
+        "a": "Lorsque vous confirmez votre envoi, avant que nous cherchions un voyageur. Mersal conserve l’argent et ne le verse au voyageur qu’après la livraison."
+      },
+      "methods": {
+        "q": "Comment puis-je payer ?",
+        "a": "Par carte, via Stripe. Mersal ne voit ni ne conserve jamais votre numéro de carte."
+      },
+      "refund": {
+        "q": "Comment fonctionnent les remboursements ?",
+        "a": "Les remboursements sont versés sur la carte utilisée pour le paiement. Ils apparaissent généralement sous 5 à 10 jours ouvrés, selon votre banque."
+      },
+      "payout": {
+        "q": "Comment les voyageurs reçoivent-ils leurs gains ?",
+        "a": "Ajoutez un compte de versement dans votre portefeuille. Les gains sont débloqués {holdHours} heures après la livraison et envoyés chaque {weekday} en un seul virement. Si un virement échoue, notre équipe le relance une fois vos informations mises à jour."
+      },
+      "problem": {
+        "q": "Il y a eu un problème. Que faire ?",
+        "a": "Ouvrez l’envoi et choisissez « Signaler un problème » dans les {disputeHours} heures suivant la livraison, ou plus tôt si le colis est en retard ou n’est pas arrivé. Les gains du voyageur restent gelés pendant l’examen par notre équipe, et vous voyez tous les deux la décision."
+      },
+      "chat": {
+        "q": "Pourquoi les numéros sont-ils masqués dans la messagerie ?",
+        "a": "Pour protéger les deux parties et garder une trace des échanges en cas de désaccord. Utilisez la messagerie pour convenir d’une heure et d’un lieu ; les codes de remise font le reste."
+      },
+      "codes": {
+        "q": "Comment fonctionnent les codes de remise ?",
+        "a": "L’expéditeur donne le code de prise en charge au voyageur en lui remettant le colis, et le destinataire donne le code de livraison à l’arrivée. Ne communiquez un code qu’au moment de la remise. Chaque code ne fonctionne qu’une fois et se bloque après plusieurs essais erronés."
+      },
+      "data": {
+        "q": "Qui voit mes pièces d’identité ?",
+        "a": "Uniquement notre équipe de vérification. Elles servent à confirmer votre identité et ne sont jamais montrées aux autres utilisateurs."
+      }
+    },
+    "prohibitedTitle": "Objets interdits et réglementés",
+    "prohibitedBody": "Les objets interdits ne peuvent jamais être envoyés. Les objets réglementés doivent être déclarés et peuvent être refusés par le voyageur.",
+    "prohibited": "Interdit",
+    "restricted": "Réglementé",
+    "listUnavailable": "La liste ne peut pas être chargée pour le moment. Réessayez dans un instant.",
+    "contactTitle": "Besoin d’aide pour un envoi ?",
+    "contactBody": "Ouvrez-le depuis votre compte et choisissez « Signaler un problème ». Notre équipe examine chaque signalement.",
+    "contactAction": "Mes envois"
+  },
+  "legal": {
+    "draftNotice": "Version de travail préparée pour la démonstration du produit. Elle n’a pas encore été relue par un juriste et n’a pas de valeur contractuelle. Le texte entre [crochets] reste à compléter.",
+    "contents": "Sommaire",
+    "terms": {
+      "title": "Conditions d’utilisation",
+      "intro": "Ces conditions expliquent le fonctionnement de Mersal et les engagements des expéditeurs, des voyageurs et de Mersal.",
+      "sections": {
+        "service": {
+          "title": "Le service",
+          "body": "Mersal est une plateforme en ligne qui met en relation des personnes souhaitant envoyer un colis (expéditeurs) avec des personnes qui prévoient déjà de voyager sur le même trajet (voyageurs). Mersal n’est pas un transporteur : le voyageur transporte le colis, et Mersal assure la mise en relation, le paiement, le suivi et l’assistance.\n\nMersal est exploité par [dénomination, forme juridique et siège social]."
+        },
+        "accounts": {
+          "title": "Comptes",
+          "body": "Vous devez avoir au moins 18 ans et fournir des informations exactes. Les voyageurs doivent faire vérifier leur identité avant de transporter un colis. Vous êtes responsable de la confidentialité de vos identifiants et de toute action effectuée depuis votre compte."
+        },
+        "parcels": {
+          "title": "Colis",
+          "body": "Les expéditeurs doivent décrire le contenu avec exactitude, en déclarer la valeur et ne jamais envoyer d’objets interdits. Les voyageurs peuvent refuser un colis qui ne correspond pas à sa description ou à ses photos.\n\nExpéditeurs et voyageurs doivent chacun respecter les règles douanières des pays concernés."
+        },
+        "payments": {
+          "title": "Prix et paiement",
+          "body": "L’expéditeur paie le prix total en confirmant l’envoi. Mersal conserve le paiement jusqu’à la confirmation de la livraison avec le code du destinataire. Le prix inclut les frais de service de Mersal.\n\nLes gains du voyageur deviennent disponibles {holdHours} heures après la livraison si aucun problème n’a été signalé, et sont versés chaque semaine sur le compte de versement qu’il a configuré."
+        },
+        "cancellations": {
+          "title": "Annulations",
+          "body": "L’expéditeur peut annuler tant que le colis n’a pas été pris en charge et il est alors remboursé intégralement. Si aucun voyageur n’est trouvé, il peut choisir de nouvelles dates ou annuler pour un remboursement intégral.\n\nLe voyageur peut se retirer d’un colis avant la prise en charge. Les retraits font baisser son score de fiabilité."
+        },
+        "disputes": {
+          "title": "Problèmes et litiges",
+          "body": "L’expéditeur peut signaler un problème dans les {disputeHours} heures suivant la livraison, ou plus tôt si le colis est en retard ou n’a pas été livré. Les gains du voyageur sont gelés pendant l’examen du dossier par Mersal.\n\nMersal peut rembourser l’expéditeur totalement ou partiellement, ou verser les gains au voyageur, et motive sa décision auprès des deux parties."
+        },
+        "liability": {
+          "title": "Couverture et responsabilité",
+          "body": "Les colis sont couverts à hauteur de leur valeur déclarée, dans les limites de la couverture choisie lors du paiement [montants et conditions à définir]. Mersal n’est pas responsable des préjudices indirects ni des objets envoyés en violation des présentes conditions."
+        },
+        "conduct": {
+          "title": "Comportement",
+          "body": "Les utilisateurs se doivent le respect, gardent leurs échanges sur la plateforme et n’utilisent jamais Mersal à des fins illégales. Mersal peut suspendre les comptes qui enfreignent ces règles."
+        },
+        "law": {
+          "title": "Droit applicable",
+          "body": "Les présentes conditions sont régies par [droit applicable]. Les litiges relèvent de [juridictions compétentes], sans préjudice des règles protectrices des consommateurs."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "intro": "Les données personnelles que Mersal collecte, pourquoi, et vos droits sur ces données au titre du RGPD.",
+      "sections": {
+        "controller": {
+          "title": "Responsable du traitement",
+          "body": "Le responsable du traitement est [dénomination et siège social]. Pour toute question sur vos données, écrivez à [adresse e-mail de contact]."
+        },
+        "data": {
+          "title": "Données collectées",
+          "body": "Données de compte : nom, adresse e-mail, numéro de téléphone et langue. Pour les voyageurs : pièce d’identité et selfie. Données d’envoi : trajet, description et photos du colis, nom et téléphone du destinataire. Messages échangés dans la messagerie d’un envoi. Statut des paiements et informations de versement. Données techniques comme l’adresse IP et le type d’appareil, pour la sécurité.\n\nLes numéros de carte sont traités par notre prestataire de paiement, Stripe, et ne sont jamais conservés par Mersal."
+        },
+        "purposes": {
+          "title": "Finalités",
+          "body": "Fournir le service (devis, mise en relation, paiements et livraison), vérifier les identités et prévenir la fraude, traiter les litiges, envoyer les messages de service et respecter nos obligations légales et comptables.\n\nCes traitements reposent sur le contrat qui nous lie, sur nos obligations légales et sur notre intérêt légitime à sécuriser la plateforme. Nous ne vendons pas de données personnelles et ne les utilisons pas pour de la publicité de tiers."
+        },
+        "sharing": {
+          "title": "Destinataires",
+          "body": "L’autre partie d’un envoi ne voit que ce qui est nécessaire pour le réaliser, comme le prénom, le statut de vérification et la note. Nos sous-traitants agissent sur nos instructions : hébergement, paiements (Stripe), e-mails et SMS [et prestataire de vérification d’identité]."
+        },
+        "retention": {
+          "title": "Durées de conservation",
+          "body": "Les données de compte sont conservées tant que le compte est ouvert. Les pièces d’identité sont supprimées [durée] après la décision de vérification. Les données de paiement et comptables sont conservées pendant la durée imposée par la loi. Les messages sont conservés [durée] après la livraison pour permettre le traitement des litiges."
+        },
+        "rights": {
+          "title": "Vos droits",
+          "body": "Vous pouvez accéder à vos données, les rectifier, les exporter ou les effacer, vous opposer à certains traitements ou les limiter, et retirer votre consentement à tout moment. Certaines données doivent être conservées pour des raisons légales même après la fermeture du compte.\n\nVous pouvez aussi introduire une réclamation auprès de votre autorité de protection des données (la CNIL en France)."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "body": "Mersal n’utilise que les cookies nécessaires au service : cookies de session pour rester connecté et préférences comme la langue. Aucun cookie publicitaire ou de traçage."
+        },
+        "security": {
+          "title": "Sécurité",
+          "body": "Les mots de passe sont stockés sous forme de hachages salés, les sessions utilisent des jetons de courte durée et les pièces d’identité ne sont accessibles qu’à l’équipe de vérification. Les actions sensibles sont consignées dans un journal d’audit."
+        }
+      }
+    }
+  },
+  "errorPage": {
+    "notFoundTitle": "Page introuvable",
+    "notFoundBody": "La page que vous cherchez n’existe pas ou a été déplacée.",
+    "errorTitle": "Une erreur est survenue",
+    "errorBody": "Une erreur inattendue a empêché le chargement de cette page. Réessayez, et si le problème persiste, revenez dans quelques minutes.",
+    "retry": "Réessayer",
+    "home": "Retour à l’accueil",
+    "help": "Consulter l’aide",
+    "reference": "Référence : {digest}"
+  }
+}

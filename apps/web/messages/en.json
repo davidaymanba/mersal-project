@@ -1,0 +1,1544 @@
+{
+  "meta": {
+    "title": "Mersal — send parcels with verified travellers",
+    "description": "Mersal matches your parcel with a verified traveller already making the trip. Fixed price upfront, payment protected until delivery."
+  },
+  "nav": {
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "help": "Help",
+    "login": "Log in",
+    "signup": "Sign up",
+    "menu": "Menu",
+    "services": "Services",
+    "account": "My account",
+    "close": "Close menu",
+    "main": "Main",
+    "skipToContent": "Skip to content"
+  },
+  "locale": {
+    "label": "Language",
+    "en": "English",
+    "fr": "Français",
+    "ar": "العربية"
+  },
+  "home": {
+    "eyebrow": "France ⇄ Algeria · Morocco · Tunisia",
+    "title": "Your parcel travels with someone already going.",
+    "subtitle": "Mersal matches your parcel with a verified traveller on the same route. You see the full price before you pay, and your payment stays protected until delivery is confirmed.",
+    "ctaSend": "Get a price",
+    "ctaTravel": "Travel and earn",
+    "stepsTitle": "How it works",
+    "steps": {
+      "describe": {
+        "title": "Describe your parcel",
+        "body": "Route, size, weight and contents. The full price is shown before you pay."
+      },
+      "match": {
+        "title": "We find a traveller",
+        "body": "Our matching engine proposes your parcel to verified travellers on your route. No searching on your side."
+      },
+      "handover": {
+        "title": "Hand over with a code",
+        "body": "Pickup and delivery are confirmed with one-time codes, and you can follow every step."
+      }
+    },
+    "trustTitle": "Built on trust",
+    "trust": {
+      "verified": {
+        "title": "Verified travellers",
+        "body": "Every traveller passes an identity check before carrying a parcel."
+      },
+      "protected": {
+        "title": "Protected payment",
+        "body": "Travellers are paid only after delivery is confirmed."
+      },
+      "rules": {
+        "title": "Clear rules",
+        "body": "A published list of prohibited items, and support if something goes wrong."
+      }
+    },
+    "preview": {
+      "label": "Tracking preview",
+      "route": "Paris → Algiers",
+      "status": "In transit",
+      "paid": "Paid · €24.50",
+      "matched": "Traveller matched",
+      "pickedUp": "Picked up · code verified",
+      "delivery": "Delivery with code",
+      "traveller": "Verified traveller",
+      "rating": "4.9 · 31 deliveries"
+    },
+    "travellerTitle": "Already travelling?",
+    "travellerBody": "Publish your trip, accept the parcels that suit you, and receive your earnings every week.",
+    "stepsMore": "See the full journey"
+  },
+  "footer": {
+    "rights": "© {year} Mersal. All rights reserved.",
+    "brand": "Brand guide",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "tagline": "Your parcel travels with someone already going. Between France and North Africa, with verified travellers.",
+    "product": "Product",
+    "support": "Support",
+    "company": "Legal",
+    "prohibited": "Prohibited items",
+    "becomeTraveller": "Become a traveller"
+  },
+  "brandGuide": {
+    "metaTitle": "Brand guide",
+    "eyebrow": "Brand guide",
+    "title": "Mersal — the messenger",
+    "intro": "Mersal (مرسال) is the messenger who carries something to the person it belongs to. The identity is calm and trustworthy, with the warmth of the Mediterranean that connects our routes.",
+    "logoTitle": "Logo",
+    "logoBody": "A lowercase m drawn as a two-leg route: origin, hand-off to a traveller, arrival. The terracotta point marks the destination.",
+    "logoFull": "Primary lockup",
+    "logoArabic": "Arabic lockup",
+    "logoMark": "Mark",
+    "logoInverse": "On dark",
+    "colorTitle": "Colour",
+    "colorBody": "White-led layouts with Deep Sea text and teal actions. Terracotta is an accent for icons and illustration — never for long text.",
+    "contrastOnWhite": "on white",
+    "contrastInkOn": "ink text on it",
+    "semanticTitle": "Status colours",
+    "typeTitle": "Typography",
+    "typeBody": "Readex Pro for headings in both Latin and Arabic scripts; IBM Plex Sans and IBM Plex Sans Arabic for interface text.",
+    "typeDisplay": "Display · Readex Pro",
+    "typeBodyLabel": "Body · IBM Plex Sans / Arabic",
+    "typeSample": "Your parcel travels with someone already going.",
+    "voiceTitle": "Voice",
+    "voiceBody": "Clear, warm, reassuring. Short sentences. We explain what happens next and never compare ourselves with others.",
+    "voiceDo": "Do",
+    "voiceDont": "Avoid",
+    "voiceDoItems": [
+      "Your traveller has confirmed pickup.",
+      "You will be charged €24.50. Nothing else.",
+      "We hold the payment until delivery is confirmed."
+    ],
+    "voiceDontItems": [
+      "Cheapest shipping ever!!!",
+      "30% cheaper than courier X",
+      "Hurry, offer ends soon"
+    ],
+    "themeTitle": "Partner theme (white-label)",
+    "themeBody": "Every colour, radius and name comes from one brand configuration. Switch themes to preview the platform in a partner's identity.",
+    "themeCurrent": "Active theme",
+    "colors": {
+      "ink": "Headings, body text, dark surfaces",
+      "primary": "Primary actions, links, focus",
+      "tint": "Subtle fills, selected states, badges",
+      "accent": "Icons and illustration accents only",
+      "accentStrong": "Accent text on light backgrounds",
+      "sand": "Warm section backgrounds",
+      "surface": "Cards and page surface",
+      "success": "Delivered, paid, approved",
+      "warning": "Awaiting action, expiring offers",
+      "danger": "Errors, disputes, rejections",
+      "info": "Neutral system information"
+    }
+  },
+  "common": {
+    "loading": "Loading…",
+    "save": "Save",
+    "saved": "Saved",
+    "cancel": "Cancel",
+    "back": "Back",
+    "continue": "Continue",
+    "close": "Close",
+    "search": "Search",
+    "all": "All",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {page} of {pages}",
+    "results": "{count, plural, =0 {No results} one {# result} other {# results}}",
+    "empty": "Nothing here yet.",
+    "optional": "optional",
+    "view": "View",
+    "never": "Never",
+    "logout": "Log out",
+    "demoCode": "Demo mode — your code is {code}"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "We could not reach the server. Check your connection.",
+    "email_taken": "An account already exists with this email.",
+    "phone_taken": "This phone number is used by another account.",
+    "invalid_credentials": "Email or password is incorrect.",
+    "account_suspended": "This account is suspended. Contact support.",
+    "invalid_code": "The code is invalid or has expired.",
+    "too_many_attempts": "Too many attempts. Request a new code.",
+    "code_recently_sent": "A code was just sent. Please wait a moment before asking again.",
+    "email_not_verified": "Confirm your email first.",
+    "phone_not_verified": "Confirm your phone number first.",
+    "verification_pending": "Your identity check is already under review.",
+    "already_verified": "This has already been reviewed.",
+    "not_found": "We could not find what you were looking for.",
+    "forbidden": "You do not have access to this.",
+    "unauthorized": "Please log in again.",
+    "invalid_file": "This file can't be used. Use JPG, PNG, WEBP or PDF under 8 MB.",
+    "wrong_password": "Your current password is incorrect.",
+    "validation_failed": "Some fields need your attention.",
+    "field": {
+      "required": "Required",
+      "invalid": "Invalid value",
+      "tooShort": "Must be at least {min} characters",
+      "tooLong": "Must be at most {max} characters",
+      "email": "Enter a valid email address",
+      "phone": "Use international format, e.g. +33612345678",
+      "code": "Enter the 6-digit code"
+    },
+    "invalid_status": "This action isn't possible at the shipment's current stage.",
+    "route_not_served": "We don't serve this route yet.",
+    "no_active_tariff": "Prices for this route are not available yet.",
+    "too_heavy": "This parcel is heavier than the route allows.",
+    "category_weight_limit": "This category has a lower weight limit. Reduce the weight or choose another category.",
+    "unknown_option": "One of the selected options is no longer available.",
+    "quote_expired": "This price has expired. Please calculate a new one.",
+    "quote_used": "This price was already used for a shipment.",
+    "invalid_dates": "Choose dates from today, within a 60-day window.",
+    "photos_required": "Add at least one photo of the contents for this category.",
+    "not_cancellable": "This shipment can no longer be cancelled from your account.",
+    "already_exists": "An item with the same identifier already exists.",
+    "traveller_not_verified": "Verify your identity before travelling with parcels.",
+    "trip_has_shipments": "This trip already carries parcels. Contact support to cancel it.",
+    "trip_full": "This trip no longer has room for the parcel.",
+    "offer_expired": "This proposal has expired.",
+    "offer_not_pending": "This proposal is no longer open.",
+    "payment_provider_error": "The payment provider is unavailable. Please try again in a moment.",
+    "payment_not_pending": "This payment is no longer pending.",
+    "payout_account_required": "Add your bank details to receive payouts.",
+    "nothing_to_refund": "There is nothing left to refund on this payment.",
+    "dispute_window_closed": "Problems can be reported until the complaint window closes.",
+    "dispute_exists": "A problem is already being reviewed for this shipment.",
+    "review_exists": "You already reviewed this delivery.",
+    "review_not_allowed": "You can leave a review once the parcel is delivered.",
+    "too_many_requests": "Too many attempts. Please wait a minute and try again.",
+    "internal_error": "Something went wrong on our side. Please try again in a moment."
+  },
+  "auth": {
+    "panelTitle": "Send with people already going.",
+    "panelBody": "Verified travellers, a fixed price before you pay, and a payment that stays protected until delivery.",
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Log in to follow your parcels and trips.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Log in",
+      "forgot": "Forgot password?",
+      "noAccount": "New to Mersal?",
+      "signupLink": "Create an account"
+    },
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "One account to send parcels and, once verified, to carry them.",
+      "travellerSubtitle": "Create your account, then verify your identity to start carrying parcels.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "passwordHint": "At least 8 characters.",
+      "acceptTerms": "I accept the <terms>terms of use</terms> and the <privacy>privacy policy</privacy>.",
+      "submit": "Create account",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Log in"
+    },
+    "verifyEmail": {
+      "title": "Check your email",
+      "body": "We sent a 6-digit code to {email}.",
+      "code": "Verification code",
+      "submit": "Confirm email",
+      "resend": "Send a new code",
+      "resent": "A new code is on its way.",
+      "done": "Email confirmed.",
+      "later": "I'll do it later"
+    },
+    "forgot": {
+      "title": "Reset your password",
+      "body": "Enter your account email and we'll send you a code.",
+      "email": "Email",
+      "submit": "Send code",
+      "sent": "If an account exists for this email, a code is on its way.",
+      "haveCode": "I have a code"
+    },
+    "reset": {
+      "title": "Choose a new password",
+      "body": "Enter the code from your email and a new password.",
+      "email": "Email",
+      "code": "Code",
+      "password": "New password",
+      "submit": "Update password",
+      "done": "Password updated. You can log in now."
+    }
+  },
+  "app": {
+    "nav": {
+      "overview": "Overview",
+      "settings": "Settings",
+      "verification": "Traveller verification",
+      "admin": "Admin",
+      "sectionAccount": "Account",
+      "sectionTravel": "Travelling",
+      "trips": "My trips",
+      "offers": "Proposals",
+      "wallet": "Wallet"
+    },
+    "travellerStatus": {
+      "NOT_STARTED": "Not verified",
+      "PENDING": "Under review",
+      "APPROVED": "Verified traveller",
+      "REJECTED": "Needs new documents"
+    },
+    "overview": {
+      "greeting": "Hello {name}",
+      "subtitle": "Here is where your account stands.",
+      "checklistTitle": "Get your account ready",
+      "checklistDone": "Your account is ready.",
+      "steps": {
+        "email": {
+          "title": "Confirm your email",
+          "body": "We use it for receipts and important updates.",
+          "action": "Confirm"
+        },
+        "phone": {
+          "title": "Confirm your phone number",
+          "body": "Travellers and our team can reach you during a delivery.",
+          "action": "Add number"
+        },
+        "traveller": {
+          "title": "Verify your identity to travel",
+          "body": "Needed only if you want to carry parcels.",
+          "action": "Start"
+        }
+      },
+      "sendTitle": "Send a parcel",
+      "sendBody": "Get a fixed price, pay, and we find a verified traveller on your route.",
+      "sendAction": "Get a price",
+      "travelTitle": "Carry parcels on your trips",
+      "travelBody": "Publish your journey and receive proposals that match your route and space.",
+      "travelAction": "Become a traveller"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": {
+      "title": "Profile",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "language": "Language",
+      "save": "Save profile"
+    },
+    "phone": {
+      "title": "Phone number",
+      "body": "We send a 6-digit code by SMS to confirm it.",
+      "number": "Phone number",
+      "send": "Send code",
+      "code": "Code",
+      "verify": "Confirm number",
+      "verified": "Confirmed",
+      "change": "Change number"
+    },
+    "password": {
+      "title": "Password",
+      "current": "Current password",
+      "new": "New password",
+      "submit": "Change password",
+      "done": "Password changed. Other sessions were signed out."
+    }
+  },
+  "verification": {
+    "title": "Traveller verification",
+    "subtitle": "Every traveller is verified before carrying a parcel. It usually takes less than a day.",
+    "privacy": "Your documents are only visible to our verification team and are never shared with senders.",
+    "requirementsTitle": "Before you start",
+    "requirements": {
+      "email": "Email confirmed",
+      "phone": "Phone number confirmed"
+    },
+    "status": {
+      "PENDING": {
+        "title": "Under review",
+        "body": "We received your documents on {date}. We'll notify you as soon as they are reviewed."
+      },
+      "APPROVED": {
+        "title": "You are verified",
+        "body": "You can publish trips and receive parcel proposals."
+      },
+      "REJECTED": {
+        "title": "We need new documents",
+        "body": "Reason given by our team: {reason}"
+      }
+    },
+    "form": {
+      "title": "Identity document",
+      "documentType": "Document type",
+      "documentTypes": {
+        "PASSPORT": "Passport",
+        "NATIONAL_ID": "National ID card",
+        "RESIDENCE_PERMIT": "Residence permit",
+        "DRIVING_LICENSE": "Driving licence"
+      },
+      "country": "Issuing country",
+      "front": "Front of the document",
+      "back": "Back of the document",
+      "selfie": "Selfie",
+      "selfieHint": "A clear photo of your face, without glasses or hat.",
+      "fileHint": "JPG, PNG, WEBP or PDF · up to 8 MB",
+      "choose": "Choose a file",
+      "replace": "Replace",
+      "submit": "Send for review",
+      "submitted": "Documents sent. We'll review them shortly."
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "empty": "You're all caught up.",
+    "markAll": "Mark all as read",
+    "types": {
+      "verification": {
+        "approved": "Your identity check was approved. You can now publish trips.",
+        "rejected": "Your identity check needs new documents: {reason}"
+      },
+      "admin": {
+        "verificationSubmitted": "New identity check submitted by {name}",
+        "noMatch": "Parcel {reference} has no traveller.",
+        "payoutFailed": "A payout failed: {reason}",
+        "chargeback": "A card payment was disputed by the bank.",
+        "disputeOpened": "New problem reported on {reference}."
+      },
+      "offer": {
+        "received": "A parcel matching your trip is waiting for your answer ({reference}).",
+        "expired": "A proposal expired before you answered."
+      },
+      "shipment": {
+        "matched": "A verified traveller accepted your parcel {reference}.",
+        "noMatch": "We haven't found a traveller for {reference} yet.",
+        "refunded": "Parcel {reference} was cancelled and refunded.",
+        "cancelled": "Parcel {reference} was cancelled; the space on your trip is free again.",
+        "pickedUp": "Your parcel {reference} was picked up by the traveller.",
+        "inTransit": "Your parcel {reference} is on its way.",
+        "delivered": "Your parcel {reference} was delivered.",
+        "withdrawn": "The traveller could no longer take {reference}. We're finding another traveller."
+      },
+      "payment": {
+        "succeeded": "Payment received for {reference}. We're looking for a traveller."
+      },
+      "message": {
+        "received": "New message about {reference}."
+      },
+      "wallet": {
+        "earningHeld": "Delivery confirmed for {reference}. Your earning is held during the complaint window.",
+        "released": "Your earning for {reference} is now available for the next payout."
+      },
+      "payout": {
+        "paid": "Your weekly payout was sent.",
+        "failed": "Your payout could not be sent. Check your bank details."
+      },
+      "dispute": {
+        "opened": "The sender reported a problem with {reference}. Our team will review it.",
+        "resolved": "The problem reported on {reference} has been resolved."
+      }
+    }
+  },
+  "admin": {
+    "title": "Admin",
+    "nav": {
+      "overview": "Overview",
+      "users": "Users",
+      "verifications": "Verifications",
+      "backToApp": "Back to my account",
+      "sectionPeople": "People",
+      "sectionOperations": "Operations",
+      "shipments": "Shipments",
+      "sectionConfig": "Configuration",
+      "pricing": "Pricing",
+      "catalog": "Routes & catalogue",
+      "matching": "Matching",
+      "payments": "Payments",
+      "payouts": "Payouts",
+      "disputes": "Disputes",
+      "reports": "Reports",
+      "settings": "Settings",
+      "audit": "Audit log",
+      "sectionInsights": "Insights"
+    },
+    "overview": {
+      "title": "Overview",
+      "users": "Users",
+      "travellers": "Verified travellers",
+      "pendingVerifications": "Verifications to review",
+      "suspended": "Suspended accounts",
+      "review": "Review",
+      "gmv": "Paid volume (net)",
+      "commission": "Commission earned",
+      "refunds": "Refunded",
+      "matchRate": "Matched after payment",
+      "timeToMatch": "Avg. time to match",
+      "hours": "{value} h",
+      "activeTrips": "Active trips",
+      "openDisputes": "Open disputes",
+      "heldFunds": "Held for travellers",
+      "availableToPay": "Due at next payout",
+      "noMatch": "Parcels without traveller",
+      "activity": "Activity, last 30 days",
+      "series": {
+        "created": "Created",
+        "paid": "Paid",
+        "delivered": "Delivered"
+      },
+      "byStatus": "Shipments by status",
+      "byCorridor": "Paid volume by route",
+      "showTable": "Show as table",
+      "date": "Date",
+      "count": "Shipments",
+      "route": "Route",
+      "volume": "Volume"
+    },
+    "userStatus": {
+      "ACTIVE": "Active",
+      "SUSPENDED": "Suspended"
+    },
+    "users": {
+      "title": "Users",
+      "searchPlaceholder": "Name, email or phone",
+      "status": "Account",
+      "traveller": "Traveller",
+      "columns": {
+        "name": "Name",
+        "contact": "Contact",
+        "traveller": "Traveller",
+        "status": "Account",
+        "joined": "Joined"
+      },
+      "detail": {
+        "counts": {
+          "shipmentsSent": "Parcels sent",
+          "shipmentsCarried": "Parcels carried",
+          "trips": "Trips",
+          "disputesOpened": "Disputes opened"
+        },
+        "lastLogin": "Last login",
+        "joined": "Joined",
+        "suspend": "Suspend account",
+        "suspendReason": "Reason (kept in the audit log)",
+        "reactivate": "Reactivate account",
+        "verifications": "Identity checks",
+        "auditTrail": "Activity"
+      }
+    },
+    "verifications": {
+      "title": "Identity verifications",
+      "empty": "No verifications in this list.",
+      "columns": {
+        "user": "User",
+        "document": "Document",
+        "submitted": "Submitted",
+        "status": "Status"
+      },
+      "status": {
+        "PENDING": "Pending",
+        "APPROVED": "Approved",
+        "REJECTED": "Rejected"
+      },
+      "detail": {
+        "documentFront": "Document — front",
+        "documentBack": "Document — back",
+        "selfie": "Selfie",
+        "noBack": "Not provided",
+        "approve": "Approve",
+        "reject": "Reject",
+        "rejectReason": "Reason shown to the user",
+        "rejectPlaceholder": "e.g. The document photo is blurry — please upload a sharper picture.",
+        "reviewed": "Reviewed by {name} on {date}",
+        "approved": "Verification approved.",
+        "rejected": "Verification rejected."
+      }
+    },
+    "shipments": {
+      "title": "Shipments",
+      "searchPlaceholder": "Reference, sender email or recipient",
+      "status": "Status",
+      "columns": {
+        "reference": "Reference",
+        "route": "Route",
+        "sender": "Sender",
+        "traveller": "Traveller",
+        "status": "Status",
+        "price": "Price",
+        "created": "Created"
+      },
+      "detail": {
+        "money": "Money",
+        "price": "Paid by sender",
+        "commission": "Platform commission",
+        "earning": "Traveller earning",
+        "tariff": "Tariff version",
+        "sender": "Sender",
+        "traveller": "Traveller",
+        "none": "Not assigned",
+        "codes": "Hand-over codes",
+        "pickupCode": "Pickup",
+        "deliveryCode": "Delivery",
+        "resetAttempts": "Reset code attempts",
+        "attemptsReset": "Code attempts reset.",
+        "payments": "Payments",
+        "cancelRefund": "Cancel and refund",
+        "cancelReason": "Reason for cancelling",
+        "cancelled": "Shipment cancelled and refunded.",
+        "conversation": "Conversation"
+      }
+    },
+    "pricing": {
+      "title": "Pricing",
+      "subtitle": "Tariffs are versioned per route. Edit a draft, test it with the simulator, then activate it. Existing quotes keep the version they were priced with.",
+      "version": "Version {version}",
+      "status": {
+        "DRAFT": "Draft",
+        "ACTIVE": "Active",
+        "ARCHIVED": "Archived"
+      },
+      "newDraft": "New draft from this version",
+      "open": "Open",
+      "activate": "Activate this version",
+      "activateConfirm": "Activate this tariff? New quotes on this route will use it immediately.",
+      "activated": "Tariff activated.",
+      "saveDraft": "Save draft",
+      "saved": "Draft saved.",
+      "draftCreated": "Draft created.",
+      "readOnly": "Active and archived versions are read-only. Create a draft to change prices.",
+      "notes": "Notes",
+      "noTariff": "No tariff yet",
+      "editor": {
+        "general": "General",
+        "minimumPrice": "Minimum price",
+        "commission": "Platform commission (%)",
+        "roundTo": "Round to",
+        "volumetricDivisor": "Volumetric divisor (cm³/kg)",
+        "maxWeight": "Maximum weight (kg)",
+        "brackets": "Weight brackets",
+        "upTo": "Up to (kg)",
+        "price": "Price",
+        "addBracket": "Add bracket",
+        "extraPerKg": "Each extra kg above the last bracket",
+        "categoryMultipliers": "Category multipliers",
+        "declaredValue": "Declared value",
+        "freeUpTo": "Covered free up to",
+        "feePercent": "Fee above that (%)",
+        "urgency": "Speed multipliers",
+        "options": "Paid options",
+        "simulator": "Simulator",
+        "simulatorBody": "Prices a sample parcel with the rules on screen, before saving.",
+        "run": "Simulate",
+        "commissionLine": "Commission",
+        "earningLine": "Traveller earning"
+      }
+    },
+    "catalog": {
+      "title": "Routes & catalogue",
+      "tabs": {
+        "corridors": "Routes",
+        "cities": "Cities",
+        "categories": "Categories",
+        "restricted": "Restricted items"
+      },
+      "active": "Active",
+      "inactive": "Inactive",
+      "enable": "Enable",
+      "disable": "Disable",
+      "add": "Add",
+      "added": "Added.",
+      "updated": "Updated.",
+      "nameEn": "Name (English)",
+      "nameFr": "Name (French)",
+      "nameAr": "Name (Arabic)",
+      "country": "Country",
+      "origin": "From country",
+      "destination": "To country",
+      "currency": "Currency",
+      "tariff": "Tariff",
+      "corridorHint": "New routes start inactive. Create and activate a tariff, then enable the route.",
+      "code": "Code",
+      "requiresPhotos": "Photos required",
+      "maxWeight": "Max weight (kg)",
+      "level": "Level"
+    },
+    "matching": {
+      "title": "Matching rules",
+      "subtitle": "How parcels are proposed to travellers. Changes apply to the next matching run.",
+      "offerTtl": "Time to answer a proposal (minutes)",
+      "maxAttempts": "Proposals before a parcel is marked “no traveller”",
+      "tolerance": "Accept trips up to N days after the window",
+      "minReliability": "Minimum traveller reliability (0–1)",
+      "weights": "Scoring weights",
+      "weightsHint": "Relative importance of each signal. Express parcels count departure date twice.",
+      "weight": {
+        "reliability": "Reliability",
+        "dateProximity": "Earliest departure",
+        "capacityFit": "Space fit",
+        "rating": "Rating",
+        "responseRate": "Response rate",
+        "originMatch": "Same departure city"
+      },
+      "save": "Save rules",
+      "saved": "Matching rules saved.",
+      "log": "Matching log",
+      "noRuns": "Matching has not run for this parcel yet.",
+      "run": "Run {trigger} · {result}",
+      "candidates": "Candidates",
+      "eligible": "Eligible",
+      "score": "Score",
+      "reason": {
+        "own_shipment": "Sender's own trip",
+        "traveller_not_verified": "Traveller not verified",
+        "traveller_suspended": "Traveller suspended",
+        "low_reliability": "Reliability too low",
+        "already_offered": "Already proposed",
+        "destination_mismatch": "Other destination",
+        "date_out_of_window": "Outside dates",
+        "insufficient_capacity": "Not enough space",
+        "max_items_reached": "Parcel limit reached",
+        "too_large": "Too large",
+        "category_not_accepted": "Category not accepted"
+      },
+      "offers": "Proposals",
+      "rerun": "Run matching now",
+      "rerunDone": "Matching run: {result}",
+      "propose": "Propose to a trip",
+      "proposeAction": "Propose",
+      "proposed": "Proposal sent to the traveller.",
+      "noTrips": "No upcoming trips on this route."
+    },
+    "payments": {
+      "title": "Payments",
+      "status": {
+        "REQUIRES_PAYMENT": "Awaiting payment",
+        "PROCESSING": "Processing",
+        "SUCCEEDED": "Paid",
+        "FAILED": "Failed",
+        "REFUNDED": "Refunded",
+        "PARTIALLY_REFUNDED": "Partly refunded"
+      },
+      "columns": {
+        "shipment": "Shipment",
+        "payer": "Payer",
+        "amount": "Amount",
+        "refunded": "Refunded",
+        "status": "Status",
+        "date": "Date",
+        "provider": "Provider"
+      },
+      "refund": "Refund",
+      "refundAmount": "Amount to refund (€)",
+      "refundReason": "Reason",
+      "refunded": "Refund issued."
+    },
+    "payouts": {
+      "title": "Payouts",
+      "subtitle": "Travellers are paid once a week for earnings past the complaint window.",
+      "available": "Ready for the next payout",
+      "run": "Run payouts now",
+      "ran": "Payouts: {paid} paid, {failed} failed, {skipped} waiting for bank details.",
+      "release": "Release due holds",
+      "released": "{count, plural, =0 {Nothing to release} one {# earning released} other {# earnings released}}",
+      "retry": "Retry",
+      "columns": {
+        "traveller": "Traveller",
+        "account": "Account",
+        "amount": "Amount",
+        "status": "Status",
+        "date": "Date"
+      }
+    },
+    "disputes": {
+      "title": "Disputes",
+      "empty": "No disputes in this list.",
+      "columns": {
+        "shipment": "Shipment",
+        "reason": "Reason",
+        "openedBy": "Reported by",
+        "amount": "At stake",
+        "status": "Status",
+        "date": "Reported"
+      },
+      "detail": {
+        "description": "Sender's description",
+        "evidence": "Evidence",
+        "blocked": "Frozen traveller earning",
+        "refundable": "Refundable to sender",
+        "startReview": "Start review",
+        "resolve": "Resolve",
+        "resolution": "Decision",
+        "refundAmount": "Refund amount (€)",
+        "note": "Decision note (shown to both parties)",
+        "resolved": "Dispute resolved.",
+        "sender": "Sender",
+        "traveller": "Traveller",
+        "reliability": "Reliability {value}",
+        "conversation": "Conversation",
+        "system": "Automatic (bank)"
+      }
+    },
+    "reports": {
+      "title": "Reports",
+      "subtitle": "Export CSV files for finance and operations. Files open in Excel, Numbers and Google Sheets.",
+      "from": "From",
+      "to": "To",
+      "download": "Download CSV",
+      "types": {
+        "shipments": {
+          "title": "Shipments",
+          "body": "Every shipment with route, price, commission, traveller earning and key dates."
+        },
+        "payments": {
+          "title": "Payments",
+          "body": "Sender payments and refunds by provider."
+        },
+        "payouts": {
+          "title": "Payouts",
+          "body": "Weekly transfers to travellers, including failures."
+        }
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Platform rules. Changes apply immediately and are recorded in the audit log.",
+      "save": "Save settings",
+      "saved": "Settings saved.",
+      "demoMode": "Demo mode is on: shorter timers are used so the full flow can be shown live.",
+      "provider": "Payment provider: {provider}",
+      "fields": {
+        "walletHoldHours": "Hold after delivery (hours)",
+        "walletDemoHoldMinutes": "Hold in demo mode (minutes)",
+        "payoutsWeekday": "Weekly payout day",
+        "matchingDemoOfferTtlMinutes": "Proposal time in demo mode (minutes)",
+        "quotesTtlMinutes": "Price validity (minutes)",
+        "disputesWindowHours": "Complaint window (hours)"
+      }
+    },
+    "audit": {
+      "title": "Audit log",
+      "subtitle": "Every sensitive action, who did it and when.",
+      "filter": "Filter by action",
+      "columns": {
+        "date": "Date",
+        "actor": "Actor",
+        "action": "Action",
+        "entity": "Record"
+      },
+      "system": "System"
+    }
+  },
+  "shipmentStatus": {
+    "DRAFT": "Draft",
+    "QUOTED": "Awaiting payment",
+    "PAID": "Paid",
+    "MATCHING": "Finding a traveller",
+    "MATCHED": "Traveller assigned",
+    "PICKED_UP": "Picked up",
+    "IN_TRANSIT": "In transit",
+    "DELIVERED": "Delivered",
+    "COMPLETED": "Completed",
+    "NO_MATCH": "No traveller yet",
+    "CANCELLED": "Cancelled",
+    "DISPUTED": "In dispute",
+    "REFUNDED": "Refunded"
+  },
+  "pricing": {
+    "metaTitle": "Pricing",
+    "eyebrow": "Pricing",
+    "title": "Know your price before you pay",
+    "subtitle": "Prices depend on the route, the size and weight of your parcel and the options you choose. What you see is what you pay.",
+    "form": {
+      "from": "From",
+      "to": "To",
+      "chooseCity": "Choose a city",
+      "noRoutes": "No routes from this city yet",
+      "category": "What are you sending?",
+      "weight": "Weight (kg)",
+      "dimensions": "Size (cm)",
+      "length": "Length",
+      "width": "Width",
+      "height": "Height",
+      "declaredValue": "Declared value (€)",
+      "declaredValueHint": "Value of the contents. Up to €100 is covered at no extra cost.",
+      "urgency": "Delivery speed",
+      "urgencyOptions": {
+        "STANDARD": {
+          "title": "Standard",
+          "body": "Matched with the next suitable traveller"
+        },
+        "EXPRESS": {
+          "title": "Express",
+          "body": "Priority matching with the earliest trips"
+        }
+      },
+      "options": "Options",
+      "submit": "Calculate price",
+      "recalculate": "Update price"
+    },
+    "result": {
+      "title": "Your price",
+      "validFor": "Price held for {minutes} minutes",
+      "volumetric": "Priced on volumetric weight: {kg} kg",
+      "cta": "Send this parcel",
+      "ctaSignedOut": "Create an account to send",
+      "placeholder": "Fill in the parcel details to see your price.",
+      "lines": {
+        "base": "Transport ({kg} kg)",
+        "category": "Category adjustment",
+        "urgency": "Express",
+        "declaredValue": "Declared value cover",
+        "minimum": "Minimum price adjustment",
+        "rounding": "Rounding"
+      }
+    },
+    "restrictedTitle": "What we can't carry",
+    "restrictedBody": "Travellers carry parcels in their luggage, so some items are prohibited and others are restricted by customs rules.",
+    "prohibited": "Prohibited",
+    "restricted": "Restricted"
+  },
+  "shipments": {
+    "title": "Shipments",
+    "newAction": "Send a parcel",
+    "tabs": {
+      "sending": "Sending",
+      "carrying": "Carrying"
+    },
+    "empty": "You haven't sent any parcel yet.",
+    "emptyCarrying": "Parcels you carry will appear here.",
+    "columns": {
+      "reference": "Reference",
+      "route": "Route",
+      "status": "Status",
+      "price": "Price",
+      "dates": "Dates"
+    },
+    "new": {
+      "title": "Send a parcel",
+      "steps": {
+        "quote": "Price",
+        "details": "Details"
+      },
+      "priceStepBody": "Start with the route and parcel details to get your price.",
+      "continue": "Continue with this price",
+      "changePrice": "Change parcel or route",
+      "quoteExpired": "This price has expired. Calculate it again to continue.",
+      "description": "What's inside?",
+      "descriptionHint": "Describe the contents honestly. The traveller and customs may check them.",
+      "dates": "When should it leave?",
+      "earliest": "From",
+      "latest": "Until",
+      "datesHint": "A wider window helps us find a traveller faster.",
+      "recipient": "Recipient",
+      "recipientName": "Full name",
+      "recipientPhone": "Phone number",
+      "recipientEmail": "Email",
+      "photos": "Photos of the contents",
+      "photosHint": "Up to 4 photos. Required for this category.",
+      "photosOptional": "Up to 4 photos. Optional, but they reassure travellers.",
+      "addPhoto": "Add photo",
+      "restrictedAck": "I confirm my parcel contains none of the prohibited items listed, and I am responsible for its contents.",
+      "seeList": "See the list",
+      "submit": "Create shipment",
+      "created": "Shipment created."
+    },
+    "detail": {
+      "route": "Route",
+      "parcel": "Parcel",
+      "weight": "Weight",
+      "size": "Size",
+      "declaredValue": "Declared value",
+      "speed": "Speed",
+      "options": "Options",
+      "dates": "Departure window",
+      "datesValue": "{from} – {to}",
+      "recipient": "Recipient",
+      "price": "Price",
+      "earning": "Your earning",
+      "photos": "Photos",
+      "timeline": "History",
+      "cancel": "Cancel shipment",
+      "cancelConfirm": "Cancel this shipment? This cannot be undone.",
+      "cancelled": "Shipment cancelled.",
+      "awaitingPayment": "Next step: pay to start the search for a traveller.",
+      "by": {
+        "USER": "by you",
+        "ADMIN": "by our team",
+        "SYSTEM": "automatically",
+        "SENDER": "by the sender",
+        "TRAVELLER": "by the traveller"
+      },
+      "matching": "We're proposing your parcel to verified travellers on your route. You'll be notified as soon as one accepts.",
+      "noMatch": "No traveller is available for your dates yet. Our team has been notified.",
+      "traveller": "Your traveller",
+      "sender": "Sender",
+      "departure": "Departs on {date}",
+      "rating": "{rating} · {count, plural, one {# review} other {# reviews}}",
+      "newMember": "New on Mersal",
+      "verifiedTraveller": "Verified traveller"
+    }
+  },
+  "trips": {
+    "title": "My trips",
+    "subtitle": "Publish the journeys you're already making. We'll propose parcels that fit your route, dates and space.",
+    "newAction": "Publish a trip",
+    "empty": "You haven't published a trip yet.",
+    "verifyFirst": "Verify your identity to publish trips and receive parcel proposals.",
+    "verifyAction": "Start verification",
+    "status": {
+      "PUBLISHED": "Published",
+      "IN_PROGRESS": "In progress",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled"
+    },
+    "capacity": "{remaining} of {total} kg free",
+    "items": "{count, plural, =0 {No parcels yet} one {# parcel} other {# parcels}}",
+    "new": {
+      "title": "Publish a trip",
+      "from": "Departure city",
+      "to": "Arrival city",
+      "departure": "Departure date",
+      "arrival": "Arrival date",
+      "capacity": "Space available (kg)",
+      "capacityHint": "Total weight you're willing to carry for others.",
+      "maxItems": "Maximum number of parcels",
+      "maxLength": "Longest side accepted (cm)",
+      "categories": "Categories you accept",
+      "categoriesHint": "Leave all unchecked to accept every category.",
+      "notes": "Notes for our team",
+      "submit": "Publish trip",
+      "published": "Trip published. We'll send you matching parcels."
+    },
+    "detail": {
+      "route": "Route",
+      "dates": "Dates",
+      "space": "Space",
+      "categories": "Accepted categories",
+      "allCategories": "All categories",
+      "parcels": "Parcels on this trip",
+      "noParcels": "No parcels yet. We'll notify you when one matches.",
+      "cancel": "Cancel trip",
+      "cancelConfirm": "Cancel this trip? Open proposals will go to other travellers.",
+      "cancelled": "Trip cancelled."
+    }
+  },
+  "offers": {
+    "title": "Parcel proposals",
+    "subtitle": "Parcels matched to your trips. Accept the ones that suit you before the proposal expires.",
+    "tabs": {
+      "open": "Open",
+      "history": "History"
+    },
+    "empty": "No open proposals. We'll notify you when a parcel matches one of your trips.",
+    "emptyHistory": "Your past proposals will appear here.",
+    "expiresIn": "Expires {time}",
+    "earning": "You earn",
+    "onTrip": "For your trip on {date}",
+    "window": "Leaves between {from} and {to}",
+    "accept": "Accept",
+    "reject": "Decline",
+    "rejectReason": "Reason (optional)",
+    "confirmReject": "Decline proposal",
+    "accepted": "Accepted. The sender has been notified.",
+    "rejected": "Proposal declined.",
+    "status": {
+      "PENDING": "Open",
+      "ACCEPTED": "Accepted",
+      "REJECTED": "Declined",
+      "EXPIRED": "Expired",
+      "CANCELLED": "Withdrawn"
+    },
+    "express": "Express"
+  },
+  "payment": {
+    "pay": "Pay {amount}",
+    "secure": "Your payment is held securely and the traveller is paid only after delivery.",
+    "redirecting": "Redirecting to secure payment…",
+    "succeeded": "Payment confirmed. We're looking for a traveller.",
+    "cancelled": "Payment cancelled. You can try again whenever you're ready.",
+    "checking": "Confirming your payment…",
+    "demo": {
+      "title": "Secure payment",
+      "notice": "Demo mode — no real card is charged.",
+      "card": "Card number",
+      "expiry": "Expiry",
+      "cvc": "CVC",
+      "name": "Name on card",
+      "submit": "Pay {amount}"
+    },
+    "cancelRefund": "Cancel and get a refund",
+    "cancelRefundConfirm": "Cancel this shipment? You will be refunded in full.",
+    "refunded": "Shipment cancelled. Your refund is on its way."
+  },
+  "handover": {
+    "title": "Hand-over",
+    "pickupCodeTitle": "Pickup code",
+    "pickupCodeBody": "Give this code to the traveller when you hand over the parcel — not before.",
+    "deliveryCodeTitle": "Delivery code",
+    "deliveryCodeBody": "The recipient gives this code to the traveller on delivery. Share the tracking page with them.",
+    "copyLink": "Copy tracking link",
+    "copied": "Link copied.",
+    "openTracking": "Open tracking page",
+    "travellerPickupTitle": "Confirm pickup",
+    "travellerPickupBody": "Ask the sender for their 6-digit pickup code when you receive the parcel. Check that the contents match the description.",
+    "travellerDeliveryTitle": "Confirm delivery",
+    "travellerDeliveryBody": "Ask the recipient for their 6-digit delivery code when you hand over the parcel.",
+    "code": "Code",
+    "confirmPickup": "Confirm pickup",
+    "confirmDelivery": "Confirm delivery",
+    "startJourney": "I'm on my way",
+    "pickedUp": "Pickup confirmed.",
+    "delivered": "Delivery confirmed. Your earning is now on hold for the complaint window.",
+    "inTransit": "Marked as on the way.",
+    "attemptsLeft": "{count, plural, one {# attempt left} other {# attempts left}}",
+    "recipient": "Recipient: {name}"
+  },
+  "chat": {
+    "title": "Messages",
+    "placeholder": "Write a message…",
+    "send": "Send",
+    "closed": "The conversation is closed.",
+    "empty": "Use this conversation to agree on where and when to hand over the parcel.",
+    "maskedNote": "Contact details are hidden to keep your exchange protected by Mersal.",
+    "you": "You",
+    "system": {
+      "matched": "A traveller accepted this parcel. Agree here on where and when to meet.",
+      "pickedUp": "Parcel picked up — pickup code confirmed.",
+      "inTransit": "The traveller is on the way.",
+      "delivered": "Parcel delivered — delivery code confirmed.",
+      "disputed": "A problem was reported. Our team is reviewing it.",
+      "disputeResolved": "Our team resolved the reported problem.",
+      "withdrawn": "The traveller withdrew. We're finding another traveller."
+    }
+  },
+  "tracking": {
+    "metaTitle": "Track a parcel",
+    "title": "Parcel {reference}",
+    "for": "For {name}",
+    "travellerWith": "Travelling with {name}",
+    "departure": "Departure {date}",
+    "codeTitle": "Your delivery code",
+    "codeBody": "Give this code to the traveller only when you have the parcel in your hands.",
+    "history": "Progress",
+    "notFound": "We couldn't find this parcel. Check the link you received."
+  },
+  "wallet": {
+    "title": "Wallet",
+    "subtitle": "Your earnings from delivered parcels. Earnings are held for {hours} after delivery for complaints, then paid every week.",
+    "expected": "Expected",
+    "expectedHint": "Parcels you're carrying",
+    "held": "On hold",
+    "heldHint": "Complaint window",
+    "available": "Available",
+    "availableHint": "Paid on {date}",
+    "blocked": "Blocked",
+    "blockedHint": "Open dispute",
+    "paidOut": "Paid out",
+    "account": {
+      "title": "Payout account",
+      "none": "Add your bank details to receive your weekly payouts.",
+      "ready": "Payouts go to {label}.",
+      "holder": "Account holder",
+      "iban": "IBAN",
+      "save": "Save bank details",
+      "saved": "Bank details saved.",
+      "stripe": "Set up payouts with Stripe",
+      "stripeBody": "You'll complete a short, secure form on Stripe to receive your payouts.",
+      "change": "Change"
+    },
+    "activity": "Activity",
+    "noActivity": "No earnings yet. Deliver your first parcel to see them here.",
+    "entry": {
+      "EARNING_CREATED": "Earning on hold",
+      "HOLD_RELEASED": "Earning available",
+      "PAYOUT_SENT": "Payout sent",
+      "PAYOUT_FAILED": "Payout failed — back to available",
+      "DISPUTE_BLOCKED": "Blocked by a dispute",
+      "DISPUTE_RELEASED": "Dispute resolved — released",
+      "DISPUTE_REVERSED": "Dispute resolved — refunded to sender",
+      "ADJUSTMENT": "Adjustment"
+    },
+    "releases": "Available {date}",
+    "payouts": "Payouts",
+    "payoutStatus": {
+      "SCHEDULED": "Scheduled",
+      "PROCESSING": "Processing",
+      "PAID": "Paid",
+      "FAILED": "Failed"
+    }
+  },
+  "dispute": {
+    "report": "Report a problem",
+    "title": "Report a problem",
+    "body": "Tell us what happened. The traveller's earning stays frozen until our team reviews it.",
+    "reason": "What went wrong?",
+    "reasons": {
+      "NOT_DELIVERED": "Not delivered",
+      "DAMAGED": "Damaged",
+      "ITEM_MISSING": "Something is missing",
+      "LATE": "Very late",
+      "OTHER": "Something else",
+      "CHARGEBACK": "Bank chargeback"
+    },
+    "description": "Describe the problem",
+    "photos": "Photos (optional)",
+    "submit": "Send report",
+    "sent": "Report sent. We'll get back to you quickly.",
+    "status": {
+      "OPEN": "Reported",
+      "UNDER_REVIEW": "Being reviewed",
+      "RESOLVED": "Resolved"
+    },
+    "resolution": {
+      "FULL_REFUND": "Refunded in full",
+      "PARTIAL_REFUND": "Partly refunded ({amount})",
+      "RELEASE_TO_TRAVELLER": "Closed in favour of the traveller"
+    },
+    "panelTitle": "Reported problem",
+    "teamNote": "Our team: {note}"
+  },
+  "review": {
+    "title": "How did it go?",
+    "rateTraveller": "Rate your traveller",
+    "rateSender": "Rate the sender",
+    "comment": "Comment (optional)",
+    "submit": "Send review",
+    "sent": "Thanks for your review.",
+    "yours": "Your review",
+    "stars": "{count, plural, one {# star} other {# stars}}"
+  },
+  "withdraw": {
+    "action": "I can no longer take this parcel",
+    "title": "Give this parcel back",
+    "body": "We'll propose it to another traveller. Withdrawing affects your reliability score, so only do it if you really can't carry it.",
+    "reason": "Reason",
+    "submit": "Withdraw",
+    "done": "You withdrew from this parcel."
+  },
+  "howItWorks": {
+    "metaTitle": "How it works",
+    "eyebrow": "How it works",
+    "title": "One parcel, one traveller, every step confirmed.",
+    "subtitle": "Mersal takes care of the price, the matching and the payment. You only meet the traveller to hand the parcel over, and a code confirms each handover.",
+    "senders": {
+      "title": "Sending a parcel",
+      "steps": {
+        "quote": {
+          "title": "Get a fixed price",
+          "body": "Choose the route, category, weight and size. The price comes from the published tariff, and you see every line before you pay."
+        },
+        "pay": {
+          "title": "Pay to start matching",
+          "body": "Your payment is held by Mersal, not by the traveller. If nobody can take your parcel, you get a full refund."
+        },
+        "match": {
+          "title": "We find the traveller",
+          "body": "Your parcel is proposed to one verified traveller at a time, chosen by route, dates, space and reliability. You are notified as soon as someone accepts."
+        },
+        "pickup": {
+          "title": "Hand it over with your pickup code",
+          "body": "Meet the traveller, check their name, and give them your 6-digit code or let them scan the QR code. Your parcel is on its way."
+        },
+        "delivery": {
+          "title": "Your recipient confirms delivery",
+          "body": "Your recipient gets a tracking link and a delivery code. The parcel only counts as delivered once the traveller enters that code."
+        }
+      }
+    },
+    "travellers": {
+      "title": "Travelling with spare space",
+      "steps": {
+        "verify": {
+          "title": "Verify your identity",
+          "body": "Upload an identity document and a selfie. Our team reviews them before you carry your first parcel."
+        },
+        "publish": {
+          "title": "Publish your trip",
+          "body": "Route, date and the space you can spare: weight, size and number of parcels."
+        },
+        "offers": {
+          "title": "Accept the parcels that suit you",
+          "body": "Offers arrive one at a time with the parcel details and your earnings. Accept or decline before the offer expires."
+        },
+        "handover": {
+          "title": "Pick up and deliver with codes",
+          "body": "The sender’s code confirms pickup and the recipient’s code confirms delivery. Use the in-app chat to agree on a meeting point."
+        },
+        "paid": {
+          "title": "Get paid every week",
+          "body": "Your earnings unlock {holdHours} hours after delivery and are paid out every {weekday}."
+        }
+      }
+    },
+    "money": {
+      "title": "Where the money goes",
+      "subtitle": "Nobody is paid until the parcel has arrived.",
+      "stages": {
+        "paid": {
+          "title": "The sender pays",
+          "body": "The full price is collected before matching starts."
+        },
+        "held": {
+          "title": "Mersal holds it",
+          "body": "The money stays on hold while the parcel travels."
+        },
+        "delivered": {
+          "title": "Delivery is confirmed",
+          "body": "The recipient’s code opens a {holdHours}-hour window to report a problem."
+        },
+        "available": {
+          "title": "The traveller’s balance",
+          "body": "With no complaint, the earnings become available."
+        },
+        "payout": {
+          "title": "Weekly payout",
+          "body": "Available balances are transferred every {weekday}."
+        }
+      }
+    },
+    "safety": {
+      "title": "Safety at every step",
+      "items": {
+        "identity": {
+          "title": "Checked identities",
+          "body": "A member of our team reviews every traveller before their first trip."
+        },
+        "codes": {
+          "title": "One-time handover codes",
+          "body": "Each code works once and locks after several wrong attempts."
+        },
+        "chat": {
+          "title": "Private chat",
+          "body": "Phone numbers and email addresses are hidden in messages, so arrangements stay on the platform and on record."
+        },
+        "disputes": {
+          "title": "Disputes handled by our team",
+          "body": "Report a problem within {disputeHours} hours of delivery. The traveller’s earnings stay frozen until we decide."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to send?",
+      "body": "Get a price in under a minute. You only pay if you decide to go ahead.",
+      "send": "Get a price",
+      "travel": "Publish a trip"
+    }
+  },
+  "services": {
+    "metaTitle": "Services",
+    "eyebrow": "Services",
+    "title": "What you can send, and where.",
+    "subtitle": "Documents, clothes, gifts and everyday items between France and North Africa, carried by verified travellers.",
+    "unavailable": "Routes and categories can’t be loaded right now. Please try again in a moment.",
+    "routesTitle": "Routes",
+    "routesBody": "Every route works in both directions. New cities are added as travellers join.",
+    "bothWays": "in both directions",
+    "cityCount": "{count, plural, one {# city} other {# cities}}",
+    "categoriesTitle": "What you can send",
+    "categoriesBody": "Each category has its own price factor and weight limit.",
+    "maxWeight": "Up to {kg} kg",
+    "noWeightLimit": "Within the traveller’s space",
+    "photosRequired": "Photos required",
+    "paceTitle": "Choose your pace",
+    "standard": {
+      "title": "Standard",
+      "body": "Flexible dates, the widest choice of travellers and the lowest price."
+    },
+    "express": {
+      "title": "Express",
+      "body": "Travellers leaving soonest are proposed first, for a surcharge."
+    },
+    "extrasTitle": "Optional extras",
+    "from": "from {price}",
+    "extrasNote": "Add them when you create a shipment. Prices can vary by route.",
+    "prohibitedTitle": "Prohibited and restricted items",
+    "prohibitedBody": "Some items can’t travel with Mersal, and others need extra checks.",
+    "prohibitedLink": "See the list",
+    "cta": {
+      "title": "Know what you’re sending?",
+      "body": "Enter the route and the size of your parcel to see the full price.",
+      "action": "Get a price"
+    }
+  },
+  "help": {
+    "metaTitle": "Help & FAQ",
+    "eyebrow": "Help",
+    "title": "Questions, answered.",
+    "subtitle": "Short answers about sending, travelling, payments and safety.",
+    "topics": "Topics",
+    "groups": {
+      "sending": "Sending",
+      "travelling": "Travelling",
+      "payments": "Payments",
+      "safety": "Safety and problems"
+    },
+    "faq": {
+      "price": {
+        "q": "How is the price calculated?",
+        "a": "Each route has a published tariff: a price per weight band, applied to whichever is greater, the real weight or the volumetric weight (length × width × height ÷ a set divisor). The category, declared value, speed and extras then adjust it. You see each line before you pay."
+      },
+      "noMatch": {
+        "q": "What if no traveller takes my parcel?",
+        "a": "Your parcel is proposed to suitable travellers one after another. If nobody accepts in time, we let you know: you can try again with new dates or cancel for a full refund."
+      },
+      "cancel": {
+        "q": "Can I cancel a shipment?",
+        "a": "Yes, until the traveller picks the parcel up, and your payment is refunded in full. After pickup, use “Report a problem” if something goes wrong."
+      },
+      "recipient": {
+        "q": "Does my recipient need an account?",
+        "a": "No. They receive a private tracking link and the delivery code by text message or email, and give the code to the traveller on arrival."
+      },
+      "who": {
+        "q": "Who can travel with Mersal?",
+        "a": "Anyone aged 18 or over with a confirmed email address and phone number. Our team reviews your identity document and selfie before your first trip."
+      },
+      "choose": {
+        "q": "Do I have to accept every parcel?",
+        "a": "No. Each offer shows the parcel, its size and what you will earn, and you can decline it. Offers left to expire lower your response rate, which matching takes into account."
+      },
+      "check": {
+        "q": "Can I check what’s inside a parcel?",
+        "a": "Yes, and you should. Before entering the pickup code, check that the parcel matches its description and photos. If it doesn’t, or if it holds anything prohibited, don’t take it: withdraw from the parcel in the app."
+      },
+      "withdraw": {
+        "q": "What if my plans change?",
+        "a": "You can withdraw from a parcel until you pick it up, and it goes back to matching for another traveller. Withdrawals lower your reliability score, so let us know as early as you can."
+      },
+      "when": {
+        "q": "When am I charged?",
+        "a": "When you confirm your shipment, before we look for a traveller. Mersal holds the money and releases it to the traveller only after delivery."
+      },
+      "methods": {
+        "q": "How can I pay?",
+        "a": "By card, through Stripe. Mersal never sees or stores your card number."
+      },
+      "refund": {
+        "q": "How do refunds work?",
+        "a": "Refunds go back to the card you paid with. They usually appear within 5 to 10 working days, depending on your bank."
+      },
+      "payout": {
+        "q": "How do travellers receive their earnings?",
+        "a": "Add a payout account in your wallet. Earnings unlock {holdHours} hours after delivery and are sent every {weekday} in a single transfer. If a transfer fails, our team retries it once your details are updated."
+      },
+      "problem": {
+        "q": "Something went wrong. What do I do?",
+        "a": "Open the shipment and choose “Report a problem” within {disputeHours} hours of delivery, or earlier if the parcel is late or hasn’t arrived. The traveller’s earnings stay frozen while our team reviews the case, and you both see the decision."
+      },
+      "chat": {
+        "q": "Why are phone numbers hidden in the chat?",
+        "a": "To protect both sides and keep arrangements on record if there is a disagreement. Use the chat to agree on a time and place; the handover codes do the rest."
+      },
+      "codes": {
+        "q": "How do the handover codes work?",
+        "a": "The sender gives the pickup code to the traveller when handing over the parcel, and the recipient gives the delivery code on arrival. Share a code only at the handover itself. Each code works once and locks after several wrong attempts."
+      },
+      "data": {
+        "q": "Who sees my identity documents?",
+        "a": "Only our verification team. They are used to confirm who you are and are never shown to other users."
+      }
+    },
+    "prohibitedTitle": "Prohibited and restricted items",
+    "prohibitedBody": "Prohibited items can never be sent. Restricted items need a declaration and may be refused by the traveller.",
+    "prohibited": "Prohibited",
+    "restricted": "Restricted",
+    "listUnavailable": "The list can’t be loaded right now. Please try again in a moment.",
+    "contactTitle": "Need help with a shipment?",
+    "contactBody": "Open it from your account and choose “Report a problem”. Our team reviews every report.",
+    "contactAction": "My shipments"
+  },
+  "legal": {
+    "draftNotice": "Working draft prepared for the product demo. It has not been reviewed by a lawyer yet and is not binding. Text in [brackets] is still to be completed.",
+    "contents": "Contents",
+    "terms": {
+      "title": "Terms of use",
+      "intro": "These terms explain how Mersal works and what senders, travellers and Mersal each commit to.",
+      "sections": {
+        "service": {
+          "title": "The service",
+          "body": "Mersal is an online platform that connects people who want to send a parcel (senders) with people who already plan to travel on the same route (travellers). Mersal is not a carrier: the traveller carries the parcel, and Mersal provides matching, payment, tracking and support.\n\nMersal is operated by [company name, legal form and registered address]."
+        },
+        "accounts": {
+          "title": "Accounts",
+          "body": "You must be at least 18 years old and give accurate information. Travellers must complete identity verification before carrying a parcel. You are responsible for keeping your login details safe and for everything done from your account."
+        },
+        "parcels": {
+          "title": "Parcels",
+          "body": "Senders must describe the contents truthfully, declare their value and never send prohibited items. Travellers may refuse a parcel that doesn’t match its description or photos.\n\nSenders and travellers must each respect the customs rules of the countries concerned."
+        },
+        "payments": {
+          "title": "Price and payment",
+          "body": "The sender pays the full price when confirming a shipment. Mersal holds the payment until delivery is confirmed with the recipient’s code. The price includes Mersal’s service fee.\n\nThe traveller’s earnings become available {holdHours} hours after delivery when no problem has been reported, and are paid out weekly to the payout account they have set up."
+        },
+        "cancellations": {
+          "title": "Cancellations",
+          "body": "A sender can cancel until the parcel is picked up and is refunded in full. If no traveller is found, the sender can choose new dates or cancel for a full refund.\n\nA traveller can withdraw from a parcel before pickup. Withdrawals lower the traveller’s reliability score."
+        },
+        "disputes": {
+          "title": "Problems and disputes",
+          "body": "A sender can report a problem within {disputeHours} hours of delivery, or earlier if the parcel is late or hasn’t been delivered. The traveller’s earnings are frozen while Mersal reviews the case.\n\nMersal may refund the sender in full or in part, or release the earnings to the traveller, and explains its decision to both."
+        },
+        "liability": {
+          "title": "Cover and liability",
+          "body": "Parcels are covered up to their declared value, within the limits of the cover chosen at checkout [amounts and conditions to be defined]. Mersal is not liable for indirect losses or for items sent in breach of these terms."
+        },
+        "conduct": {
+          "title": "Conduct",
+          "body": "Users must treat each other with respect, keep arrangements on the platform and never use Mersal for illegal purposes. Mersal may suspend accounts that break these rules."
+        },
+        "law": {
+          "title": "Applicable law",
+          "body": "These terms are governed by [applicable law]. Disputes fall under [competent courts], without prejudice to consumer protection rules."
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "What personal data Mersal collects, why, and the rights you have over it under the GDPR.",
+      "sections": {
+        "controller": {
+          "title": "Who is responsible",
+          "body": "The data controller is [company name and registered address]. For any question about your data, write to [privacy contact email]."
+        },
+        "data": {
+          "title": "Data we collect",
+          "body": "Account data: name, email address, phone number and preferred language. For travellers: identity document and selfie. Shipment data: route, parcel description and photos, recipient name and phone number. Messages exchanged in a shipment’s chat. Payment status and payout details. Technical data such as IP address and device type, for security.\n\nCard numbers are handled by our payment provider, Stripe, and are never stored by Mersal."
+        },
+        "purposes": {
+          "title": "Why we use it",
+          "body": "To provide the service (quotes, matching, payments and delivery), to verify identities and prevent fraud, to handle disputes, to send service messages and to meet our legal and accounting obligations.\n\nWe rely on the contract with you, on our legal obligations, and on our legitimate interest in keeping the platform secure. We don’t sell personal data or use it for third-party advertising."
+        },
+        "sharing": {
+          "title": "Who we share it with",
+          "body": "The other party of a shipment sees only what is needed to complete it, such as first name, verification status and rating. Our processors act on our instructions: hosting, payments (Stripe), email and text messaging [and identity verification provider]."
+        },
+        "retention": {
+          "title": "How long we keep it",
+          "body": "Account data is kept while your account is open. Identity documents are deleted [period] after the verification decision. Payment and accounting records are kept for the period required by law. Chat messages are kept for [period] after delivery so that disputes can be handled."
+        },
+        "rights": {
+          "title": "Your rights",
+          "body": "You can access, correct, export or delete your data, object to or restrict some processing, and withdraw your consent at any time. Some records must be kept for legal reasons even after your account is closed.\n\nYou can also complain to your data protection authority (the CNIL in France)."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "body": "Mersal only uses cookies the service needs: session cookies that keep you signed in, and preferences such as your language. We use no advertising or tracking cookies."
+        },
+        "security": {
+          "title": "Security",
+          "body": "Passwords are stored as salted hashes, sessions use short-lived tokens, and identity documents are only accessible to the verification team. Sensitive actions are recorded in an audit log."
+        }
+      }
+    }
+  },
+  "errorPage": {
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "The page you’re looking for doesn’t exist or has moved.",
+    "errorTitle": "Something went wrong",
+    "errorBody": "An unexpected error stopped this page from loading. Try again, and if it keeps happening, come back in a few minutes.",
+    "retry": "Try again",
+    "home": "Back to home",
+    "help": "Visit the help centre",
+    "reference": "Reference: {digest}"
+  }
+}

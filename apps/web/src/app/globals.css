@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+@import '@mersal/brand/tokens.css';
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-ink: var(--brand-ink);
+  --color-primary: var(--brand-primary);
+  --color-primary-hover: var(--brand-primary-hover);
+  --color-primary-foreground: var(--brand-primary-fg);
+  --color-tint: var(--brand-tint);
+  --color-accent: var(--brand-accent);
+  --color-accent-strong: var(--brand-accent-strong);
+  --color-sand: var(--brand-sand);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-tint: var(--success-tint);
+  --color-warning: var(--warning);
+  --color-warning-tint: var(--warning-tint);
+  --color-danger: var(--danger);
+  --color-danger-tint: var(--danger-tint);
+  --color-info: var(--info);
+  --color-info-tint: var(--info-tint);
+
+  --font-display: var(--font-readex), var(--font-plex-ar), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plex), var(--font-plex-ar), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-plex), var(--font-plex-ar), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  html[lang='ar'] body {
+    font-family: var(--font-plex-ar), var(--font-plex), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  html[lang='ar'] h1,
+  html[lang='ar'] h2,
+  html[lang='ar'] h3,
+  html[lang='ar'] h4 {
+    letter-spacing: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}

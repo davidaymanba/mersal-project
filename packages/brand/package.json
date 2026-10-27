@@ -1,0 +1,24 @@
+{
+  "name": "@mersal/brand",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mersal brand: logo, colour tokens, typography and white-label themes.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": "./src/tokens.css",
+    "./assets/*": "./assets/*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch --preserveWatchOutput",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}
